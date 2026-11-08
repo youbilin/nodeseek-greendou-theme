@@ -1,0 +1,20 @@
+/* NodeSeek Nord theme v1.0.0
+   Standalone full theme; the eye-care base and mobile fixes are concatenated by build.mjs.
+   Mutually exclusive with eye-care, oled-black and high-contrast - enable only
+   one full theme, since each restates the whole token set.
+   Polar Night surfaces, Snow Storm ink, Frost-blue links. Both site modes are
+   intentionally dark: Nord has one palette, so light mode is not a light theme. */
+
+/* Light site mode still renders Nord dark; every token is restated here. */
+:root,body{--ns-page:#2e3440;--ns-card:#3b4252;--ns-sub:#434c5e;--ns-text:#d8dee9;--ns-title:#eceff4;--ns-muted:#a3abbc;--ns-link:#88c0d0;--ns-border:#4c566a;--ns-active:#434c5e;--ns-hover:#3b4252;--ns-read:#a3abbc;--ns-bubble:#3b4252;--ns-mine:#434c5e;--ns-accent:#5e81ac;--ns-risk-bg:#3b4252;--ns-border-soft:rgba(216,222,233,.07);--ns-border-soft-2:rgba(216,222,233,.12);--ns-hover-soft:rgba(136,192,208,.14);--ns-shadow-notice:0 3px 12px rgba(8,10,16,.4);--ns-shadow-message:0 3px 14px rgba(8,10,16,.4);--ns-shadow-panel:0 3px 10px rgba(8,10,16,.4);--ns-shadow-button:0 2px 8px rgba(8,10,16,.4);--ns-shadow-search:0 12px 28px rgba(8,10,16,.5);--ns-shadow-right:0 2px 10px rgba(8,10,16,.4);--ns-shadow-user:0 8px 24px rgba(8,10,16,.55);--ns-shadow-main:0 3px 12px rgba(8,10,16,.45);--ns-shadow-card:0 3px 12px rgba(8,10,16,.45);color-scheme:dark}
+
+/* Dark site mode repeats the identical set so no eye-care value survives. */
+body.dark-layout{--ns-page:#2e3440;--ns-card:#3b4252;--ns-sub:#434c5e;--ns-text:#d8dee9;--ns-title:#eceff4;--ns-muted:#a3abbc;--ns-link:#88c0d0;--ns-border:#4c566a;--ns-active:#434c5e;--ns-hover:#3b4252;--ns-read:#a3abbc;--ns-bubble:#3b4252;--ns-mine:#434c5e;--ns-accent:#5e81ac;--ns-risk-bg:#3b4252;--ns-border-soft:rgba(216,222,233,.07);--ns-border-soft-2:rgba(216,222,233,.12);--ns-hover-soft:rgba(136,192,208,.14);--ns-shadow-notice:0 3px 12px rgba(8,10,16,.4);--ns-shadow-message:0 3px 14px rgba(8,10,16,.4);--ns-shadow-panel:0 3px 10px rgba(8,10,16,.4);--ns-shadow-button:0 2px 8px rgba(8,10,16,.4);--ns-shadow-search:0 12px 28px rgba(8,10,16,.5);--ns-shadow-right:0 2px 10px rgba(8,10,16,.4);--ns-shadow-user:0 8px 24px rgba(8,10,16,.55);--ns-shadow-main:0 3px 12px rgba(8,10,16,.45);--ns-shadow-card:0 3px 12px rgba(8,10,16,.45);color-scheme:dark}
+
+/* Avatars keep their real colours instead of the base theme's green tint. */
+body :is(.avatar,.avatar-normal){filter:none!important}
+
+/* Frost accents for selection, focus and scrollbars; colours only, no geometry. */
+::selection{background:var(--ns-accent);color:var(--ns-title)}
+body :focus-visible{outline:2px solid var(--ns-link);outline-offset:2px}
+html{scrollbar-color:var(--ns-border) var(--ns-page)}

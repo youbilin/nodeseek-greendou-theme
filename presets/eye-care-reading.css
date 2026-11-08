@@ -1,6 +1,0 @@
-/* NodeSeek preset: eye-care reading v1.0.0
-   One import for the daily reading stack: eye-care + reading + zen + mobile. */
-@import url("../themes/eye-care.css");
-@import url("../modules/reading.css");
-@import url("../modules/zen.css");
-@import url("../modules/mobile.css");

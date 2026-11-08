@@ -1,0 +1,123 @@
+/* NodeSeek reading typography module v1.1.0
+   Includes code-tables.css for code/table styling.
+   Stackable with eye-care or any other color theme. It changes rhythm and structure only,
+   never colors, so light and dark layouts both keep working. */
+:root{
+  --nsk-read-size:15px;
+  --nsk-read-leading:1.75;
+  --nsk-read-heading-size:18px;
+}
+body .nsk-post .post-title h1{
+  margin:0 0 6px!important;
+  font-size:22px!important;
+  line-height:1.35!important;
+}
+body .nsk-post .post-content,
+body .content-item .post-content,
+body .readme.post-content{
+  font-size:var(--nsk-read-size)!important;
+  line-height:var(--nsk-read-leading)!important;
+  letter-spacing:.01em!important;
+  overflow-wrap:anywhere!important;
+  text-wrap:pretty;
+}
+body .nsk-post .post-content p,
+body .content-item .post-content p,
+body .readme.post-content p{
+  margin:.8em 0!important;
+}
+body .nsk-post .post-content :is(h1,h2,h3,h4,h5,h6),
+body .content-item .post-content :is(h1,h2,h3,h4,h5,h6),
+body .readme.post-content :is(h1,h2,h3,h4,h5,h6){
+  margin:1.4em 0 .55em!important;
+  line-height:1.4!important;
+  font-weight:650!important;
+}
+body .nsk-post .post-content h2,
+body .content-item .post-content h2,
+body .readme.post-content h2{
+  font-size:var(--nsk-read-heading-size)!important;
+  padding-bottom:.3em!important;
+  border-bottom:1px solid rgba(127,127,127,.24)!important;
+}
+body .nsk-post .post-content h3,
+body .content-item .post-content h3,
+body .readme.post-content h3{
+  font-size:16px!important;
+}
+body .nsk-post .post-content :is(ul,ol),
+body .content-item .post-content :is(ul,ol),
+body .readme.post-content :is(ul,ol){
+  margin:.7em 0!important;
+  padding-left:1.45em!important;
+}
+body .nsk-post .post-content li,
+body .content-item .post-content li,
+body .readme.post-content li{
+  margin:.32em 0!important;
+}
+body .nsk-post .post-content blockquote,
+body .content-item .post-content blockquote,
+body .readme.post-content blockquote{
+  margin:1em 0!important;
+  padding:.65em 1em!important;
+  border-left:3px solid rgba(127,127,127,.4)!important;
+  border-radius:0 6px 6px 0!important;
+  background:rgba(127,127,127,.08)!important;
+  color:inherit!important;
+}
+body .nsk-post .post-content img,
+body .content-item .post-content img,
+body .readme.post-content img{
+  max-width:100%!important;
+  height:auto!important;
+  border-radius:6px!important;
+}
+body .nsk-post .post-content a,
+body .content-item .post-content a,
+body .readme.post-content a{
+  text-decoration:underline!important;
+  text-decoration-color:rgba(127,127,127,.45)!important;
+  text-underline-offset:3px!important;
+  text-decoration-thickness:1px!important;
+}
+body .nsk-post .post-content a:hover,
+body .content-item .post-content a:hover,
+body .readme.post-content a:hover{
+  text-decoration-color:currentColor!important;
+}
+body .nsk-post .post-content hr,
+body .content-item .post-content hr,
+body .readme.post-content hr{
+  margin:1.6em 0!important;
+  border:0!important;
+  border-top:1px solid rgba(127,127,127,.24)!important;
+}
+body .content-item{
+  scroll-margin-top:64px!important;
+}
+body .nsk-post .post-content :is(h1,h2,h3,h4,h5,h6)[id]{
+  scroll-margin-top:64px!important;
+}
+body .signature{
+  margin-top:10px!important;
+  padding-top:8px!important;
+  border-top:1px solid rgba(127,127,127,.18)!important;
+  font-size:12px!important;
+  line-height:1.5!important;
+  opacity:.78!important;
+}
+body .signature :is(h1,h2,h3,h4,h5,h6,p){
+  margin:0!important;
+  font-size:inherit!important;
+  line-height:inherit!important;
+}
+@media (max-width:1100px){
+  body .nsk-post .post-title h1{
+    font-size:19px!important;
+  }
+  :root{
+    --nsk-read-size:15px;
+    --nsk-read-heading-size:17px;
+  }
+}

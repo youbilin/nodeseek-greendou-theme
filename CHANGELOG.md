@@ -1,5 +1,15 @@
 # Changelog
 
+## v1.9.0 — 2026-11-09
+
+- 仓库改为**复制粘贴型**：每个 ~themes/~、~modules/~ 文件都是自包含 CSS，不再依赖相对 @import。
+- 主题文件由 `build.mjs` 拼装：eye-care 底座 + 主题 token 覆盖 + mobile；复制一个主题即可。
+- `modules/reading.css` 内联 code-tables；复制 reading 不需要再复制 code-tables。
+- 移除 `presets/` 一键包，避免把所有样式一次性塞进去；组合改为 README 里的复制顺序。
+- 新增 `src/base/eye-care.css`、`src/themes/*.overlay.css`、`src/modules/reading.css`、`package.json`、`build.mjs`。
+- 旧 @import URL 仍可用（文件会整份加载），但主推复制粘贴。
+- `nodeseek-greendou.css` 由构建脚本同步。
+
 ## v1.8.0 — 2026-11-09
 
 - 新增主题：`terminal`（终端绿）、`sepia`（暖纸）、`nord`、`solarized`（亮/暗）。

@@ -1,0 +1,82 @@
+/* NodeSeek mung-bean high-contrast theme v1.1.0
+   WCAG-oriented: 21:1 body text, black/white borders, underlined links, 3px focus rings.
+   Mutually exclusive with eye-care and OLED - enable only one theme. */
+
+/* Light: pure white surfaces, pure black ink. */
+:root,body{--ns-page:#fff;--ns-card:#fff;--ns-sub:#fff;--ns-text:#000;--ns-title:#000;--ns-muted:#595959;--ns-link:#0033cc;--ns-border:#000;--ns-active:#ffff00;--ns-hover:#e6e6e6;--ns-read:#595959;--ns-bubble:#fff;--ns-mine:#e6e6e6;--ns-accent:#000;--ns-risk-bg:#fff;--ns-border-soft:rgba(0,0,0,.5);--ns-border-soft-2:rgba(0,0,0,.75);--ns-hover-soft:rgba(0,0,0,.12);--ns-shadow-notice:none;--ns-shadow-message:none;--ns-shadow-panel:none;--ns-shadow-button:none;--ns-shadow-search:none;--ns-shadow-right:none;--ns-shadow-user:none;--ns-shadow-main:none;--ns-shadow-card:none;color-scheme:light}
+
+/* Dark: pure black surfaces, pure white ink. */
+body.dark-layout,html:has(body.dark-layout){--ns-page:#000;--ns-card:#000;--ns-sub:#000;--ns-text:#fff;--ns-title:#fff;--ns-muted:#c0c0c0;--ns-link:#66ccff;--ns-border:#fff;--ns-active:#333;--ns-hover:#333;--ns-read:#c0c0c0;--ns-bubble:#1a1a1a;--ns-mine:#333;--ns-accent:#fff;--ns-risk-bg:#000;--ns-border-soft:rgba(255,255,255,.5);--ns-border-soft-2:rgba(255,255,255,.75);--ns-hover-soft:rgba(255,255,255,.16);--ns-shadow-notice:none;--ns-shadow-message:none;--ns-shadow-panel:none;--ns-shadow-button:none;--ns-shadow-search:none;--ns-shadow-right:none;--ns-shadow-user:none;--ns-shadow-main:none;--ns-shadow-card:none;color-scheme:dark}
+
+/* Keyboard focus is always visible, even on coloured surfaces. */
+body :focus-visible{outline:3px solid currentColor!important;outline-offset:2px!important}
+
+/* Links carry a permanent underline so colour is never the only cue. */
+body #nsk-frame a{text-decoration:underline!important;text-underline-offset:2px!important}
+
+/* Article bodies are not covered by the base text rule; keep them at full ink. */
+body #nsk-frame :is(article,.post-content,.content-item,.comment-wrapper){color:var(--ns-text)!important}
+
+/* Stock avatars must not be dimmed or tinted. */
+body img.avatar,body img.avatar-normal,body #nsk-frame :is(img.avatar,img.avatar-normal){filter:none!important}
+
+/* Buttons: accent fill, page-coloured label -> 21:1 in both modes. */
+body #nsk-frame :is(.btn.btn,.glass-search-btn.glass-search-btn),body .glass-card .glass-search-btn,body .nsk-notification .btn{background:var(--ns-accent)!important;color:var(--ns-page)!important;border:1px solid var(--ns-border)!important;border-radius:8px!important;font-weight:600!important}
+body #nsk-frame :is(.btn,.glass-search-btn):is(:hover,:focus,:active,:focus-visible),body .glass-card .glass-search-btn:is(:hover,:focus,:active),body .nsk-notification .btn:is(:hover,:focus,:active){background:var(--ns-accent)!important;color:var(--ns-page)!important;border-color:var(--ns-border)!important;opacity:1!important}
+body #nsk-frame .btn:is(:disabled,[disabled]),body .nsk-notification .btn:is(:disabled,[disabled]){color:var(--ns-page)!important;background:var(--ns-muted)!important;border-color:var(--ns-border)!important;opacity:1!important}
+body #nsk-frame :is(.btn,.glass-search-btn) :is(svg,svg *),body .nsk-notification .btn :is(svg,svg *){fill:currentColor!important}
+
+/* Tabs, pills and pager need an explicit label colour on yellow/black fills. */
+body .glass-card :is(.tab-btn.active,.sub-pill.active),body #nsk-frame :is(.app-title.router-link-active,.select-item.router-link-active,.pager-cur),body .nsk-notification .app-switch .app-title.router-link-active{background:var(--ns-active)!important;color:var(--ns-text)!important;border-color:var(--ns-border)!important}
+
+/* Respect the OS reduced-motion preference. */
+@media (prefers-reduced-motion:reduce){
+  body *,body *::before,body *::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}
+}
+
+/* Filled buttons: force the label and every child icon to the page colour. */
+body #nsk-frame :is(.btn,.new-discussion,.glass-search-btn),
+body #nsk-frame :is(.btn,.new-discussion,.glass-search-btn) *,
+body .nsk-notification .btn,
+body .nsk-notification .btn *{
+  color:var(--ns-page)!important;
+}
+body #nsk-frame #nsk-right-panel-container .new-discussion,
+body #nsk-frame #nsk-right-panel-container .new-discussion span,
+body #nsk-frame #nsk-right-panel-container .new-discussion svg,
+body #nsk-frame #nsk-right-panel-container .new-discussion svg *{
+  color:var(--ns-page)!important;
+  fill:currentColor!important;
+}
+
+/* Body copy keeps the theme ink colour even where NodeSeek injects #444. */
+body #nsk-frame :is(.post-content,.content-item,.comment-wrapper){
+  color:var(--ns-text)!important;
+}
+
+/* More-contrast preference: thicker edges and a stronger focus ring. */
+@media (prefers-contrast: more){
+  body #nsk-frame :is(.nsk-panel,.user-card,.selector,.head-container,.nsk-notification,.post-list-item,.content-item){
+    border-width:2px!important;
+  }
+  body :focus-visible{
+    outline-width:4px!important;
+  }
+}
+
+/* Forced colors: defer to the OS palette instead of fighting it. */
+@media (forced-colors: active){
+  body #nsk-frame :is(.nsk-panel,.user-card,.selector,.head-container,.nsk-notification,.post-list-item,.content-item){
+    background:Canvas!important;
+    color:CanvasText!important;
+    border:1px solid CanvasText!important;
+  }
+  body #nsk-frame a{
+    color:LinkText!important;
+  }
+  body #nsk-frame :is(.btn,.new-discussion){
+    background:ButtonFace!important;
+    color:ButtonText!important;
+    border:1px solid ButtonText!important;
+  }
+}

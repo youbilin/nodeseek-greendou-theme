@@ -1,4 +1,6 @@
-@import url("./code-tables.css");
+/* NodeSeek reading — standalone module @v1.9.0
+   复制整个文件到论坛 CSS 注入；代码/表格样式已内联。
+   不要再单独复制 code-tables.css。 */
 /* NodeSeek reading typography module v1.1.0
    Includes code-tables.css for code/table styling.
    Stackable with eye-care or any other color theme. It changes rhythm and structure only,
@@ -121,4 +123,66 @@ body .signature :is(h1,h2,h3,h4,h5,h6,p){
     --nsk-read-size:15px;
     --nsk-read-heading-size:17px;
   }
+}
+
+/* NodeSeek code and table module v1.0.0
+   Standalone: import it directly for code/table styling.
+   Also imported by reading.css, so existing reading imports keep working.
+   No colors are hardcoded; all surfaces are neutral or inherited. */
+:root{
+  --nsk-code-size:13px;
+  --nsk-code-leading:1.55;
+}
+body .nsk-post .post-content :is(pre,code),
+body .content-item .post-content :is(pre,code),
+body .readme.post-content :is(pre,code){
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace!important;
+  font-size:var(--nsk-code-size)!important;
+  line-height:var(--nsk-code-leading)!important;
+}
+body .nsk-post .post-content pre,
+body .content-item .post-content pre,
+body .readme.post-content pre{
+  margin:1em 0!important;
+  padding:12px 14px!important;
+  overflow:auto!important;
+  border-radius:8px!important;
+  background:rgba(127,127,127,.1)!important;
+  tab-size:2!important;
+}
+body .nsk-post .post-content :not(pre)>code,
+body .content-item .post-content :not(pre)>code,
+body .readme.post-content :not(pre)>code{
+  padding:.12em .38em!important;
+  border-radius:4px!important;
+  background:rgba(127,127,127,.12)!important;
+}
+body .nsk-post .post-content pre code,
+body .content-item .post-content pre code,
+body .readme.post-content pre code{
+  padding:0!important;
+  background:transparent!important;
+}
+body .nsk-post .post-content table,
+body .content-item .post-content table,
+body .readme.post-content table{
+  width:100%!important;
+  max-width:100%!important;
+  margin:1em 0!important;
+  border-collapse:collapse!important;
+  table-layout:auto!important;
+}
+body .nsk-post .post-content :is(th,td),
+body .content-item .post-content :is(th,td),
+body .readme.post-content :is(th,td){
+  padding:6px 9px!important;
+  border:1px solid rgba(127,127,127,.28)!important;
+  overflow-wrap:anywhere!important;
+  word-break:break-word!important;
+}
+body .nsk-post .post-content th,
+body .content-item .post-content th,
+body .readme.post-content th{
+  background:rgba(127,127,127,.1)!important;
+  font-weight:650!important;
 }

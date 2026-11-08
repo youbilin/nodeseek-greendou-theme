@@ -1,9 +1,7 @@
 /* NodeSeek background module v1.0.1
    Paints a custom page photo and makes the main surfaces translucent.
-   Stackable: import after a theme, e.g.
-     @import url("./themes/eye-care.css");
-     @import url("./modules/background.css");
-   Set the photo with these variables, imported after this file:
+   Copy-paste order: theme → background → glass.
+   Set the photo with these variables at the top of your custom CSS:
      :root{
        --nsk-bg-image:url("https://cdn.nodeimage.com/i/QxqCslRIB79cCYLxCN5KeucxIcrmob5Y.webp");
        --nsk-bg-overlay:rgba(16,22,18,.35);
