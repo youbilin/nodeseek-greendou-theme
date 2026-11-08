@@ -159,7 +159,7 @@ body .nsk-notification .reply-item > div:nth-child(2) > span {flex:0 0 auto!impo
 body .nsk-notification .btn {color:#f5f7f2!important;background:#59785f!important;border:1px solid #59785f!important;border-radius:8px!important}
 
 /* Private messages: compact card, but a usable 128px Markdown/plain-text editor. */
-body .nsk-notification:has(.message-wrapper) {display:flex!important;flex-direction:column!important;width:min(860px,calc(100% - 24px))!important;max-width:860px!important;min-height:0!important;height:auto!important;margin:16px auto!important;padding:10px!important;background:var(--ns-card)!important;border:1px solid var(--ns-border)!important;border-radius:14px!important;box-shadow:0 3px 14px rgba(35,54,39,.08)!important}
+body .nsk-notification:has(.message-wrapper) {display:flex!important;flex-direction:column!important;width:min(1080px,calc(100% - 24px))!important;max-width:1080px!important;min-height:0!important;height:auto!important;margin:16px auto!important;padding:10px!important;background:var(--ns-card)!important;border:1px solid var(--ns-border)!important;border-radius:14px!important;box-shadow:0 3px 14px rgba(35,54,39,.08)!important}
 body .nsk-notification:has(.message-wrapper) > .app-switch {display:flex!important;align-items:center!important;gap:6px!important;height:38px!important;min-height:38px!important;margin:0 0 8px!important;padding:4px!important;background:transparent!important;border:0!important}
 body .nsk-notification:has(.message-wrapper) > .app-switch .app-title {height:30px!important;min-height:30px!important;line-height:18px!important;margin:0!important;padding:6px 10px!important;border:0!important;border-radius:6px!important;background:transparent!important}
 body .nsk-notification:has(.message-wrapper) > .app-switch .app-title.router-link-active {background:var(--ns-active)!important;color:var(--ns-text)!important}
@@ -233,3 +233,36 @@ body > header {background-color:var(--ns-sub)!important;background-image:none!im
 body .user-card,body #nsk-right-panel-container,body .nsk-notification,body .nsk-notification:has(.reply-container),body .nsk-notification:has(.message-wrapper) {background-color:var(--ns-sub)!important;color:var(--ns-text)!important}
 body .nsk-notification :is(h1,h2,h3,h4,h5,h6,p,span,div,li,label,small,strong,em,td,th,button) {color:var(--ns-text)!important}
 body .nsk-notification a {color:var(--ns-link)!important}
+
+/* Keep the appended desktop categories and post action in the same visual layer as the header. */
+@media(min-width:1101px) {
+  body #nsk-left-panel-container {top:0!important;background:var(--ns-sub)!important;border-bottom:1px solid var(--ns-border)!important;z-index:1303!important}
+  body #nsk-left-panel-container .category-list a {color:var(--ns-text)!important;background:transparent!important}
+  body #nsk-left-panel-container .category-list a:hover {color:var(--ns-title)!important;background:var(--ns-active)!important}
+  body #nsk-right-panel-container .new-discussion {top:8px!important;z-index:1304!important}
+}
+
+/* Normalize the notification tabs so route changes do not resize the top row. */
+body .nsk-notification .app-switch .app-title {display:inline-flex!important;align-items:center!important;justify-content:center!important;box-sizing:border-box!important;height:32px!important;min-height:32px!important;line-height:20px!important;margin:0!important;padding:6px 12px!important;border:0!important;border-radius:7px!important;font-size:14px!important;white-space:nowrap!important}
+body .nsk-notification > .app-switch {height:40px!important;min-height:40px!important;align-items:center!important}
+
+/* Cover all CodeMirror line-number variants used by the Markdown editor. */
+body .nsk-notification:has(.message-wrapper) .message-input :is(.CodeMirror-gutters,.CodeMirror-linenumbers,.CodeMirror-linenumber,.cm-gutters,.cm-lineNumbers,[class*="line-number"],[class*="lineNumber"]) {display:none!important;width:0!important;min-width:0!important}
+body .nsk-notification:has(.message-wrapper) .message-input :is(.CodeMirror-lines,.CodeMirror-code,.cm-scroller,.cm-content) {margin-left:0!important;padding-left:0!important}
+
+/* The mobile rail must never enter the document flow or cover posts. */
+@media(max-width:760px) {
+  body > header {height:84px!important}
+  body #nsk-head .nav-menu {display:flex!important;position:fixed!important;top:48px!important;left:8px!important;right:8px!important;width:auto!important;max-width:none!important;height:36px!important;overflow-x:auto!important;overflow-y:hidden!important;z-index:1305!important}
+  body #nsk-left-panel-container {display:none!important;visibility:hidden!important;position:absolute!important;inset:auto!important;pointer-events:none!important}
+  body #nsk-frame {margin-top:84px!important}
+  body .nsk-notification:has(.message-wrapper) {width:calc(100% - 12px)!important;max-width:none!important;margin:8px 6px!important}
+}
+
+/* Tidy the desktop profile card: consistent header, stats grid, and compact actions. */
+@media(min-width:801px) {
+  body #nsk-right-panel-container > .user-card {width:100%!important;margin:0!important;border-radius:12px!important}
+  body #nsk-right-panel-container .user-card .user-head {padding:16px 12px 12px!important}
+  body #nsk-right-panel-container .user-card .user-stat {grid-template-columns:1fr 1fr!important;gap:6px 12px!important;padding:12px!important}
+  body #nsk-right-panel-container .user-card .stat-block > div > a {min-height:24px!important;line-height:20px!important}
+}

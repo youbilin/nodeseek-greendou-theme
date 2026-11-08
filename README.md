@@ -7,7 +7,7 @@ This repository contains versioned NodeSeek custom CSS themes. The current relea
 In NodeSeek Settings → Extension → Custom CSS, paste this import line:
 
 ```css
-@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.2.5/themes/eye-care.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.2.6/themes/eye-care.css");
 ```
 
 The same file is also available at the compatibility path `nodeseek-greendou.css` for existing imports.
