@@ -1,0 +1,42 @@
+/* NodeSeek zen declutter module v1.0.0
+   Hides promotional and secondary chrome while leaving navigation, posts and comments intact.
+   Every block is independent: delete the blocks you want to keep. */
+/* Footer link farm */
+body>footer{
+  display:none!important;
+}
+/* Sidebar ad banners (same selector as the legacy nodeseek-hide-promotions.css) */
+body #nsk-right-panel-container>div:has(>a.promotation-item){
+  display:none!important;
+}
+/* Recommend-award corner */
+body .award-corner{
+  display:none!important;
+}
+/* Top topic carousel */
+body .topic-carousel-wrapper{
+  display:none!important;
+}
+/* Quick-access shortcuts panel */
+body #nsk-right-panel-container .quick-access,
+body #nsk-left-panel-container .quick-access{
+  display:none!important;
+}
+/* User-count / welcome-new-users / new-member board */
+body #nsk-right-panel-container .nsk-panel:has(.nsk-new-member-board){
+  display:none!important;
+}
+body #nsk-right-panel-container .nsk-new-member-board{
+  display:none!important;
+}
+/* User signatures under posts and comments */
+body .signature{
+  display:none!important;
+}
+/* Optional: hide the whole right rail on desktop. Uncomment if you want a single-column forum. */
+/*
+@media (min-width:1101px){
+  body #nsk-right-panel-container{display:none!important}
+  body #nsk-frame>#nsk-body #nsk-body-left{width:100%!important;max-width:100%!important;flex-basis:100%!important}
+}
+*/

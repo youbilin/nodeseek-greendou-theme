@@ -1,4 +1,4 @@
-/* NodeSeek mung-bean eye-care theme v1.5.0 */
+/* NodeSeek mung-bean eye-care theme v1.6.0 */
 :root,body{--ns-page:#dfeadf;--ns-card:#e7f0e4;--ns-sub:#d9e7d8;--ns-text:#364d3e;--ns-title:#2f4838;--ns-muted:#6f8877;--ns-link:#356b48;--ns-border:#c5d8c4;--ns-active:#cfe2cc;--ns-hover:#d5e6d3;--ns-read:#708675;--ns-bubble:#dce9da;--ns-mine:#c6dfc2;color-scheme:light}
 body.dark-layout{--ns-page:#202a24;--ns-card:#29362e;--ns-sub:#313f35;--ns-text:#a7bba9;--ns-title:#a8bda9;--ns-muted:#8da593;--ns-link:#a8c6a9;--ns-border:#435247;--ns-active:#3a4b3d;--ns-hover:#344339;--ns-read:#9aab9d;--ns-bubble:#303d33;--ns-mine:#3b5941;color-scheme:dark}
 :root,body{--body-bg:var(--ns-page)!important;--bg-main-color:var(--ns-card)!important;--bg-sub-color:var(--ns-sub)!important;--body-text:var(--ns-text)!important;--text-color:var(--ns-text)!important;--dark-color:var(--ns-text)!important;--fade-color:var(--ns-muted)!important;--gray-color:var(--ns-muted)!important;--link-color:var(--ns-link)!important;--main-color:var(--ns-link)!important}

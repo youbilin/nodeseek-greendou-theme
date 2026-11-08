@@ -1,0 +1,74 @@
+/* NodeSeek compact density module v1.0.0
+   Stackable with any NodeSeek theme. Desktop only, so it never fights mobile touch layouts.
+   Tune the three variables below instead of editing rules. */
+:root{
+  --nsk-compact-row-pad:6px;
+  --nsk-compact-avatar:34px;
+  --nsk-compact-title-leading:18px;
+  --nsk-compact-content-gap:8px;
+}
+@media (min-width:1101px){
+  /* Home and category post rows */
+  body #nsk-body-left .post-list-item{
+    padding-top:var(--nsk-compact-row-pad)!important;
+    padding-bottom:0!important;
+    min-height:0!important;
+  }
+  body #nsk-body-left .post-list-item>.avatar-normal,
+  body #nsk-body-left .post-list-item>a>img.avatar-normal{
+    width:var(--nsk-compact-avatar)!important;
+    height:var(--nsk-compact-avatar)!important;
+    min-width:var(--nsk-compact-avatar)!important;
+    object-fit:cover!important;
+    border-radius:50%!important;
+  }
+  body #nsk-body-left .post-list-content{
+    padding-left:var(--nsk-compact-content-gap)!important;
+    margin-bottom:2px!important;
+    min-width:0!important;
+  }
+  body #nsk-body-left .post-title{
+    line-height:var(--nsk-compact-title-leading)!important;
+  }
+  body #nsk-body-left .post-title a{
+    font-size:14px!important;
+  }
+  body #nsk-body-left .post-info{
+    margin-top:1px!important;
+    line-height:15px!important;
+  }
+  body #nsk-body-left .post-info .info-item{
+    margin-left:4px!important;
+  }
+  body #nsk-body-left .post-list-controler{
+    margin-bottom:4px!important;
+  }
+  body #nsk-body-left .topic-carousel-item{
+    min-height:0!important;
+  }
+  /* Detail post and comment rhythm */
+  body .content-item{
+    padding-top:6px!important;
+    padding-bottom:6px!important;
+  }
+  body .content-item .nsk-content-meta-info{
+    margin-bottom:2px!important;
+  }
+  body .content-item .avatar-normal{
+    width:34px!important;
+    height:34px!important;
+    min-width:34px!important;
+    object-fit:cover!important;
+    border-radius:50%!important;
+  }
+  body .content-item>.post-content{
+    margin-top:6px!important;
+    margin-bottom:8px!important;
+  }
+  body .content-item .signature{
+    padding-top:3px!important;
+  }
+  body .content-item .comment-menu{
+    margin-top:2px!important;
+  }
+}
