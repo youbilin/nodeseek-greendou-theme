@@ -13,14 +13,14 @@ NodeSeek 设置 → 扩展 → 自定义 CSS，粘贴下面任意一行（可多
 | 包 | 说明 |
 |---|---|
 | 绿豆护眼 `eye-care` | 暖纸绿配色、低饱和图片/徽章、暗色适配、桌面悬浮分类栏、通知/私信布局修正 |
-| 纯黑 OLED `oled-black` | 纯黑画布和近黑卡片，适合 OLED 屏；自动包含 eye-care 的结构规则 |
-| 高对比 `high-contrast` | WCAG 取向：黑白高对比、3px 焦点环、链接强制下划线、减少动效 |
+| 纯黑 OLED `oled-black` | 纯黑画布和近黑卡片，适合 OLED 屏；自动包含 eye-care 结构和 mobile 移动修复 |
+| 高对比 `high-contrast` | WCAG 取向：黑白高对比、3px 焦点环、链接强制下划线、减少动效；含 mobile 移动修复 |
 
 ```css
-@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.7.0/themes/eye-care.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.7.1/themes/eye-care.css");
 /* 或者二选一：
-@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.7.0/themes/oled-black.css");
-@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.7.0/themes/high-contrast.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.7.1/themes/oled-black.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.7.1/themes/high-contrast.css");
 */
 ```
 
@@ -40,31 +40,31 @@ NodeSeek 设置 → 扩展 → 自定义 CSS，粘贴下面任意一行（可多
 | 访客 IP 卡片 `ip-card` | 右下角固定显示 IP 信息卡；默认关闭移动端；第三方请求，注意隐私 |
 
 ```css
-@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.7.0/modules/compact.css");
-@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.7.0/modules/reading.css");
-@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.7.0/modules/code-tables.css");
-@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.7.0/modules/zen.css");
-@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.7.0/modules/mobile.css");
-@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.7.0/modules/glass.css");
-@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.7.0/modules/background.css");
-@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.7.0/modules/ip-card.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.7.1/modules/compact.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.7.1/modules/reading.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.7.1/modules/code-tables.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.7.1/modules/zen.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.7.1/modules/mobile.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.7.1/modules/glass.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.7.1/modules/background.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.7.1/modules/ip-card.css");
 ```
 
 ### 推荐组合
 
 ```css
 /* 护眼 + 阅读 + 净化（阅读已含 code-tables） */
-@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.7.0/themes/eye-care.css");
-@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.7.0/modules/reading.css");
-@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.7.0/modules/zen.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.7.1/themes/eye-care.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.7.1/modules/reading.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.7.1/modules/zen.css");
 
 /* 桌面紧凑 + 移动端修复：媒体查询互补，可同时导入 */
-@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.7.0/modules/compact.css");
-@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.7.0/modules/mobile.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.7.1/modules/compact.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.7.1/modules/mobile.css");
 
 /* 自定义背景 + 玻璃：背景先、玻璃后 */
-@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.7.0/modules/background.css");
-@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.7.0/modules/glass.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.7.1/modules/background.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.7.1/modules/glass.css");
 ```
 
 背景图片在 `background.css` 顶部的变量里设置：
@@ -120,8 +120,8 @@ NodeSeek 设置 → 扩展 → 自定义 CSS，粘贴下面任意一行（可多
 以下地址继续有效，老用户不用改：
 
 ```css
-@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.7.0/nodeseek-greendou.css");
-@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.7.0/nodeseek-hide-promotions.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.7.1/nodeseek-greendou.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.7.1/nodeseek-hide-promotions.css");
 ```
 
 新用户请优先使用 `themes/eye-care.css` 和 `modules/zen.css`。`nodeseek-greendou.css` 是 eye-care 的兼容副本，内容保持一致。
@@ -149,7 +149,7 @@ nodeseek-hide-promotions.css 旧地址：只隐藏侧栏广告
 ## 版本与标签
 
 - 仓库级版本：`vMAJOR.MINOR.PATCH`；新包/新覆盖 = MINOR，修复 = PATCH，需要用户重新粘贴或改变布局契约 = MAJOR。
-- 请固定版本号，例如 `@v1.7.0`；不建议用 `@latest`，jsDelivr 缓存会延迟。
+- 请固定版本号，例如 `@v1.7.1`；不建议用 `@latest`，jsDelivr 缓存会延迟。
 - 标签不可变：发现问题发新 PATCH，不移动旧标签。
 - 主题和模块共用一条版本线；新主题会通过相对 `@import` 引用同一 tag 的 `eye-care.css`，版本始终一致。
 
@@ -162,4 +162,4 @@ nodeseek-hide-promotions.css 旧地址：只隐藏侧栏广告
 
 ## English
 
-Versioned NodeSeek custom CSS packs. Choose one theme from `themes/` (eye-care, OLED or high-contrast), then optionally stack modules from `modules/`. Everything is plain CSS with no build step. Pin a release tag, for example `@v1.7.0`.
+Versioned NodeSeek custom CSS packs. Choose one theme from `themes/` (eye-care, OLED or high-contrast), then optionally stack modules from `modules/`. Everything is plain CSS with no build step. Pin a release tag, for example `@v1.7.1`.

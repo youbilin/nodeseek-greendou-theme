@@ -1,8 +1,9 @@
-/* NodeSeek pure-black OLED theme v1.0.0
+/* NodeSeek pure-black OLED theme v1.0.1
    Full theme built on eye-care.css, imported below as its structural base.
    Mutually exclusive with eye-care and high-contrast: enable only this file.
    True #000 canvas, near-black surfaces, muted green-grey text, no glow. */
 @import url("./eye-care.css");
+@import url("../modules/mobile.css");
 
 /* One palette serves both site modes; every token is restated so no base
    value survives the switch to black. */

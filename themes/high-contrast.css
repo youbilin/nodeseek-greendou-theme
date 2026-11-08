@@ -1,7 +1,8 @@
-/* NodeSeek mung-bean high-contrast theme v1.0.0
+/* NodeSeek mung-bean high-contrast theme v1.0.1
    WCAG-oriented: 21:1 body text, black/white borders, underlined links, 3px focus rings.
    Mutually exclusive with eye-care and OLED - enable only one theme. */
 @import url("./eye-care.css");
+@import url("../modules/mobile.css");
 
 /* Light: pure white surfaces, pure black ink. */
 :root,body{--ns-page:#fff;--ns-card:#fff;--ns-sub:#fff;--ns-text:#000;--ns-title:#000;--ns-muted:#595959;--ns-link:#0033cc;--ns-border:#000;--ns-active:#ffff00;--ns-hover:#e6e6e6;--ns-read:#595959;--ns-bubble:#fff;--ns-mine:#e6e6e6;--ns-accent:#000;--ns-risk-bg:#fff;--ns-border-soft:rgba(0,0,0,.5);--ns-border-soft-2:rgba(0,0,0,.75);--ns-hover-soft:rgba(0,0,0,.12);--ns-shadow-notice:none;--ns-shadow-message:none;--ns-shadow-panel:none;--ns-shadow-button:none;--ns-shadow-search:none;--ns-shadow-right:none;--ns-shadow-user:none;--ns-shadow-main:none;--ns-shadow-card:none;color-scheme:light}
@@ -33,4 +34,24 @@ body .glass-card :is(.tab-btn.active,.sub-pill.active),body #nsk-frame :is(.app-
 /* Respect the OS reduced-motion preference. */
 @media (prefers-reduced-motion:reduce){
   body *,body *::before,body *::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}
+}
+
+/* Filled buttons: force the label and every child icon to the page colour. */
+body #nsk-frame :is(.btn,.new-discussion,.glass-search-btn),
+body #nsk-frame :is(.btn,.new-discussion,.glass-search-btn) *,
+body .nsk-notification .btn,
+body .nsk-notification .btn *{
+  color:var(--ns-page)!important;
+}
+body #nsk-frame #nsk-right-panel-container .new-discussion,
+body #nsk-frame #nsk-right-panel-container .new-discussion span,
+body #nsk-frame #nsk-right-panel-container .new-discussion svg,
+body #nsk-frame #nsk-right-panel-container .new-discussion svg *{
+  color:var(--ns-page)!important;
+  fill:currentColor!important;
+}
+
+/* Body copy keeps the theme ink colour even where NodeSeek injects #444. */
+body #nsk-frame :is(.post-content,.content-item,.comment-wrapper){
+  color:var(--ns-text)!important;
 }
