@@ -413,18 +413,25 @@ body #nsk-right-panel-container .user-card :is(.user-head,.user-stat) {backgroun
 @media(min-width:761px) {
   body > header {height:0!important;min-height:0!important;background:transparent!important;border:0!important;pointer-events:none!important}
   body #nsk-head {display:contents!important}
-  body #nsk-head :is(.site-title,.nav-menu,.search-box,.history-dropdown-on) {display:none!important}
-  body #nsk-head a[href="#search"],body a[href="#search"] {display:flex!important;position:fixed!important;top:508px!important;right:148px!important;width:28px!important;height:28px!important;align-items:center!important;justify-content:center!important;margin:0!important;padding:0!important;z-index:1203!important;color:var(--ns-text)!important;background:var(--ns-active)!important;border:1px solid var(--ns-border)!important;border-radius:999px!important;box-shadow:0 2px 8px rgba(35,54,39,.08)!important;pointer-events:auto!important;transition:background-color .18s ease,transform .18s ease!important}
+  body #nsk-head :is(.site-title,.nav-menu,.history-dropdown-on) {display:none!important}
+  body #nsk-head .search-box:has(a[href="#search"]) {display:contents!important}
+  body #nsk-head .search-box:has(a[href="#search"]) :is(input,form,.search-hint,.search-icon) {display:none!important}
+  body #nsk-head .search-box:not(:has(a[href="#search"])) {display:flex!important;position:fixed!important;top:508px!important;right:138px!important;width:28px!important;height:28px!important;box-sizing:border-box!important;align-items:center!important;justify-content:center!important;margin:0!important;padding:0!important;z-index:1203!important;color:var(--ns-text)!important;background:var(--ns-active)!important;border:1px solid var(--ns-border)!important;border-radius:999px!important;box-shadow:0 2px 8px rgba(35,54,39,.08)!important;pointer-events:auto!important}
+  body #nsk-head .search-box:not(:has(a[href="#search"])) :is(input,#search-site2,.search-hint) {display:none!important}
+  body #nsk-head a[href="#search"],body a[href="#search"] {display:flex!important;position:fixed!important;top:508px!important;right:138px!important;width:28px!important;height:28px!important;box-sizing:border-box!important;align-items:center!important;justify-content:center!important;margin:0!important;padding:0!important;z-index:1203!important;color:var(--ns-text)!important;background:var(--ns-active)!important;border:1px solid var(--ns-border)!important;border-radius:999px!important;box-shadow:0 2px 8px rgba(35,54,39,.08)!important;pointer-events:auto!important;transition:background-color .18s ease,transform .18s ease!important}
   body #nsk-head a[href="#search"]:hover,body a[href="#search"]:hover {background:var(--ns-hover)!important;transform:translateY(-1px)!important}
-  body #nsk-head .color-theme-switcher {display:flex!important;position:fixed!important;top:508px!important;right:112px!important;width:28px!important;height:28px!important;align-items:center!important;justify-content:center!important;margin:0!important;z-index:1203!important;color:var(--ns-text)!important;background:var(--ns-active)!important;border:1px solid var(--ns-border)!important;border-radius:999px!important;box-shadow:0 2px 8px rgba(35,54,39,.08)!important;pointer-events:auto!important;transition:background-color .18s ease,transform .18s ease!important}
+  body #nsk-head .color-theme-switcher {display:flex!important;position:fixed!important;top:508px!important;right:102px!important;width:28px!important;min-width:28px!important;height:28px!important;box-sizing:border-box!important;align-items:center!important;justify-content:center!important;margin:0!important;z-index:1203!important;color:var(--ns-text)!important;background:var(--ns-active)!important;border:1px solid var(--ns-border)!important;border-radius:999px!important;box-shadow:0 2px 8px rgba(35,54,39,.08)!important;pointer-events:auto!important;transition:background-color .18s ease,transform .18s ease!important}
   body #nsk-head .color-theme-switcher:hover {background:var(--ns-hover)!important;transform:translateY(-1px)!important}
   body #nsk-frame {margin-top:0!important}
   body #nsk-left-panel-container {top:390px!important;position-anchor:none!important;margin-top:0!important}
   body #nsk-right-panel-container .new-discussion {top:466px!important;position-anchor:none!important}
   body .sorter,body select.sorter {top:508px!important}
   body #nsk-frame #nsk-left-panel-container .category-list a {color:#2d4738!important}
+  body .sorter,body .sorter :is(select,button,a),body select.sorter {font-size:11px!important;line-height:1!important}
 }
 
 /* Remove nested rings from the profile card; keep only its outer frame. */
-body .user-card > :is(.user-head,.user-stat,.menu),
-body .user-card :is(.stat-block,.stat-block > div,.stat-block > div > a) {border:0!important;box-shadow:none!important}
+body #nsk-frame #nsk-right-panel-container .user-card :is(.user-head,.user-stat,.menu,.stat-block,.stat-block > div,.stat-block > div > a) {border:0!important;border-top:0!important;border-bottom:0!important;box-shadow:none!important}
+
+/* Gravatar images should remain visible and round when the remote image responds. */
+body img[src*="gravatar.com"],body img[src*="gravatar.org"] {display:block!important;visibility:visible!important;opacity:1!important;width:36px!important;height:36px!important;min-width:36px!important;object-fit:cover!important;border-radius:50%!important}
