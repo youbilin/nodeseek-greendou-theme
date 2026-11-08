@@ -319,3 +319,223 @@ body .nsk-notification:has(.message-wrapper) .mde-toolbar {display:none!importan
  body .nsk-notification:has(.message-wrapper) .message-input .cm-wrapper,
  body .nsk-notification:has(.message-wrapper) .message-input .CodeMirror {height:76px!important}
 }
+
+/* Final bug fixes: transparent list surface, readable ink, usable controls. */
+body #nsk-frame #nsk-body-left {
+ background:transparent!important;
+ color:var(--text)!important;
+ border:0!important;
+ box-shadow:none!important;
+}
+body #nsk-frame #nsk-body-left * {color:var(--text)!important;border-color:var(--border)!important}
+body #nsk-frame #nsk-body-left a {color:var(--link)!important}
+body #nsk-frame #nsk-body-left :is(.post-title,.post-title a) {color:var(--title)!important}
+body #nsk-frame #nsk-body-left .post-title a:visited {color:var(--read)!important}
+body #nsk-frame #nsk-body-left :is(.post-info,.post-info *,time,.meta,.meta *) {color:var(--muted)!important}
+body #nsk-frame #nsk-body-left :is(svg,.iconpark-icon) {color:var(--muted)!important}
+
+/* Keep the native post control in the header instead of relying on anchor support. */
+@media(min-width:761px){
+ body #nsk-right-panel-container .new-discussion {
+  position:fixed!important;
+  position-anchor:none!important;
+  top:8px!important;
+  right:var(--head-r)!important;
+  left:auto!important;
+  bottom:auto!important;
+  transform:none!important;
+  z-index:1205!important;
+ }
+}
+
+/* Notification tabs and avatars use stable dimensions so intrinsic image sizing cannot make ovals. */
+body .nsk-notification > .app-switch {height:38px!important;min-height:38px!important;padding:4px!important;box-sizing:border-box!important}
+body .nsk-notification > .app-switch .app-title {
+ height:30px!important;
+ min-height:30px!important;
+ line-height:18px!important;
+ padding:6px 10px!important;
+ margin:0!important;
+ border:0!important;
+ border-radius:6px!important;
+ font-size:14px!important;
+ box-sizing:border-box!important;
+}
+body .nsk-notification .reply-item .avatar,
+body .nsk-notification:has(.message-wrapper) .message-item .avatar {
+ display:block!important;
+ width:36px!important;
+ min-width:36px!important;
+ max-width:36px!important;
+ height:36px!important;
+ min-height:36px!important;
+ max-height:36px!important;
+ flex:0 0 36px!important;
+ aspect-ratio:1/1!important;
+ border-radius:50%!important;
+ object-fit:cover!important;
+}
+
+/* Restore Markdown mode and preview controls while keeping the editor compact and line numbers hidden. */
+body .message-input > textarea.input-area {
+ display:block;
+ width:100%!important;
+ height:76px!important;
+ min-height:64px!important;
+ max-height:120px!important;
+ box-sizing:border-box!important;
+ padding:8px 10px!important;
+ border:1px solid var(--border)!important;
+ border-radius:8px!important;
+ background:var(--sub)!important;
+ color:var(--text)!important;
+}
+body .message-input > div:last-child {
+ display:flex!important;
+ align-items:center!important;
+ justify-content:flex-end!important;
+ gap:8px!important;
+ height:32px!important;
+ min-height:32px!important;
+ margin:6px 0 0!important;
+ padding:0 2px!important;
+ background:transparent!important;
+}
+body .message-input > div:last-child > span {display:inline!important;color:var(--muted)!important;font-size:12px!important}
+body .message-input .vue-js-switch {display:inline-flex!important;align-items:center!important;margin:0 auto 0 0!important}
+body .message-input .mde-toolbar {
+ display:flex!important;
+ align-items:center!important;
+ flex-wrap:nowrap!important;
+ gap:2px!important;
+ min-height:30px!important;
+ height:30px!important;
+ padding:2px 4px!important;
+ overflow-x:auto!important;
+ background:var(--sub)!important;
+ border:1px solid var(--border)!important;
+ border-radius:8px 8px 0 0!important;
+ color:var(--muted)!important;
+}
+body .message-input .mde-toolbar .toolbar-item {display:inline-flex!important;align-items:center!important;justify-content:center!important;width:26px!important;height:26px!important;flex:0 0 26px!important;color:var(--text)!important;border-radius:5px!important}
+body .message-input .mde-toolbar .toolbar-item:hover {background:var(--active)!important;color:var(--text)!important}
+body .message-input .CodeMirror-gutters,body .message-input .cm-gutters {display:none!important;width:0!important}
+
+/* These selectors intentionally match the legacy private-message overrides above. */
+body .nsk-notification:has(.message-wrapper) .message-input > div[style*="height: 40px"] {
+ display:flex!important;
+ align-items:center!important;
+ justify-content:flex-end!important;
+ height:32px!important;
+ min-height:32px!important;
+ margin:6px 0 0!important;
+ padding:0 2px!important;
+}
+body .nsk-notification:has(.message-wrapper) .message-input > div[style*="height: 40px"] > span {display:inline!important;color:var(--muted)!important;font-size:12px!important}
+body .nsk-notification:has(.message-wrapper) .message-input > div[style*="height: 40px"] .vue-js-switch {display:inline-flex!important;align-items:center!important;margin:0 auto 0 0!important}
+body .nsk-notification:has(.message-wrapper) .message-input .mde-toolbar {display:flex!important;align-items:center!important;flex-wrap:nowrap!important;min-height:30px!important;height:30px!important;padding:2px 4px!important;overflow-x:auto!important;background:var(--sub)!important;border:1px solid var(--border)!important;border-radius:8px 8px 0 0!important;color:var(--muted)!important}
+
+/* The category rail is desktop-only. Mobile keeps the header controls clear of page content. */
+@media(max-width:760px){
+ body #nsk-left-panel-container,
+ body #nsk-left-panel-container .category-list {display:none!important}
+ body #nsk-head {width:calc(100% - 16px)!important;height:48px!important;gap:0!important;padding:0 4px!important}
+ body #nsk-head .site-title {width:28px!important;flex:0 0 28px!important}
+ body #nsk-head .nav-menu {display:none!important}
+ body #nsk-head .search-box {
+  position:fixed!important;
+  top:8px!important;
+  right:126px!important;
+  z-index:1205!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  width:32px!important;
+  height:32px!important;
+  flex:0 0 32px!important;
+  margin:0!important;
+  padding:0!important;
+  background:var(--active)!important;
+  border:1px solid var(--border)!important;
+  border-radius:8px!important;
+  box-sizing:border-box!important;
+ }
+ body #nsk-head .search-box #search-site2 {display:none!important}
+ body #nsk-head .search-box .search-icon {display:block!important;width:17px!important;height:17px!important;color:var(--text)!important}
+ body #nsk-head .color-theme-switcher {
+  position:fixed!important;
+  top:8px!important;
+  right:10px!important;
+  z-index:1205!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  width:32px!important;
+  height:32px!important;
+  margin:0!important;
+  background:var(--active)!important;
+  border:1px solid var(--border)!important;
+  border-radius:8px!important;
+  box-sizing:border-box!important;
+ }
+ body #nsk-right-panel-container > .user-card {
+  display:block!important;
+  position:fixed!important;
+  top:0!important;
+  right:0!important;
+  width:0!important;
+  height:0!important;
+  overflow:visible!important;
+  z-index:1204!important;
+  background:transparent!important;
+  border:0!important;
+ }
+ body #nsk-right-panel-container > div.user-card:not(:has(>.new-discussion)) {display:block!important}
+ body #nsk-frame #nsk-right-panel-container > div.user-card:not(:has(>.new-discussion)) {display:block!important}
+ body #nsk-right-panel-container > .user-card .user-head,
+ body #nsk-right-panel-container > .user-card .user-stat,
+ body #nsk-right-panel-container > .user-card .stat-block,
+ body #nsk-right-panel-container > .user-card .stat-block > div {display:contents!important}
+ body #nsk-right-panel-container > .user-card .user-stat a[href="/notification"] {
+  position:fixed!important;
+  top:8px!important;
+  right:88px!important;
+  z-index:1205!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  width:32px!important;
+  height:32px!important;
+  margin:0!important;
+  padding:0!important;
+  background:var(--active)!important;
+  border:1px solid var(--border)!important;
+  border-radius:8px!important;
+  box-sizing:border-box!important;
+ }
+ body #nsk-right-panel-container > .user-card .user-stat a[href="/notification"] span {display:none!important}
+ body #nsk-right-panel-container .new-discussion {
+  position:fixed!important;
+  top:8px!important;
+  right:49px!important;
+  left:auto!important;
+  bottom:auto!important;
+  transform:none!important;
+  z-index:1206!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  width:32px!important;
+  min-width:32px!important;
+  max-width:32px!important;
+  height:32px!important;
+  margin:0!important;
+  padding:0!important;
+  overflow:hidden!important;
+  font-size:0!important;
+  border-radius:8px!important;
+  box-sizing:border-box!important;
+ }
+ body #nsk-right-panel-container .new-discussion svg {display:block!important;width:17px!important;height:17px!important;margin:0!important}
+ body #nsk-right-panel-container .new-discussion span {display:none!important}
+}
