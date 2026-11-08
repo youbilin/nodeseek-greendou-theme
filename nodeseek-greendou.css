@@ -3,9 +3,9 @@
   --ns-page:#dfeadf;
   --ns-card:#e7f0e4;
   --ns-sub:#d9e7d8;
-  --ns-text:#2f4034;
-  --ns-title:#263a2c;
-  --ns-muted:#687d6d;
+  --ns-text:#435147;
+  --ns-title:#38493d;
+  --ns-muted:#788a7c;
   --ns-link:#356b48;
   --ns-border:#c5d8c4;
   --ns-active:#cfe2cc;
@@ -20,9 +20,9 @@ body.dark-layout {
   --ns-page:#202a24;
   --ns-card:#29362e;
   --ns-sub:#313f35;
-  --ns-text:#c6d1c6;
-  --ns-title:#c6d1c6;
-  --ns-muted:#9aaa9e;
+  --ns-text:#b7c4b8;
+  --ns-title:#b7c4b8;
+  --ns-muted:#93a396;
   --ns-link:#a8c6a9;
   --ns-border:#435247;
   --ns-active:#3a4b3d;
@@ -49,6 +49,7 @@ body.dark-layout {
 html,body {background:var(--ns-page)!important;color:var(--ns-text)!important}
 body > footer {display:none!important}
 body #nsk-frame,body #nsk-body,body #nsk-frame-block {background:var(--ns-page)!important;color:var(--ns-text)!important}
+body #nsk-frame > #nsk-body {background:transparent!important}
 body #nsk-frame :is(h1,h2,h3,h4,h5,h6,p,span,div,li,label,small,strong,em,td,th,button,a) {color:var(--ns-text)!important}
 body #nsk-frame a {color:var(--ns-link)!important}
 body #nsk-frame a:hover {color:var(--ns-title)!important}
@@ -83,7 +84,7 @@ body #nsk-frame {position:relative!important;z-index:1302!important;margin-top:4
 @supports (position-anchor:--ns-nav) {
   @media(min-width:1101px) {
     body #nsk-left-panel-container {position:fixed!important;position-anchor:--ns-nav!important;top:anchor(top)!important;left:anchor(right)!important;display:flex!important;align-items:center!important;width:max-content!important;max-width:calc(100vw - 560px)!important;height:48px!important;margin:0!important;padding:0!important;overflow:hidden!important;background:transparent!important;z-index:1301!important}
-    body #nsk-left-panel-container > :not(.category-list),body #nsk-left-panel-container > .nsk-panel:not(.category-list),body #nsk-left-panel-container > div:not(.nsk-panel) {display:none!important}
+    body #nsk-left-panel-container > :not(.category-list),body #nsk-left-panel-container > .nsk-panel:not(.category-list),body #nsk-left-panel-container > div:not(.nsk-panel):not(.category-list) {display:none!important}
     body #nsk-left-panel-container > .category-list {display:block!important;width:auto!important;margin:0!important;padding:0!important;background:transparent!important;border:0!important;box-shadow:none!important}
     body #nsk-left-panel-container .category-list :is(h4,.iconpark-icon) {display:none!important}
     body #nsk-left-panel-container .category-list li:nth-child(-n+7) {display:none!important}
@@ -123,7 +124,7 @@ body .nsk-container > :is(.head-container,.selector) {background:var(--ns-sub)!i
 body .nsk-container > .selector {padding:14px 18px!important}
 body .nsk-container > .selector > .card-block {display:grid!important;grid-template-columns:repeat(auto-fit,minmax(145px,1fr))!important;gap:10px!important;margin:12px 0 18px!important;padding:0!important;background:transparent!important}
 body .nsk-container > .selector > .card-block > .card-item {min-height:76px!important;padding:14px!important;background:var(--ns-card)!important;color:var(--ns-text)!important;border:1px solid var(--ns-border)!important;border-radius:10px!important;box-shadow:none!important}
-body #nsk-frame #nsk-body-left {background:transparent!important;color:var(--ns-text)!important;border:0!important;box-shadow:none!important}
+body #nsk-frame #nsk-body-left {background:var(--ns-card)!important;color:var(--ns-text)!important;border:1px solid var(--ns-border)!important;border-radius:12px!important;box-shadow:none!important}
 body #nsk-frame #nsk-body-left :is(.post-title,.post-title a) {color:var(--ns-title)!important}
 body #nsk-frame #nsk-body-left .post-title a:visited {color:var(--ns-read)!important}
 body #nsk-frame #nsk-body-left :is(.post-info,.post-info *,time,.meta,.meta *) {color:var(--ns-muted)!important}
@@ -139,33 +140,30 @@ body .glass-card .tab-btn.active,body .glass-card .sub-pill.active {color:var(--
 body .glass-card .sub-pill {color:var(--ns-muted)!important;background:var(--ns-sub)!important;border:1px solid transparent!important;border-radius:999px!important}
 body .glass-card .glass-input-group input {color:var(--ns-text)!important;background:var(--ns-sub)!important;border:1px solid var(--ns-border)!important}
 body .glass-card .glass-input-group input::placeholder {color:var(--ns-muted)!important}
-body .glass-card .glass-search-btn {color:#f5f7f2!important;background:#59785f!important;border-color:#59785f!important;border-radius:8px!important}
+body .glass-card .glass-search-btn {color:var(--ns-text)!important;background:#59785f!important;border-color:#59785f!important;border-radius:8px!important}
 
 /* Notification lists. */
 body .nsk-notification:has(.reply-container) {height:auto!important;min-height:0!important;max-height:none!important;overflow:visible!important;padding:12px!important;background:var(--ns-card)!important;border:1px solid var(--ns-border)!important;border-radius:14px!important;box-shadow:0 3px 12px rgba(35,54,39,.08)!important}
 body .nsk-notification:has(.reply-container) .reply-container {height:auto!important;min-height:0!important;max-height:none!important;overflow:visible!important;border:0!important}
-body .nsk-notification > .app-switch {display:flex!important;align-items:center!important;gap:6px!important;height:38px!important;min-height:38px!important;margin:0 0 8px!important;padding:4px!important;background:transparent!important;border:0!important;border-bottom:1px solid rgba(70,100,75,.08)!important}
-body .nsk-notification > .app-switch .app-title {height:30px!important;min-height:30px!important;line-height:18px!important;margin:0!important;padding:6px 10px!important;color:var(--ns-muted)!important;background:transparent!important;border:0!important;border-radius:6px!important;font-size:14px!important;box-sizing:border-box!important}
+body .nsk-notification > .app-switch .app-title {color:var(--ns-muted)!important;background:transparent!important}
 body .nsk-notification > .app-switch .app-title.router-link-active {color:var(--ns-text)!important;background:var(--ns-active)!important}
 body .nsk-notification .reply-item {display:flex!important;align-items:center!important;gap:12px!important;width:100%!important;min-height:52px!important;margin:2px 0!important;padding:8px 12px!important;box-sizing:border-box!important;color:var(--ns-text)!important;background:transparent!important;border:0!important;border-bottom:1px solid rgba(70,100,75,.08)!important;border-radius:8px!important}
 body .nsk-notification .reply-item:hover {background:rgba(130,165,135,.15)!important}
 body .nsk-notification .reply-item > div:first-child {flex:0 0 36px!important;width:36px!important;height:36px!important}
 body .nsk-notification .reply-item .avatar {display:block!important;width:36px!important;min-width:36px!important;max-width:36px!important;height:36px!important;min-height:36px!important;max-height:36px!important;flex:0 0 36px!important;border-radius:50%!important;object-fit:cover!important}
 body .nsk-notification .reply-item > div:nth-child(2) {display:flex!important;align-items:center!important;gap:6px!important;flex:1 1 auto!important;min-width:0!important;color:var(--ns-muted)!important;font-size:13px!important;line-height:1.45!important}
-body .nsk-notification .reply-item > div:nth-child(2) > a:first-of-type {flex:0 0 auto!important;color:#2b4230!important;font-weight:700!important;white-space:nowrap!important}
+body .nsk-notification .reply-item > div:nth-child(2) > a:first-of-type {flex:0 0 auto!important;color:var(--ns-title)!important;font-weight:700!important;white-space:nowrap!important}
 body.dark-layout .nsk-notification .reply-item > div:nth-child(2) > a:first-of-type {color:#b4c9b6!important}
 body .nsk-notification .reply-item > div:nth-child(2) > a:nth-of-type(2) {min-width:0!important;color:var(--ns-link)!important}
 body .nsk-notification .reply-item > div:nth-child(2) > span {flex:0 0 auto!important;margin-left:auto!important;color:var(--ns-muted)!important;font-size:12px!important;white-space:nowrap!important}
-body .nsk-notification .btn {color:#f5f7f2!important;background:#59785f!important;border:1px solid #59785f!important;border-radius:8px!important}
+body .nsk-notification .btn {color:var(--ns-text)!important;background:#59785f!important;border:1px solid #59785f!important;border-radius:8px!important}
 
 /* Private messages: compact card, but a usable 128px Markdown/plain-text editor. */
 body .nsk-notification:has(.message-wrapper) {display:flex!important;flex-direction:column!important;width:min(1080px,calc(100% - 24px))!important;max-width:1080px!important;min-height:0!important;height:auto!important;margin:16px auto!important;padding:10px!important;background:var(--ns-card)!important;border:1px solid var(--ns-border)!important;border-radius:14px!important;box-shadow:0 3px 14px rgba(35,54,39,.08)!important}
-body .nsk-notification:has(.message-wrapper) > .app-switch {display:flex!important;align-items:center!important;gap:6px!important;height:38px!important;min-height:38px!important;margin:0 0 8px!important;padding:4px!important;background:transparent!important;border:0!important}
-body .nsk-notification:has(.message-wrapper) > .app-switch .app-title {height:30px!important;min-height:30px!important;line-height:18px!important;margin:0!important;padding:6px 10px!important;border:0!important;border-radius:6px!important;background:transparent!important}
+body .nsk-notification:has(.message-wrapper) > .app-switch .app-title {color:var(--ns-muted)!important;background:transparent!important}
 body .nsk-notification:has(.message-wrapper) > .app-switch .app-title.router-link-active {background:var(--ns-active)!important;color:var(--ns-text)!important}
 body .nsk-notification:has(.message-wrapper) > div[style*="position: relative"] {display:flex!important;flex-direction:column!important;width:100%!important;height:auto!important;min-height:0!important;background:transparent!important;border:0!important}
-body .nsk-notification:has(.message-wrapper) > div[style*="position: relative"] > .app-switch {display:flex!important;align-items:center!important;justify-content:space-between!important;height:36px!important;min-height:36px!important;margin:0!important;padding:0 6px!important;background:transparent!important;border:0!important}
-body .nsk-notification:has(.message-wrapper) > div[style*="position: relative"] > .app-switch .app-title {height:36px!important;line-height:36px!important;margin:0!important;padding:0 6px!important;background:transparent!important;border:0!important;font-weight:600!important}
+body .nsk-notification:has(.message-wrapper) > div[style*="position: relative"] > .app-switch .app-title {color:var(--ns-muted)!important;background:transparent!important}
 body .nsk-notification:has(.message-wrapper) > div[style*="position: relative"] > .app-switch a {margin-left:auto!important}
 body .nsk-notification:has(.message-wrapper) .message-wrapper {width:100%!important;height:clamp(260px,calc(100vh - 380px),520px)!important;min-height:260px!important;max-height:calc(100vh - 380px)!important;margin:0!important;padding:10px!important;box-sizing:border-box!important;overflow-y:auto!important;overflow-x:hidden!important;background:var(--ns-page)!important;border:1px solid var(--ns-border)!important;border-radius:10px 10px 0 0!important}
 body .nsk-notification:has(.message-wrapper) .message-item {align-items:flex-end!important;margin:10px 2px!important}
@@ -191,7 +189,7 @@ body .nsk-notification:has(.message-wrapper) .message-input .btn {display:block!
 /* Mobile: keep categories in a second row of the native top bar; hide the old floating rail. */
 @media(max-width:1100px) {
   body #nsk-frame #nsk-body {display:block!important}
-  body #nsk-frame #nsk-body-left {width:auto!important;max-width:none!important;margin:0!important;background:transparent!important}
+  body #nsk-frame #nsk-body-left {width:auto!important;max-width:none!important;margin:0!important;background:var(--ns-card)!important;border:1px solid var(--ns-border)!important;border-radius:12px!important}
   body #nsk-frame #nsk-right-panel-container {position:static!important;display:flex!important;width:0!important;height:0!important;min-width:0!important;padding:0!important;margin:0!important;overflow:visible!important;background:transparent!important;border:0!important}
   body #nsk-frame #nsk-right-panel-container > .user-card,body #nsk-frame #nsk-right-panel-container > .nsk-panel,body #nsk-frame #nsk-right-panel-container > div:not(:has(>.new-discussion)) {display:none!important}
 }
@@ -234,6 +232,11 @@ body .user-card,body #nsk-right-panel-container,body .nsk-notification,body .nsk
 body .nsk-notification :is(h1,h2,h3,h4,h5,h6,p,span,div,li,label,small,strong,em,td,th,button) {color:var(--ns-text)!important}
 body .nsk-notification a {color:var(--ns-link)!important}
 
+/* Low-saturation alert surface; the native warning remains readable in both themes. */
+body #nsk-frame .risk-alert {background:#e5eee2!important;color:var(--ns-text)!important;border:1px solid var(--ns-border)!important;box-shadow:none!important}
+body #nsk-frame .risk-alert :is(p,span,strong,small,a,button) {color:var(--ns-text)!important}
+body.dark-layout #nsk-frame .risk-alert {background:#354239!important;color:var(--ns-text)!important;border-color:var(--ns-border)!important}
+
 /* Final desktop header alignment: the appended links share the native header surface. */
 @media(min-width:1101px) {
   body #nsk-left-panel-container {background:transparent!important;border:0!important;box-shadow:none!important;top:0!important}
@@ -246,15 +249,13 @@ body .nsk-notification a {color:var(--ns-link)!important}
 body #nsk-right-panel-container {max-height:none!important;overflow:visible!important;overflow-y:visible!important}
 body #nsk-frame #nsk-right-panel-container {max-height:none!important;overflow:visible!important;overflow-y:visible!important}
 @media(min-width:1101px) {
-  body #nsk-frame > #nsk-body {padding-right:276px!important;box-sizing:border-box!important}
+  body #nsk-frame > #nsk-body {padding-right:0!important;box-sizing:border-box!important;background:transparent!important}
+  body #nsk-frame > #nsk-body #nsk-body-left {width:calc(100% - 276px)!important;max-width:calc(100% - 276px)!important;flex:0 0 calc(100% - 276px)!important;padding-right:0!important;background:var(--ns-card)!important;min-width:0!important}
   body #nsk-frame #nsk-right-panel-container {position:fixed!important;top:56px!important;right:0!important;left:auto!important;width:260px!important;max-width:260px!important;box-sizing:border-box!important;max-height:calc(100vh - 72px)!important;overflow:clip!important;z-index:1200!important;anchor-name:--ns-profile!important;border-radius:16px 0 0 16px!important}
 }
 body #nsk-right-panel-container > .nsk-panel.quick-access,
 body #nsk-right-panel-container .nsk-panel.quick-access {display:none!important}
 body #nsk-right-panel-container .user-card .menu > div > :is(a:empty,button:empty) {display:none!important}
-
-/* Equal notification tabs, including the active route, prevent a resize flash. */
-body .nsk-notification > .app-switch .app-title {box-sizing:border-box!important;display:inline-flex!important;flex:0 0 96px!important;width:96px!important;min-width:96px!important;max-width:96px!important;height:34px!important;min-height:34px!important;padding:7px 8px!important;line-height:20px!important;align-items:center!important;justify-content:center!important}
 
 /* Keep every message column attached to its avatar. */
 body .nsk-notification:has(.message-wrapper) .message-item {display:flex!important;align-items:flex-start!important;gap:8px!important;width:100%!important;margin:10px 0!important}
@@ -323,7 +324,7 @@ body #editor-body :is(input,textarea,select,pre,code,[contenteditable="true"]) {
 
 /* Remove empty route rows and route-transition spacing in notification views. */
 body .nsk-notification .app-switch:not(:has(.app-title)) {display:none!important;height:0!important;min-height:0!important;margin:0!important;padding:0!important;border:0!important}
-body .nsk-notification > .app-switch {margin:0 0 4px!important;padding:4px 0!important;transition:none!important}
+body .nsk-notification > .app-switch {transition:none!important}
 body .nsk-notification .app-switch .app-title {transition:none!important;transform:none!important}
 body .nsk-notification:has(.reply-container) .reply-container,
 body .nsk-notification:has(.message-wrapper) .message-wrapper {margin-top:0!important}
@@ -335,11 +336,6 @@ body .nsk-notification > div:has(> .app-switch:not(:has(.app-title))) {margin-to
 /* Avatar cards opened from a post must remain above the fixed layout. */
 body > .user-card {z-index:2000!important;max-width:min(320px,calc(100vw - 24px))!important;overflow:hidden!important;background:var(--ns-sub)!important;color:var(--ns-text)!important;border:1px solid var(--ns-border)!important;box-shadow:0 8px 24px rgba(35,54,39,.18)!important}
 
-/* Normalize the notification tabs so route changes do not resize the top row. */
-body .nsk-notification .app-switch .app-title {display:inline-flex!important;align-items:center!important;justify-content:center!important;box-sizing:border-box!important;height:32px!important;min-height:32px!important;line-height:20px!important;margin:0!important;padding:6px 12px!important;border:0!important;border-radius:7px!important;font-size:14px!important;white-space:nowrap!important}
-body .nsk-notification > .app-switch {height:40px!important;min-height:40px!important;align-items:center!important}
-body .nsk-notification > .app-switch .app-title {flex:0 0 96px!important;width:96px!important;min-width:96px!important;max-width:96px!important}
-
 /* Cover all CodeMirror line-number variants used by the Markdown editor. */
 body .nsk-notification:has(.message-wrapper) .message-input :is(.CodeMirror-gutters,.CodeMirror-linenumbers,.CodeMirror-linenumber,.cm-gutters,.cm-lineNumbers,[class*="line-number"],[class*="lineNumber"]) {display:none!important;width:0!important;min-width:0!important}
 body .nsk-notification:has(.message-wrapper) .message-input :is(.CodeMirror-lines,.CodeMirror-code,.cm-scroller,.cm-content) {margin-left:0!important;padding-left:0!important}
@@ -347,8 +343,16 @@ body .nsk-notification:has(.message-wrapper) .message-input :is(.CodeMirror-line
 /* The mobile rail must never enter the document flow or cover posts. */
 @media(max-width:760px) {
   body > header {height:84px!important}
-  body #nsk-head .nav-menu {display:flex!important;position:fixed!important;top:48px!important;left:8px!important;right:8px!important;width:auto!important;max-width:none!important;height:36px!important;overflow-x:auto!important;overflow-y:hidden!important;z-index:1305!important}
-  body #nsk-left-panel-container {display:none!important;visibility:hidden!important;position:absolute!important;inset:auto!important;pointer-events:none!important}
+  body #nsk-head .site-title {display:flex!important;align-items:center!important;visibility:visible!important;opacity:1!important}
+  body #nsk-head .nav-menu {display:none!important;position:static!important}
+  body #nsk-frame #nsk-left-panel-container {display:flex!important;visibility:visible!important;position:fixed!important;top:48px!important;left:0!important;right:0!important;width:100%!important;max-width:none!important;height:36px!important;align-items:center!important;box-sizing:border-box!important;margin:0!important;padding:0 4px!important;overflow:hidden!important;pointer-events:auto!important;background:var(--ns-card)!important;border-top:1px solid var(--ns-border)!important;border-bottom:1px solid var(--ns-border)!important;z-index:1305!important}
+  body #nsk-left-panel-container > :not(.category-list),body #nsk-left-panel-container > .nsk-panel:not(.category-list),body #nsk-left-panel-container > div:not(.nsk-panel):not(.category-list) {display:none!important}
+  body #nsk-left-panel-container > .category-list {display:block!important;width:100%!important;margin:0!important;padding:0!important;background:transparent!important;border:0!important;box-shadow:none!important}
+  body #nsk-left-panel-container .category-list :is(h4,.iconpark-icon) {display:none!important}
+  body #nsk-left-panel-container .category-list ul {display:flex!important;align-items:center!important;gap:0!important;width:100%!important;height:36px!important;margin:0!important;padding:0!important;overflow-x:auto!important;overflow-y:hidden!important;list-style:none!important;white-space:nowrap!important;scrollbar-width:none!important}
+  body #nsk-left-panel-container .category-list li {display:list-item!important;flex:0 0 auto!important;height:36px!important;margin:0!important;padding:0!important}
+  body #nsk-left-panel-container .category-list a {display:flex!important;align-items:center!important;height:34px!important;padding:0 8px!important;color:var(--ns-text)!important;background:transparent!important;border-radius:5px!important;white-space:nowrap!important;font-size:13px!important}
+  body #nsk-left-panel-container .category-list a:hover {background:var(--ns-active)!important}
   body #nsk-frame {margin-top:84px!important}
   body .nsk-notification:has(.message-wrapper) {width:calc(100% - 12px)!important;max-width:none!important;margin:8px 6px!important}
 }
