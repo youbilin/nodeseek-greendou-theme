@@ -246,7 +246,7 @@ body .nsk-notification a {color:var(--ns-link)!important}
 body #nsk-right-panel-container {max-height:none!important;overflow:visible!important;overflow-y:visible!important}
 body #nsk-frame #nsk-right-panel-container {max-height:none!important;overflow:visible!important;overflow-y:visible!important}
 @media(min-width:1101px) {
-  body #nsk-frame #nsk-right-panel-container {position:fixed!important;top:56px!important;right:var(--ns-head-r)!important;left:auto!important;width:260px!important;max-width:260px!important;box-sizing:border-box!important;max-height:calc(100vh - 72px)!important;overflow:clip!important;z-index:1200!important;anchor-name:--ns-profile!important}
+  body #nsk-frame #nsk-right-panel-container {position:fixed!important;top:56px!important;right:0!important;left:auto!important;width:260px!important;max-width:260px!important;box-sizing:border-box!important;max-height:calc(100vh - 72px)!important;overflow:clip!important;z-index:1200!important;anchor-name:--ns-profile!important;border-radius:16px 0 0 16px!important}
 }
 body #nsk-right-panel-container > .nsk-panel.quick-access,
 body #nsk-right-panel-container .nsk-panel.quick-access {display:none!important}
@@ -285,12 +285,12 @@ body .nsk-notification:has(.message-wrapper) .message-item:has(> [style*="end"])
 /* Desktop categories and post action sit below the fixed profile card. CSS cannot reparent
    the original sibling node, so this uses the card's stable desktop footprint as its dock. */
 @media(min-width:1101px) {
-  body #nsk-left-panel-container {position:fixed!important;top:354px!important;left:auto!important;right:var(--ns-head-r)!important;width:260px!important;max-width:260px!important;box-sizing:border-box!important;height:auto!important;margin:0!important;padding:6px 8px!important;overflow:visible!important;background:var(--ns-sub)!important;border:1px solid var(--ns-border)!important;border-radius:0 0 14px 14px!important;box-shadow:0 3px 10px rgba(35,54,39,.08)!important;z-index:1201!important}
+  body #nsk-left-panel-container {position:fixed!important;top:354px!important;left:auto!important;right:0!important;width:260px!important;max-width:260px!important;box-sizing:border-box!important;height:auto!important;margin:0!important;padding:4px 6px!important;overflow:hidden!important;background:var(--ns-sub)!important;border:1px solid var(--ns-border)!important;border-radius:0 0 0 14px!important;box-shadow:0 3px 10px rgba(35,54,39,.08)!important;z-index:1201!important}
   body #nsk-left-panel-container .category-list {width:100%!important}
-  body #nsk-left-panel-container .category-list ul {display:flex!important;flex-wrap:wrap!important;gap:2px!important;width:100%!important;height:auto!important;padding:0 68px 0 0!important;box-sizing:border-box!important}
-  body #nsk-left-panel-container .category-list li {height:30px!important}
-  body #nsk-left-panel-container .category-list a {height:30px!important;padding:0 6px!important;font-size:13px!important;color:var(--ns-text)!important;background:transparent!important}
-  body #nsk-right-panel-container .new-discussion {position:fixed!important;top:367px!important;right:calc(var(--ns-head-r) + 8px)!important;left:auto!important;margin:0!important;z-index:1202!important}
+    body #nsk-left-panel-container .category-list ul {display:flex!important;flex-wrap:nowrap!important;gap:0!important;width:100%!important;height:26px!important;padding:0 68px 0 0!important;box-sizing:border-box!important;overflow:hidden!important;white-space:nowrap!important}
+    body #nsk-left-panel-container .category-list li {height:26px!important;flex:0 0 auto!important}
+    body #nsk-left-panel-container .category-list a {height:26px!important;padding:0 3px!important;font-size:11px!important;color:var(--ns-text)!important;background:transparent!important}
+  body #nsk-right-panel-container .new-discussion {position:fixed!important;top:359px!important;right:8px!important;left:auto!important;margin:0!important;z-index:1202!important}
 }
 
 /* Keep the discussion editor surfaces in mung-bean green as well. */
@@ -299,6 +299,20 @@ body #editor-body > div.tab-select.window_header,
 body #editor-body > div.expression,
 body #editor-body :is(.tab-select,.window_header,.expression,.editor-toolbar,.editor-content,.CodeMirror,.cm-editor,.cm-scroller) {background:var(--ns-sub)!important;color:var(--ns-text)!important;border-color:var(--ns-border)!important}
 body #editor-body :is(input,textarea,select,pre,code,[contenteditable="true"]) {background:var(--ns-card)!important;color:var(--ns-text)!important;border-color:var(--ns-border)!important}
+
+/* Keep desktop header controls in separate, non-shrinking slots. */
+@media(min-width:761px) {
+  body #nsk-head {gap:8px!important;overflow:visible!important}
+  body #nsk-head .search-box {flex:0 0 145px!important;width:145px!important;min-width:145px!important;margin-left:auto!important;margin-right:0!important;position:relative!important;z-index:1310!important}
+  body #nsk-head .history-dropdown-on,body #nsk-head .color-theme-switcher {flex:0 0 32px!important;width:32px!important;min-width:32px!important;position:relative!important;z-index:1311!important}
+}
+
+/* Remove empty route rows and route-transition spacing in notification views. */
+body .nsk-notification .app-switch:not(:has(.app-title)) {display:none!important;height:0!important;min-height:0!important;margin:0!important;padding:0!important;border:0!important}
+body .nsk-notification > .app-switch {margin:0 0 4px!important;padding:4px 0!important;transition:none!important}
+body .nsk-notification .app-switch .app-title {transition:none!important;transform:none!important}
+body .nsk-notification:has(.reply-container) .reply-container,
+body .nsk-notification:has(.message-wrapper) .message-wrapper {margin-top:0!important}
 
 /* Avatar cards opened from a post must remain above the fixed layout. */
 body > .user-card {z-index:2000!important;max-width:min(320px,calc(100vw - 24px))!important;overflow:hidden!important;background:var(--ns-sub)!important;color:var(--ns-text)!important;border:1px solid var(--ns-border)!important;box-shadow:0 8px 24px rgba(35,54,39,.18)!important}
