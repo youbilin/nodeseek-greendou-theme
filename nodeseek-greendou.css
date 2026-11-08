@@ -76,8 +76,6 @@ body .nsk-notification .app-switch:not(:has(.app-title)){display:none!important;
    blocking layer while images decode or lazy-load. */
 body #nsk-frame :is(.post-content,.post-content-inner,.markdown-body,.topic-content,.discussion-content) img{display:block!important;visibility:visible!important;opacity:1!important;max-width:100%!important;width:auto!important;height:auto!important;object-fit:contain!important;pointer-events:auto!important}
 body #nsk-frame :is(.post-content,.post-content-inner,.markdown-body,.topic-content,.discussion-content){overflow:visible!important;contain:none!important;content-visibility:visible!important}
-/* Keep the fast navigation group on the left with a small breathing gap. */
-body #fast-nav-button-group{left:12px!important;right:auto!important;margin-left:0!important}
 
 /* Restore the native desktop controls and remove the temporary utility tray. */
 @media(min-width:1101px){
@@ -98,5 +96,8 @@ body #fast-nav-button-group{left:12px!important;right:auto!important;margin-left
 body #nsk-right-panel-container .user-card .user-stat .notify-count,
 body #nsk-right-panel-container .user-card span.notify-count{color:var(--ns-title)!important;background:var(--ns-active)!important;border:1px solid var(--ns-border)!important;border-radius:999px!important;box-shadow:none!important}
 
-/* Leave a clearer gap from the viewport edge. */
-body #fast-nav-button-group{left:24px!important;right:auto!important;margin-left:0!important}
+/* Desktop-only positioning; mobile keeps the site's native fast-nav layout. */
+@media(min-width:1101px){
+  body #fast-nav-button-group{left:110px!important;right:auto!important;margin-left:0!important}
+  body #nsk-right-panel-container .new-discussion{right:12px!important;width:260px!important;min-width:260px!important;max-width:260px!important;height:34px!important;min-height:34px!important;border-radius:12px!important;box-sizing:border-box!important}
+}
