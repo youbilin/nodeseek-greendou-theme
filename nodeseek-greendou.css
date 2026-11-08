@@ -245,6 +245,9 @@ body .nsk-notification a {color:var(--ns-link)!important}
 /* The profile column is a card, not a nested scroll viewport. */
 body #nsk-right-panel-container {max-height:none!important;overflow:visible!important;overflow-y:visible!important}
 body #nsk-frame #nsk-right-panel-container {max-height:none!important;overflow:visible!important;overflow-y:visible!important}
+@media(min-width:1101px) {
+  body #nsk-frame #nsk-right-panel-container {position:fixed!important;top:56px!important;right:var(--ns-head-r)!important;left:auto!important;width:260px!important;max-width:260px!important;max-height:calc(100vh - 72px)!important;overflow:clip!important;z-index:1200!important;anchor-name:--ns-profile!important}
+}
 body #nsk-right-panel-container > .nsk-panel.quick-access,
 body #nsk-right-panel-container .nsk-panel.quick-access {display:none!important}
 body #nsk-right-panel-container .user-card .menu > div > :is(a:empty,button:empty) {display:none!important}
@@ -262,12 +265,33 @@ body .nsk-notification:has(.message-wrapper) .message-item:has(.content-column[s
 body .nsk-notification:has(.message-wrapper) .message-item:has(.content-column[style*="right"]) .content-column,
 body .nsk-notification:has(.message-wrapper) .message-item:has(.content-column[style*="end"]) .content-column {align-items:flex-end!important}
 
-/* Keep the appended desktop categories and post action in the same visual layer as the header. */
-@media(min-width:1101px) {
-  body #nsk-left-panel-container {top:0!important;background:transparent!important;border:0!important;box-shadow:none!important;z-index:1303!important}
-  body #nsk-left-panel-container .category-list a {color:var(--ns-text)!important;background:transparent!important}
-  body #nsk-left-panel-container .category-list a:hover {color:var(--ns-title)!important;background:var(--ns-active)!important}
-  body #nsk-right-panel-container .new-discussion {top:8px!important;z-index:1304!important}
+/* Grid placement keeps the avatar beside the matching bubble regardless of DOM order. */
+body .nsk-notification:has(.message-wrapper) .message-item {display:grid!important;grid-template-columns:36px minmax(0,1fr)!important;grid-template-rows:auto!important;align-items:start!important;flex-direction:initial!important}
+body .nsk-notification:has(.message-wrapper) .message-item > :first-child {grid-column:1!important;grid-row:1!important}
+body .nsk-notification:has(.message-wrapper) .message-item .content-column {grid-column:2!important;grid-row:1!important;justify-self:start!important}
+body .nsk-notification:has(.message-wrapper) .message-item:has(.content-column[style*="right"]),
+body .nsk-notification:has(.message-wrapper) .message-item:has(.content-column[style*="end"]),
+body .nsk-notification:has(.message-wrapper) .message-item:has(> [style*="right"]),
+body .nsk-notification:has(.message-wrapper) .message-item:has(> [style*="end"]) {grid-template-columns:minmax(0,1fr) 36px!important}
+body .nsk-notification:has(.message-wrapper) .message-item:has(.content-column[style*="right"]) > :first-child,
+body .nsk-notification:has(.message-wrapper) .message-item:has(.content-column[style*="end"]) > :first-child,
+body .nsk-notification:has(.message-wrapper) .message-item:has(> [style*="right"]) > :first-child,
+body .nsk-notification:has(.message-wrapper) .message-item:has(> [style*="end"]) > :first-child {grid-column:2!important}
+body .nsk-notification:has(.message-wrapper) .message-item:has(.content-column[style*="right"]) .content-column,
+body .nsk-notification:has(.message-wrapper) .message-item:has(.content-column[style*="end"]) .content-column,
+body .nsk-notification:has(.message-wrapper) .message-item:has(> [style*="right"]) .content-column,
+body .nsk-notification:has(.message-wrapper) .message-item:has(> [style*="end"]) .content-column {grid-column:1!important;justify-self:end!important;align-items:flex-end!important}
+
+/* Desktop categories and post action are visually attached to the floating profile card. */
+@supports (position-anchor:--ns-profile) {
+  @media(min-width:1101px) {
+    body #nsk-left-panel-container {position:fixed!important;position-anchor:--ns-profile!important;top:anchor(bottom)!important;left:anchor(left)!important;right:auto!important;width:260px!important;max-width:260px!important;height:auto!important;margin:8px 0 0!important;padding:6px 8px!important;overflow:visible!important;background:var(--ns-sub)!important;border:1px solid var(--ns-border)!important;border-radius:0 0 14px 14px!important;box-shadow:0 3px 10px rgba(35,54,39,.08)!important;z-index:1201!important}
+    body #nsk-left-panel-container .category-list {width:100%!important}
+    body #nsk-left-panel-container .category-list ul {display:flex!important;flex-wrap:wrap!important;gap:2px!important;width:100%!important;height:auto!important;padding:0 68px 0 0!important;box-sizing:border-box!important}
+    body #nsk-left-panel-container .category-list li {height:30px!important}
+    body #nsk-left-panel-container .category-list a {height:30px!important;padding:0 6px!important;font-size:13px!important}
+    body #nsk-right-panel-container .new-discussion {position:fixed!important;position-anchor:--ns-profile!important;top:anchor(bottom)!important;right:anchor(right)!important;left:auto!important;margin-top:13px!important;z-index:1202!important}
+  }
 }
 
 /* Normalize the notification tabs so route changes do not resize the top row. */
