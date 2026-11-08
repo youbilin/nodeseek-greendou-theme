@@ -1,5 +1,12 @@
 # Changelog
 
+## v1.7.2 — 2026-11-09
+
+- `background.css` 默认背景换成指定的山景 WebP（CDN，约 650KB）；仍可用 `--nsk-bg-image` 覆盖。
+- `ip-card.css` 换成 `card.net.coffee` 的 terminal 风格 SVG（480×227，显示 240×114）。
+- 文档明确：CSS 无法让伪元素可点击；点击跳转 `https://ip.net.coffee/ip/` 需要 userscript。
+- 其他主题和模块不变。
+
 ## v1.7.1 — 2026-11-09
 
 - OLED / high-contrast 主题自带 `mobile` 模块，移动端不再出现 419px 横向溢出。

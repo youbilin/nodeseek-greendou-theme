@@ -15,8 +15,8 @@
 | zen | 模块 | full | full | full | 与 glass 方向相反；不隐藏分类栏/锚点容器 |
 | mobile | 模块 | n/a | full | full | 仅 `max-width:1100px`；修复 375px 溢出和通知竖排 |
 | glass | 模块 | full | full | full | 避免与 zen / OLED 叠用；放最后导入 |
-| background | 模块 | full | full | full | 默认主题色渐变；设置 `--nsk-bg-image` 换图 |
-| ip-card | 模块 | full | 默认隐藏 | full | 第三方请求；CSS 无 alt 文本 |
+| background | 模块 | full | full | full | 默认山景图（CDN，约 650KB）；设置 `--nsk-bg-image` 换图 |
+| ip-card | 模块 | full | 默认隐藏 | full | 第三方请求；CSS 无 alt 文本；点击跳转需 userscript |
 
 ## 页面 × 主题
 
@@ -41,7 +41,7 @@
 - eye-care v1.5.x 单独用在 375px 通知列表时，桌面单行 flex 规则会把长标题挤成竖排；`mobile` 已修复。
 - `glass` 的 `backdrop-filter` 只加在普通面板上，绝不给 `body>header`、`#nsk-head`、`#nsk-left-panel-container`、`#nsk-right-panel-container` 加，否则 fixed/anchor 子元素会认错包含块。
 - `background` 只改背景和表面透明度，不加 `backdrop-filter`；和 `glass` 叠用时先 background 后 glass。
-- `ip-card` 在 `max-width:600px` 下 `content:none`，既隐藏卡片也跳过第三方请求。
+- `ip-card` 在 `max-width:600px` 下 `content:none`，既隐藏卡片也跳过第三方请求；卡片由 `card.net.coffee` 生成，CSS 不能让它可点击。
 
 ## 选择器稳定度
 

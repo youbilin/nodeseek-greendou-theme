@@ -1,17 +1,20 @@
-/* NodeSeek visitor IP card module v1.0.0
-   OPT-IN AND THIRD-PARTY. This file paints https://my.ippure.com/v1/card as a
-   CSS background image. Once it is loaded, every visitor's browser requests that
-   third-party endpoint, so the operator of my.ippure.com sees the visitor's IP
-   address (plus the usual user-agent and referrer), and the returned card shows
-   that visitor their own public IP on screen. Enable it only where visitors have
-   been told about it; it is not something a theme should turn on for them.
+/* NodeSeek visitor IP card module v1.0.1
+   OPT-IN AND THIRD-PARTY. This file paints
+   https://card.net.coffee/v1/card.svg?style=terminal&w=480 as a CSS background image.
+   Every visitor's browser requests card.net.coffee, so that service sees the
+   visitor's IP address (plus the usual user-agent and referrer), and the card
+   shows that visitor their own public IP on screen. Enable it only where visitors
+   have been told about it; it is not something a theme should turn on for them.
    A CSS background is not an <img>: no alt text, no caption, no DOM node, no
-   right-click or save-as, and it is silent to screen readers. If the card has to
-   be accessible, publish a real <img alt="..."> instead of this module. */
+   right-click or save-as, and it is silent to screen readers. If the card must be
+   accessible, publish a real <img alt="..."> instead of this module.
+   Click-through is also impossible from CSS: a pseudo-element cannot be an <a>.
+   For a clickable card that opens https://ip.net.coffee/ip/, use a userscript
+   that injects <a href="https://ip.net.coffee/ip/" target="_blank"><img ...></a>. */
 :root{
-  --nsk-ip-card:url("https://my.ippure.com/v1/card");
+  --nsk-ip-card:url("https://card.net.coffee/v1/card.svg?style=terminal&w=480");
   --nsk-ip-width:240px;
-  --nsk-ip-height:113px;
+  --nsk-ip-height:114px;
   --nsk-ip-offset-x:12px;   /* gap from the right edge */
   --nsk-ip-offset-y:12px;   /* gap from the bottom edge */
   --nsk-ip-radius:10px;
@@ -38,7 +41,7 @@ body::after{
   pointer-events:none;
   z-index:var(--nsk-ip-z);
 }
-/* Phones: off by default. A 240x113 card would cover content on a 390px wide
+/* Phones: off by default. A 240x114 card would cover content on a 390px wide
    screen, and because no box is generated the third-party request is skipped too.
    To opt in on phones, give the media query its own smaller card, e.g.
      @media (max-width:600px){

@@ -17,10 +17,10 @@ NodeSeek 设置 → 扩展 → 自定义 CSS，粘贴下面任意一行（可多
 | 高对比 `high-contrast` | WCAG 取向：黑白高对比、3px 焦点环、链接强制下划线、减少动效；含 mobile 移动修复 |
 
 ```css
-@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.7.1/themes/eye-care.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.7.2/themes/eye-care.css");
 /* 或者二选一：
-@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.7.1/themes/oled-black.css");
-@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.7.1/themes/high-contrast.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.7.2/themes/oled-black.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.7.2/themes/high-contrast.css");
 */
 ```
 
@@ -36,35 +36,35 @@ NodeSeek 设置 → 扩展 → 自定义 CSS，粘贴下面任意一行（可多
 | 极简净化 `zen` | 隐藏页脚、侧栏广告、顶部轮播、推荐角标、快捷功能区、新用户面板和签名 |
 | 移动可用性 `mobile` | 仅移动端。两行头部、修复 375px 横向溢出和通知竖排、可横滑分类/翻页、触摸目标 |
 | 玻璃拟态 `glass` | 半透明面板 + `backdrop-filter` 模糊；不要和 zen / OLED 叠用，放最后导入 |
-| 自定义背景 `background` | 把页面背景换成自己的图片，并让主要卡片半透明；默认是主题色渐变，设置 `--nsk-bg-image` 换成图片 |
-| 访客 IP 卡片 `ip-card` | 右下角固定显示 IP 信息卡；默认关闭移动端；第三方请求，注意隐私 |
+| 自定义背景 `background` | 把页面背景换成自己的图片，并让主要卡片半透明；默认使用自带山景图（CDN，约 650KB），设置 `--nsk-bg-image` 换成自己的图 |
+| 访客 IP 卡片 `ip-card` | 右下角固定显示 card.net.coffee 的终端风格 IP 卡；默认关闭移动端；第三方请求、CSS 不可点击 |
 
 ```css
-@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.7.1/modules/compact.css");
-@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.7.1/modules/reading.css");
-@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.7.1/modules/code-tables.css");
-@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.7.1/modules/zen.css");
-@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.7.1/modules/mobile.css");
-@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.7.1/modules/glass.css");
-@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.7.1/modules/background.css");
-@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.7.1/modules/ip-card.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.7.2/modules/compact.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.7.2/modules/reading.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.7.2/modules/code-tables.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.7.2/modules/zen.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.7.2/modules/mobile.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.7.2/modules/glass.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.7.2/modules/background.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.7.2/modules/ip-card.css");
 ```
 
 ### 推荐组合
 
 ```css
 /* 护眼 + 阅读 + 净化（阅读已含 code-tables） */
-@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.7.1/themes/eye-care.css");
-@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.7.1/modules/reading.css");
-@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.7.1/modules/zen.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.7.2/themes/eye-care.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.7.2/modules/reading.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.7.2/modules/zen.css");
 
 /* 桌面紧凑 + 移动端修复：媒体查询互补，可同时导入 */
-@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.7.1/modules/compact.css");
-@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.7.1/modules/mobile.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.7.2/modules/compact.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.7.2/modules/mobile.css");
 
 /* 自定义背景 + 玻璃：背景先、玻璃后 */
-@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.7.1/modules/background.css");
-@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.7.1/modules/glass.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.7.2/modules/background.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.7.2/modules/glass.css");
 ```
 
 背景图片在 `background.css` 顶部的变量里设置：
@@ -77,6 +77,8 @@ NodeSeek 设置 → 扩展 → 自定义 CSS，粘贴下面任意一行（可多
 ```
 
 把 `--nsk-bg-image` 设为 `none` 可关闭背景图；`--nsk-bg-overlay` 设为 `transparent` 可取消压暗层。远程图片会被每个访客的浏览器直接请求。
+
+IP 卡片同理：CSS 只能把卡片画出来，不能给伪元素加链接。要让它可点击，使用用户脚本注入真实的 `<a href="https://ip.net.coffee/ip/" target="_blank"><img ...></a>`；纯 CSS 模块只负责显示。
 
 ## 分类规则
 
@@ -98,8 +100,8 @@ NodeSeek 设置 → 扩展 → 自定义 CSS，粘贴下面任意一行（可多
 | zen | 模块 | full | full | full | 隐藏签名；不需要可删对应规则 |
 | mobile | 模块 | n/a | full | full | 仅 `max-width:1100px` |
 | glass | 模块 | full | full | full | 不给 fixed/anchor 容器加模糊；避免与 zen/OLED 叠用 |
-| background | 模块 | full | full | full | 默认主题色渐变；设置 `--nsk-bg-image` 换成图片 |
-| ip-card | 模块 | full | 默认隐藏 | full | 第三方请求；CSS 无 alt 文本 |
+| background | 模块 | full | full | full | 默认山景图；设置 `--nsk-bg-image` 换成自己的图 |
+| ip-card | 模块 | full | 默认隐藏 | full | 第三方请求；CSS 无 alt 文本；点击跳转需 userscript |
 
 详细矩阵和回归清单见 [docs/compatibility.md](docs/compatibility.md)。测试日期：2026-11-09。
 
@@ -111,8 +113,8 @@ NodeSeek 设置 → 扩展 → 自定义 CSS，粘贴下面任意一行（可多
 - `mobile` 的两行头部是对原生移动布局的主动调整；如果 NodeSeek 大改头部，先回退这个模块。
 - `oled-black` 和 `high-contrast` 互斥，且都与 `eye-care` 互斥；不要在同一个自定义 CSS 里同时启用。
 - `glass` 不要和 `zen` / OLED 叠用；玻璃需要背景层次，zen 会把层次隐藏掉，OLED 的纯黑上模糊也不可见。
-- `background` 导入后默认就是一层主题色渐变，不是无操作；换成照片后内容卡片会半透明，背景图请选低对比、干净的图片，否则正文可读性下降。
-- `ip-card` 是第三方请求：访客浏览器会直接访问 `my.ippure.com`，卡片会显示访客自己的 IP。CSS 背景没有 alt 文本，屏幕阅读器读不到；移动端默认隐藏以避免遮挡内容。
+- `background` 导入后默认就是一张山景照片（约 650KB），不是无操作；内容卡片会半透明，换成自己的图时请选低对比、干净的图片，否则正文可读性下降。
+- `ip-card` 是第三方请求：访客浏览器会直接访问 `card.net.coffee`，卡片会显示访客自己的 IP。CSS 背景没有 alt 文本，屏幕阅读器读不到；移动端默认隐藏以避免遮挡内容。CSS 也不能让卡片可点击；要点击跳转 `https://ip.net.coffee/ip/`，需要用 userscript 注入真实 `<a><img></a>`。
 - 所有包都依赖 NodeSeek 现有类名；站点大版本更新后需要重新跑一遍兼容表。
 
 ## 旧地址
@@ -120,8 +122,8 @@ NodeSeek 设置 → 扩展 → 自定义 CSS，粘贴下面任意一行（可多
 以下地址继续有效，老用户不用改：
 
 ```css
-@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.7.1/nodeseek-greendou.css");
-@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.7.1/nodeseek-hide-promotions.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.7.2/nodeseek-greendou.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.7.2/nodeseek-hide-promotions.css");
 ```
 
 新用户请优先使用 `themes/eye-care.css` 和 `modules/zen.css`。`nodeseek-greendou.css` 是 eye-care 的兼容副本，内容保持一致。
@@ -149,7 +151,7 @@ nodeseek-hide-promotions.css 旧地址：只隐藏侧栏广告
 ## 版本与标签
 
 - 仓库级版本：`vMAJOR.MINOR.PATCH`；新包/新覆盖 = MINOR，修复 = PATCH，需要用户重新粘贴或改变布局契约 = MAJOR。
-- 请固定版本号，例如 `@v1.7.1`；不建议用 `@latest`，jsDelivr 缓存会延迟。
+- 请固定版本号，例如 `@v1.7.2`；不建议用 `@latest`，jsDelivr 缓存会延迟。
 - 标签不可变：发现问题发新 PATCH，不移动旧标签。
 - 主题和模块共用一条版本线；新主题会通过相对 `@import` 引用同一 tag 的 `eye-care.css`，版本始终一致。
 
@@ -162,4 +164,4 @@ nodeseek-hide-promotions.css 旧地址：只隐藏侧栏广告
 
 ## English
 
-Versioned NodeSeek custom CSS packs. Choose one theme from `themes/` (eye-care, OLED or high-contrast), then optionally stack modules from `modules/`. Everything is plain CSS with no build step. Pin a release tag, for example `@v1.7.1`.
+Versioned NodeSeek custom CSS packs. Choose one theme from `themes/` (eye-care, OLED or high-contrast), then optionally stack modules from `modules/`. Everything is plain CSS with no build step. Pin a release tag, for example `@v1.7.2`.

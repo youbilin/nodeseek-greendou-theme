@@ -1,16 +1,16 @@
-/* NodeSeek background module v1.0.0
+/* NodeSeek background module v1.0.1
    Paints a custom page photo and makes the main surfaces translucent.
    Stackable: import after a theme, e.g.
      @import url("./themes/eye-care.css");
      @import url("./modules/background.css");
    Set the photo with these variables, imported after this file:
      :root{
-       --nsk-bg-image:url("./bg.jpg");
+       --nsk-bg-image:url("https://cdn.nodeimage.com/i/QxqCslRIB79cCYLxCN5KeucxIcrmob5Y.webp");
        --nsk-bg-overlay:rgba(16,22,18,.35);
        --nsk-bg-surface:rgba(231,240,228,.82);
        --nsk-bg-surface-dark:rgba(41,54,46,.84);
      }
-   --nsk-bg-image defaults to a theme-coloured gradient. --nsk-bg-overlay
+   --nsk-bg-image defaults to the bundled mountain photo. --nsk-bg-overlay
    defaults to transparent, meaning no dim wash. The two surface tokens default to the
    eye-care card colours at about 82% opacity and apply to light and dark layouts.
    Pick a calm, low-contrast picture: it sits behind every word and the cards
@@ -20,7 +20,7 @@
    so the photo scrolls there instead of staying put.
    Nothing is hidden, moved or re-positioned: only background paint changes. */
 :root{
-  --nsk-bg-image:linear-gradient(135deg, var(--ns-page, #dfeadf), var(--ns-sub, #d9e7d8));
+  --nsk-bg-image:url("https://cdn.nodeimage.com/i/QxqCslRIB79cCYLxCN5KeucxIcrmob5Y.webp");
   --nsk-bg-overlay:transparent;
   --nsk-bg-surface:color-mix(in srgb, var(--ns-card, #e7f0e4) 82%, transparent);
   --nsk-bg-surface-dark:color-mix(in srgb, var(--ns-card, #29362e) 84%, transparent);
