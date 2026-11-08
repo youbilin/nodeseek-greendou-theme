@@ -397,11 +397,34 @@ body #nsk-right-panel-container .user-card :is(.user-head,.user-stat) {backgroun
 
 /* Dock the post sorter with the profile actions on wide screens. */
 @media(min-width:1101px) {
-  body .sorter {position:fixed!important;top:534px!important;right:12px!important;width:auto!important;min-width:104px!important;max-width:180px!important;min-height:32px!important;height:32px!important;box-sizing:border-box!important;display:inline-flex!important;align-items:center!important;justify-content:center!important;gap:3px!important;margin:0!important;padding:3px!important;z-index:1201!important;color:var(--ns-text)!important;background:var(--ns-sub)!important;border:1px solid var(--ns-border)!important;border-radius:999px!important;box-shadow:0 2px 8px rgba(35,54,39,.08)!important;transition:background-color .18s ease,box-shadow .18s ease!important}
-  body select.sorter {display:block!important;top:534px!important;width:120px!important;min-width:120px!important;height:26px!important;min-height:26px!important;padding:3px 24px 3px 9px!important;color:var(--ns-text)!important;background:var(--ns-sub)!important;border:0!important;border-radius:999px!important;box-shadow:none!important;transition:background-color .18s ease,color .18s ease!important}
+  body .sorter {position:fixed!important;top:534px!important;right:12px!important;width:88px!important;min-width:88px!important;max-width:104px!important;min-height:28px!important;height:28px!important;box-sizing:border-box!important;display:inline-flex!important;align-items:center!important;justify-content:center!important;gap:2px!important;margin:0!important;padding:2px!important;z-index:1201!important;color:var(--ns-text)!important;background:var(--ns-sub)!important;border:1px solid var(--ns-border)!important;border-radius:999px!important;box-shadow:0 2px 8px rgba(35,54,39,.08)!important;transition:background-color .18s ease,box-shadow .18s ease!important}
+  body select.sorter {display:block!important;top:534px!important;width:84px!important;min-width:84px!important;height:22px!important;min-height:22px!important;padding:2px 20px 2px 7px!important;color:var(--ns-text)!important;background:var(--ns-sub)!important;border:0!important;border-radius:999px!important;box-shadow:none!important;transition:background-color .18s ease,color .18s ease!important}
+  body select.sorter:hover,body select.sorter:focus,body select.sorter:active {color:var(--ns-title)!important;background:var(--ns-active)!important;outline:none!important}
+  body select.sorter option:checked {color:#294332!important;background:#b9d2b7!important}
   body .sorter :is(select,button,a) {color:var(--ns-text)!important;background:transparent!important;border:0!important;border-radius:999px!important;transition:background-color .18s ease,color .18s ease,transform .18s ease!important}
-  body .sorter :is(button,a) {display:inline-flex!important;align-items:center!important;justify-content:center!important;min-height:26px!important;padding:3px 9px!important}
+  body .sorter :is(button,a) {display:inline-flex!important;align-items:center!important;justify-content:center!important;min-height:22px!important;padding:2px 7px!important}
   body .sorter :is(button,a):hover,body .sorter :is(button,a):focus-visible,body .sorter :is(.active,[aria-pressed="true"],[aria-current="true"]) {color:var(--ns-title)!important;background:var(--ns-active)!important}
   body .sorter :is(button,a):active {transform:scale(.96)!important}
   body .sorter:focus-within {background:var(--ns-active)!important;box-shadow:0 3px 10px rgba(35,54,39,.14)!important}
 }
+
+/* Desktop utility dock: hide the native head shell while keeping only its search
+   and theme controls visible in the profile-side action stack. */
+@media(min-width:761px) {
+  body > header {height:0!important;min-height:0!important;background:transparent!important;border:0!important;pointer-events:none!important}
+  body #nsk-head {display:contents!important}
+  body #nsk-head :is(.site-title,.nav-menu,.search-box,.history-dropdown-on) {display:none!important}
+  body #nsk-head a[href="#search"],body a[href="#search"] {display:flex!important;position:fixed!important;top:508px!important;right:148px!important;width:28px!important;height:28px!important;align-items:center!important;justify-content:center!important;margin:0!important;padding:0!important;z-index:1203!important;color:var(--ns-text)!important;background:var(--ns-active)!important;border:1px solid var(--ns-border)!important;border-radius:999px!important;box-shadow:0 2px 8px rgba(35,54,39,.08)!important;pointer-events:auto!important;transition:background-color .18s ease,transform .18s ease!important}
+  body #nsk-head a[href="#search"]:hover,body a[href="#search"]:hover {background:var(--ns-hover)!important;transform:translateY(-1px)!important}
+  body #nsk-head .color-theme-switcher {display:flex!important;position:fixed!important;top:508px!important;right:112px!important;width:28px!important;height:28px!important;align-items:center!important;justify-content:center!important;margin:0!important;z-index:1203!important;color:var(--ns-text)!important;background:var(--ns-active)!important;border:1px solid var(--ns-border)!important;border-radius:999px!important;box-shadow:0 2px 8px rgba(35,54,39,.08)!important;pointer-events:auto!important;transition:background-color .18s ease,transform .18s ease!important}
+  body #nsk-head .color-theme-switcher:hover {background:var(--ns-hover)!important;transform:translateY(-1px)!important}
+  body #nsk-frame {margin-top:0!important}
+  body #nsk-left-panel-container {top:390px!important;position-anchor:none!important;margin-top:0!important}
+  body #nsk-right-panel-container .new-discussion {top:466px!important;position-anchor:none!important}
+  body .sorter,body select.sorter {top:508px!important}
+  body #nsk-frame #nsk-left-panel-container .category-list a {color:#2d4738!important}
+}
+
+/* Remove nested rings from the profile card; keep only its outer frame. */
+body .user-card > :is(.user-head,.user-stat,.menu),
+body .user-card :is(.stat-block,.stat-block > div,.stat-block > div > a) {border:0!important;box-shadow:none!important}
