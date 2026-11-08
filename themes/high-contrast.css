@@ -1,4 +1,4 @@
-/* NodeSeek mung-bean high-contrast theme v1.0.1
+/* NodeSeek mung-bean high-contrast theme v1.1.0
    WCAG-oriented: 21:1 body text, black/white borders, underlined links, 3px focus rings.
    Mutually exclusive with eye-care and OLED - enable only one theme. */
 @import url("./eye-care.css");
@@ -54,4 +54,31 @@ body #nsk-frame #nsk-right-panel-container .new-discussion svg *{
 /* Body copy keeps the theme ink colour even where NodeSeek injects #444. */
 body #nsk-frame :is(.post-content,.content-item,.comment-wrapper){
   color:var(--ns-text)!important;
+}
+
+/* More-contrast preference: thicker edges and a stronger focus ring. */
+@media (prefers-contrast: more){
+  body #nsk-frame :is(.nsk-panel,.user-card,.selector,.head-container,.nsk-notification,.post-list-item,.content-item){
+    border-width:2px!important;
+  }
+  body :focus-visible{
+    outline-width:4px!important;
+  }
+}
+
+/* Forced colors: defer to the OS palette instead of fighting it. */
+@media (forced-colors: active){
+  body #nsk-frame :is(.nsk-panel,.user-card,.selector,.head-container,.nsk-notification,.post-list-item,.content-item){
+    background:Canvas!important;
+    color:CanvasText!important;
+    border:1px solid CanvasText!important;
+  }
+  body #nsk-frame a{
+    color:LinkText!important;
+  }
+  body #nsk-frame :is(.btn,.new-discussion){
+    background:ButtonFace!important;
+    color:ButtonText!important;
+    border:1px solid ButtonText!important;
+  }
 }

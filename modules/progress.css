@@ -1,0 +1,48 @@
+/* NodeSeek reading progress bar module v1.0.0
+   A 3px bar pinned to the top of the viewport that fills as the page scrolls.
+   Chromium-only progressive enhancement: driven by animation-timeline: scroll(root block)
+   (Chrome/Edge 115+). Browsers without scroll timelines render nothing at all - the whole
+   rule sits inside @supports, so no empty bar is ever created. Purely visual: the bar is
+   fixed, pointer-events:none, and takes no space in layout.
+   Stackable: import after a theme, e.g.
+     @import url("../themes/eye-care.css");
+     @import url("./progress.css"); */
+
+@supports (animation-timeline: scroll()) {
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    z-index: 2147483000;
+    pointer-events: none;
+    background: var(--ns-link, #356b48) !important;
+    box-shadow: 0 0 6px rgba(53, 107, 72, 0.45);
+    box-shadow: 0 0 6px color-mix(in srgb, var(--ns-link, #356b48) 45%, transparent);
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    animation-name: nsk-progress;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-fill-mode: both;
+    animation-timeline: scroll(root block);
+  }
+}
+
+@keyframes nsk-progress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* Printing must never show the bar. */
+@media print {
+  body::before {
+    display: none !important;
+  }
+}

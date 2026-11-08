@@ -1,0 +1,6 @@
+/* NodeSeek preset: terminal focus v1.0.0
+   Terminal theme with a quiet list and reading typography. */
+@import url("../themes/terminal.css");
+@import url("../modules/focus.css");
+@import url("../modules/fonts.css");
+@import url("../modules/reading.css");

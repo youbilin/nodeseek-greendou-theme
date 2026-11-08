@@ -1,0 +1,23 @@
+/* NodeSeek terminal-green theme v1.0.0
+   Full theme built on eye-care.css, imported below as its structural base.
+   Mutually exclusive with eye-care, OLED and high-contrast: enable only one theme.
+   Black canvas, phosphor-green ink, muted console greens, no glow. */
+@import url("./eye-care.css");
+@import url("../modules/mobile.css");
+
+/* One palette serves both site modes; every token is restated so no base
+   value survives the switch to black. */
+:root,body{--ns-page:#050805;--ns-card:#0a0f0b;--ns-sub:#0f1511;--ns-text:#b8ffcf;--ns-title:#d6ffe0;--ns-muted:#6f9a7a;--ns-link:#7dffb0;--ns-border:#1e3a28;--ns-active:#12301d;--ns-hover:#0f2417;--ns-read:#5e8a6b;--ns-bubble:#0d1a12;--ns-mine:#143522;--ns-accent:#1f6b3d;--ns-risk-bg:#1a2418;--ns-border-soft:rgba(125,255,176,.08);--ns-border-soft-2:rgba(125,255,176,.14);--ns-hover-soft:rgba(125,255,176,.1);--ns-shadow-notice:0 3px 12px rgba(0,0,0,.55);--ns-shadow-message:0 3px 14px rgba(0,0,0,.55);--ns-shadow-panel:0 3px 10px rgba(0,0,0,.55);--ns-shadow-button:0 2px 8px rgba(0,0,0,.55);--ns-shadow-search:0 12px 28px rgba(0,0,0,.7);--ns-shadow-right:0 2px 10px rgba(0,0,0,.55);--ns-shadow-user:0 8px 24px rgba(0,0,0,.7);--ns-shadow-main:0 3px 12px rgba(0,0,0,.6);--ns-shadow-card:0 3px 12px rgba(0,0,0,.6);color-scheme:dark}
+body.dark-layout{--ns-page:#050805;--ns-card:#0a0f0b;--ns-sub:#0f1511;--ns-text:#b8ffcf;--ns-title:#d6ffe0;--ns-muted:#6f9a7a;--ns-link:#7dffb0;--ns-border:#1e3a28;--ns-active:#12301d;--ns-hover:#0f2417;--ns-read:#5e8a6b;--ns-bubble:#0d1a12;--ns-mine:#143522;--ns-accent:#1f6b3d;--ns-risk-bg:#1a2418;--ns-border-soft:rgba(125,255,176,.08);--ns-border-soft-2:rgba(125,255,176,.14);--ns-hover-soft:rgba(125,255,176,.1);--ns-shadow-notice:0 3px 12px rgba(0,0,0,.55);--ns-shadow-message:0 3px 14px rgba(0,0,0,.55);--ns-shadow-panel:0 3px 10px rgba(0,0,0,.55);--ns-shadow-button:0 2px 8px rgba(0,0,0,.55);--ns-shadow-search:0 12px 28px rgba(0,0,0,.7);--ns-shadow-right:0 2px 10px rgba(0,0,0,.55);--ns-shadow-user:0 8px 24px rgba(0,0,0,.7);--ns-shadow-main:0 3px 12px rgba(0,0,0,.6);--ns-shadow-card:0 3px 12px rgba(0,0,0,.6);color-scheme:dark}
+
+/* Code keeps its terminal phosphor tint; geometry stays with code-tables.css. */
+body :is(.nsk-post,.content-item) .post-content :is(pre,code),
+body .readme.post-content :is(pre,code){background:var(--ns-bubble)!important;color:var(--ns-text)!important;border-color:var(--ns-border)!important}
+body :is(.nsk-post,.content-item) .post-content a code,
+body .readme.post-content a code{color:var(--ns-link)!important}
+
+/* Selection reads as a green console highlight. */
+body ::selection{background:var(--ns-active);color:var(--ns-title)}
+
+/* Avatars keep their true colors instead of the base theme's soft tint. */
+body #nsk-body-left :is(.avatar,.avatar-normal){filter:none!important}

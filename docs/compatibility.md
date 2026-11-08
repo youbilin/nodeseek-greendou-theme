@@ -67,3 +67,37 @@
 8. 玻璃：header、左右 fixed 侧栏的 `backdrop-filter` 必须为 `none`。
 9. 背景：默认渐变生效；换成照片后卡片半透明且正文可读。
 10. IP 卡片：桌面右下角显示 240×113；375px 下不生成伪元素、不发起第三方请求。
+
+## v1.8.0 新增包
+
+| 包 | 类型 | 桌面 | 移动 | 说明 |
+|---|---|---|---|---|
+| terminal | 主题 | full | full | 终端绿；含 eye-care + mobile |
+| sepia | 主题 | full | full | 暖纸；含 eye-care + mobile |
+| nord | 主题 | full | full | Nord 深色；含 eye-care + mobile |
+| solarized | 主题 | full | full | Solarized 亮/暗；含 eye-care + mobile |
+| focus | 模块 | full | full | 隐藏头像/签名/浏览量/最后回复/分类徽章 |
+| fonts | 模块 | full | full | 本地 CJK 字体栈，无外部请求 |
+| progress | 模块 | full | full | Chromium 115+ 顶部进度条；其他浏览器不显示 |
+| full-width | 模块 | full | n/a | 隐藏左右栏，内容 1080px；保留顶部导航/搜索 |
+
+## 预设
+
+| 预设 | 组合 | 说明 |
+|---|---|---|
+| eye-care-reading | eye-care + reading + zen + mobile | 日常阅读 |
+| oled-terminal | oled-black + code-tables + ip-card | 终端视觉 |
+| background-glass | eye-care + mobile + background + glass | 背景 + 玻璃 |
+| sepia-reading | sepia + reading + zen | 暖纸阅读 |
+| terminal-focus | terminal + focus + fonts + reading | 终端专注 |
+| solarized-reading | solarized + reading | Solarized 阅读 |
+
+预设内部用相对 `@import`，不要再重复导入包含的主题/模块；嵌套导入在 jsDelivr 上按同 tag 解析。
+
+## v1.8.0 回归项
+
+1. 四个新主题在亮/暗两种站点模式下 token 解析正确，移动端 `scrollWidth <= innerWidth`。
+2. `focus` 隐藏头像后正文占满整行，不错位；固定侧栏和导航不受影响。
+3. `progress` 在 Chromium 中从 0 到 1 填充；关闭 scroll timeline 支持时不生成进度条。
+4. `full-width` 在 1101/1440 宽度下右侧栏不重叠，顶部导航/搜索可见。
+5. 预设能通过 jsDelivr 解析嵌套主题和模块。

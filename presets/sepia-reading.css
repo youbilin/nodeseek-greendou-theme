@@ -1,0 +1,5 @@
+/* NodeSeek preset: sepia reading v1.0.0
+   Warm paper theme with long-form typography and declutter. */
+@import url("../themes/sepia.css");
+@import url("../modules/reading.css");
+@import url("../modules/zen.css");

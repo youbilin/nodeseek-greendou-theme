@@ -1,0 +1,27 @@
+/* NodeSeek full-width module v1.0.0
+   Desktop-only single-column layout. Hides both side rails and centers the
+   content at up to 1080px. The native header (site title, category nav, search,
+   theme switcher) stays visible; the sidebar profile card, category dock and
+   the sidebar post button are hidden.
+   Use without zen/glass; the mobile module already gives phones a single column. */
+@media (min-width:1101px){
+  body #nsk-frame #nsk-left-panel-container,
+  body #nsk-frame #nsk-right-panel-container{
+    display:none!important;
+  }
+  body #nsk-frame>#nsk-body{
+    display:block!important;
+    width:100%!important;
+    max-width:100%!important;
+    padding:0 24px!important;
+    box-sizing:border-box!important;
+  }
+  body #nsk-frame>#nsk-body #nsk-body-left{
+    width:min(1080px,100%)!important;
+    max-width:1080px!important;
+    flex:0 0 auto!important;
+    margin:0 auto!important;
+    padding-right:0!important;
+    box-sizing:border-box!important;
+  }
+}

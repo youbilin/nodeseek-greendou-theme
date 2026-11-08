@@ -1,0 +1,6 @@
+/* NodeSeek preset: background glass v1.0.0
+   Mountain background behind frosted panels. Background must load before glass. */
+@import url("../themes/eye-care.css");
+@import url("../modules/mobile.css");
+@import url("../modules/background.css");
+@import url("../modules/glass.css");

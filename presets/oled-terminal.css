@@ -1,0 +1,5 @@
+/* NodeSeek preset: OLED terminal v1.0.0
+   Black terminal look with the terminal IP card. */
+@import url("../themes/oled-black.css");
+@import url("../modules/code-tables.css");
+@import url("../modules/ip-card.css");

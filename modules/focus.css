@@ -1,0 +1,45 @@
+/* NodeSeek focus module v1.0.0
+   Stackable with any NodeSeek theme. Hides avatars and secondary post metadata
+   so titles and body text carry the page. Author, time, comment counts,
+   category navigation and every fixed panel stay untouched.
+   Works on desktop and mobile; no colors or sizes are changed. */
+
+/* Home and category rows: drop the avatar. */
+body .post-list-item .avatar-normal{
+  display:none!important;
+}
+
+/* ...and the empty link wrapper the avatar column leaves behind. */
+body .post-list-item>a:has(>.avatar-normal){
+  display:none!important;
+}
+
+/* Close the gutter the avatar column reserved. The id-scoped selector keeps
+   the reset winning when compact.css is stacked on top of this file. */
+body #nsk-body-left .post-list-item .post-list-content,
+body .post-list-item .post-list-content{
+  padding-left:0!important;
+  margin-left:0!important;
+}
+
+/* Topic bodies and comments: the avatar wrapper goes, its text metadata stays. */
+body .content-item .avatar-wrapper{
+  display:none!important;
+}
+
+/* Secondary list metadata: views, last commenter and last comment time. */
+body .post-info :is(.info-views,.info-last-commenter,.info-last-comment-time,.post-category){
+  display:none!important;
+}
+
+/* Signatures sit outside the conversation itself. */
+body .signature{
+  display:none!important;
+}
+
+/* With the avatar gone, let the text block take the whole row. */
+body .post-list-item .post-list-content{
+  flex:1 1 auto!important;
+  width:auto!important;
+  min-width:0!important;
+}

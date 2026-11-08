@@ -1,0 +1,23 @@
+/* NodeSeek CJK font stacks module v1.0.0
+   Stackable with any NodeSeek theme. Optional local-font typography: a UI face
+   for chrome and a serif face for long-form reading. No imports, no external
+   fonts, and no font-size or line-height changes.
+   Icons, images and buttons are deliberately never targeted. */
+
+:root{
+  --nsk-font-ui:"PingFang SC","Microsoft YaHei","Noto Sans SC","Source Han Sans SC",sans-serif;
+  --nsk-font-reading:"Noto Serif SC","Songti SC",SimSun,serif;
+}
+
+/* UI surfaces: post titles, list metadata, panels and profile cards. */
+body #nsk-frame .post-title,
+body .post-info,
+body .nsk-panel,
+body .user-card{
+  font-family:var(--nsk-font-ui)!important;
+}
+
+/* Reading surfaces: article and comment bodies. */
+body .post-content{
+  font-family:var(--nsk-font-reading)!important;
+}

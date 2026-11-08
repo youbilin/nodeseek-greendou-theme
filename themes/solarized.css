@@ -1,0 +1,19 @@
+/* NodeSeek Solarized theme v1.0.0
+   Ethan Schoonover's Solarized palette for NodeSeek, light and dark.
+   Built on eye-care.css, imported below as its structural base.
+   Mutually exclusive with eye-care, OLED and high-contrast: enable only this file.
+   Layout is untouched - only the token set is restated per mode. */
+@import url("./eye-care.css");
+@import url("../modules/mobile.css");
+
+/* Light: base3 canvas, base2 surfaces, base00 body ink, blue links. */
+:root,body{--ns-page:#fdf6e3;--ns-card:#eee8d5;--ns-sub:#e6dfc9;--ns-text:#657b83;--ns-title:#586e75;--ns-muted:#93a1a1;--ns-link:#268bd2;--ns-border:#d6cfb8;--ns-active:#e6dfc9;--ns-hover:#f0e9d6;--ns-read:#93a1a1;--ns-bubble:#eee8d5;--ns-mine:#e0d8c0;--ns-accent:#268bd2;--ns-risk-bg:#f5e6c8;--ns-border-soft:rgba(101,123,131,.10);--ns-border-soft-2:rgba(101,123,131,.18);--ns-hover-soft:rgba(38,139,210,.06);--ns-shadow-notice:0 1px 3px rgba(88,110,117,.08);--ns-shadow-message:0 1px 3px rgba(88,110,117,.08);--ns-shadow-panel:0 1px 3px rgba(88,110,117,.08);--ns-shadow-button:0 1px 2px rgba(88,110,117,.08);--ns-shadow-search:0 4px 16px rgba(88,110,117,.14);--ns-shadow-right:0 1px 3px rgba(88,110,117,.08);--ns-shadow-user:0 4px 14px rgba(88,110,117,.16);--ns-shadow-main:0 1px 3px rgba(88,110,117,.08);--ns-shadow-card:0 1px 3px rgba(88,110,117,.08);color-scheme:light}
+
+/* Dark: base03 canvas, base02 surfaces, base1 body ink, cyan links. */
+body.dark-layout,html:has(body.dark-layout){--ns-page:#002b36;--ns-card:#073642;--ns-sub:#0a3f4c;--ns-text:#93a1a1;--ns-title:#eee8d5;--ns-muted:#657b83;--ns-link:#2aa198;--ns-border:#1a4a56;--ns-active:#0e4a58;--ns-hover:#0a3f4c;--ns-read:#657b83;--ns-bubble:#073642;--ns-mine:#0e4a58;--ns-accent:#268bd2;--ns-risk-bg:#0a3f4c;--ns-border-soft:rgba(147,161,161,.10);--ns-border-soft-2:rgba(147,161,161,.18);--ns-hover-soft:rgba(42,161,152,.10);--ns-shadow-notice:0 1px 3px rgba(0,0,0,.28);--ns-shadow-message:0 1px 3px rgba(0,0,0,.28);--ns-shadow-panel:0 1px 3px rgba(0,0,0,.28);--ns-shadow-button:0 1px 2px rgba(0,0,0,.28);--ns-shadow-search:0 4px 16px rgba(0,0,0,.40);--ns-shadow-right:0 1px 3px rgba(0,0,0,.28);--ns-shadow-user:0 4px 14px rgba(0,0,0,.45);--ns-shadow-main:0 1px 3px rgba(0,0,0,.28);--ns-shadow-card:0 1px 3px rgba(0,0,0,.28);color-scheme:dark}
+
+/* Avatars keep their true colors instead of the base theme's warm tint. */
+body img.avatar,body img.avatar-normal,body #nsk-frame :is(img.avatar,img.avatar-normal){filter:none!important}
+
+/* Accent-filled buttons carry page ink on both palettes. */
+body #nsk-frame :is(.btn.btn,.glass-search-btn.glass-search-btn),body .glass-card .glass-search-btn,body .nsk-notification .btn{color:var(--ns-page)!important}

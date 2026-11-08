@@ -1,5 +1,14 @@
 # Changelog
 
+## v1.8.0 — 2026-11-09
+
+- 新增主题：`terminal`（终端绿）、`sepia`（暖纸）、`nord`、`solarized`（亮/暗）。
+- 新增模块：`focus`（专注）、`fonts`（本地 CJK 字体栈）、`progress`（Chromium 阅读进度条）、`full-width`（桌面单栏）。
+- 新增 `presets/`：护眼阅读、OLED 终端、背景玻璃、暖纸阅读、终端专注、Solarized 阅读。
+- 高对比主题增加 `prefers-contrast: more` 和 `forced-colors: active` 适配。
+- 新增独立用户脚本仓库：可点击 IP 卡片、快捷键、链接预览、本地联系人列表。
+- eye-care 文件头同步到 v1.8.0；样式行为不变。
+
 ## v1.7.2 — 2026-11-09
 
 - `background.css` 默认背景换成指定的山景 WebP（CDN，约 650KB）；仍可用 `--nsk-bg-image` 覆盖。
