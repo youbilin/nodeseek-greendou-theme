@@ -47,3 +47,34 @@ body .user-card{color:var(--ns-text)!important;background:var(--ns-card)!importa
 @media(max-width:1100px){body #nsk-body{background:transparent!important}body #nsk-body-left{background:var(--ns-card)!important;color:var(--ns-text)!important;border-color:var(--ns-border)!important}body #nsk-right-panel-container,body #nsk-right-panel-container .user-card{background:var(--ns-card)!important;color:var(--ns-text)!important;border-color:var(--ns-border)!important}body #nsk-frame :is(.nsk-panel,.selector,.head-container,.card-block,.discussion-wrapper,.discussion-item,.comment-wrapper,.collection-wrapper,.talk-list){background:var(--ns-card)!important;color:var(--ns-text)!important;border-color:var(--ns-border)!important}body .nsk-notification:has(.message-wrapper){background:var(--ns-card)!important;color:var(--ns-text)!important}}
 /* Remove empty route rows without changing notification controls. */
 body .nsk-notification .app-switch:not(:has(.app-title)){display:none!important;height:0!important;min-height:0!important;margin:0!important;padding:0!important;border:0!important}body .nsk-notification>div:has(>.app-switch:not(:has(.app-title))){margin-top:0!important;padding-top:0!important;border-top:0!important}
+
+/* Desktop header stays visible. The real home link is reused as the first
+   button in the utility tray; its original logo is rendered in the header. */
+@media(min-width:1101px){
+  body>header{position:fixed!important;inset:0 0 auto!important;height:48px!important;min-height:48px!important;background:var(--ns-sub)!important;border-bottom:1px solid var(--ns-border)!important;pointer-events:auto!important;z-index:1400!important}
+  body #nsk-head{display:flex!important;align-items:center!important;gap:8px!important;width:calc(100% - 24px)!important;max-width:1320px!important;height:48px!important;margin:auto!important;padding:0!important;box-sizing:border-box!important;position:relative!important;z-index:1401!important}
+  body #nsk-head .site-title{display:block!important;position:relative!important;flex:0 0 auto!important;width:auto!important;height:48px!important;margin:0!important;font-size:16px!important;overflow:visible!important}
+  body #nsk-head .site-title::before{content:none!important;display:none!important}
+  body #nsk-head .site-title>a[href="/"]{display:flex!important;position:static!important;width:auto!important;height:48px!important;align-items:center!important;box-sizing:border-box!important;margin:0!important;padding:0!important;color:var(--ns-title)!important;background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important;z-index:auto!important;pointer-events:auto!important;font-size:16px!important}
+  body #nsk-head .site-title>a[href="/"] :is(img,.title-text,.beta-icon){display:initial!important}
+  body #nsk-head .site-title>a[href="/"]::after{content:none!important}
+  body #nsk-head .nav-menu{display:flex!important;align-items:center!important;flex:1 1 auto!important;min-width:0!important;width:auto!important;max-width:none!important;height:48px!important;margin:0!important;padding:0!important;overflow:hidden!important;list-style:none!important}
+  body #nsk-head .nav-menu li{display:list-item!important;flex:0 0 auto!important;list-style:none!important}
+  body #nsk-head .nav-menu a{display:block!important;padding:5px 7px!important;white-space:nowrap!important;font-size:14px!important}
+  body #nsk-head .history-dropdown-on{display:none!important}
+  body #nsk-frame{margin-top:48px!important}
+  body #nsk-frame #nsk-left-panel-container .category-list ul{padding-top:0!important}
+  body #nsk-frame #nsk-left-panel-container::before{content:"\5168\90e8";display:flex!important;position:absolute!important;left:35px!important;bottom:-41px!important;width:48px!important;height:32px!important;align-items:center!important;justify-content:center!important;box-sizing:border-box!important;color:var(--ns-title)!important;background:var(--ns-active)!important;border:1px solid var(--ns-border)!important;border-radius:8px!important;font-size:13px!important;line-height:1!important;white-space:nowrap!important;z-index:1204!important;pointer-events:auto!important;cursor:pointer!important}
+  body #nsk-frame #nsk-left-panel-container::after{left:-1px!important;right:-1px!important;bottom:-48px!important;height:46px!important}
+  body #nsk-right-panel-container .new-discussion{right:108px!important;width:72px!important;min-width:72px!important;max-width:72px!important;height:32px!important;min-height:32px!important;margin-top:8px!important;display:flex!important;align-items:center!important;justify-content:center!important;gap:4px!important;padding:0 8px!important;visibility:visible!important;opacity:1!important;color:var(--ns-text)!important;background:var(--ns-active)!important;border:1px solid var(--ns-border)!important;border-radius:8px!important;white-space:nowrap!important}
+  body #nsk-right-panel-container .new-discussion span{display:inline!important;visibility:visible!important;opacity:1!important;color:var(--ns-text)!important;font-size:13px!important;line-height:1!important}
+  body #nsk-right-panel-container .new-discussion svg{display:block!important;width:15px!important;height:15px!important;margin:0!important;color:var(--ns-text)!important}
+  body #nsk-head .search-box:not(:has(a[href="#search"])),body #nsk-head a[href="#search"],body a[href="#search"]{top:anchor(--ns-category bottom,620px)!important;right:68px!important;width:32px!important;min-width:32px!important;height:32px!important;margin-top:8px!important}
+  body #nsk-head .color-theme-switcher{top:anchor(--ns-category bottom,620px)!important;right:28px!important;width:32px!important;min-width:32px!important;height:32px!important;margin-top:8px!important}
+}
+/* Post media should stay visible and contained without creating a page-wide
+   blocking layer while images decode or lazy-load. */
+body #nsk-frame :is(.post-content,.post-content-inner,.markdown-body,.topic-content,.discussion-content) img{display:block!important;visibility:visible!important;opacity:1!important;max-width:100%!important;width:auto!important;height:auto!important;object-fit:contain!important;pointer-events:auto!important}
+body #nsk-frame :is(.post-content,.post-content-inner,.markdown-body,.topic-content,.discussion-content){overflow:visible!important;contain:none!important;content-visibility:visible!important}
+/* Keep the fast navigation group on the left with a small breathing gap. */
+body #fast-nav-button-group{left:12px!important;right:auto!important;margin-left:0!important}
