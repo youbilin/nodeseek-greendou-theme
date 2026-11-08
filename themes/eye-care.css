@@ -77,7 +77,7 @@ body #nsk-head #search-site2 {width:100%!important;box-sizing:border-box!importa
 body #nsk-head #search-site2::placeholder {color:var(--ns-muted)!important}
 body #nsk-head :is(.history-dropdown-on,.color-theme-switcher) {display:flex!important;align-items:center!important;justify-content:center!important;flex:0 0 32px!important;width:32px!important;height:32px!important;margin:0!important;color:var(--ns-text)!important;background:var(--ns-active)!important;border:1px solid var(--ns-border)!important;border-radius:8px!important;cursor:pointer}
 body #nsk-head .color-theme-switcher {anchor-name:--ns-theme}
-body #nsk-frame {margin-top:48px!important}
+body #nsk-frame {position:relative!important;z-index:1302!important;margin-top:48px!important}
 
 /* Append the remaining categories after the native navigation on wide screens. */
 @supports (position-anchor:--ns-nav) {
