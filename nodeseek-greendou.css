@@ -1,18 +1,18 @@
 /* NodeSeek mung-bean eye-care theme. */
 :root,body {
-  --ns-page:#e8f0e6;
-  --ns-card:#f2f6f0;
-  --ns-sub:#e6efe2;
-  --ns-text:#344139;
-  --ns-title:#2c3830;
-  --ns-muted:#718276;
-  --ns-link:#3f6a4c;
-  --ns-border:#d1dfcf;
-  --ns-active:#dce8d8;
-  --ns-hover:#eaf0e6;
-  --ns-read:#7a8c80;
-  --ns-bubble:#e7eee3;
-  --ns-mine:#cfe3ca;
+  --ns-page:#dfeadf;
+  --ns-card:#e7f0e4;
+  --ns-sub:#d9e7d8;
+  --ns-text:#2f4034;
+  --ns-title:#263a2c;
+  --ns-muted:#687d6d;
+  --ns-link:#356b48;
+  --ns-border:#c5d8c4;
+  --ns-active:#cfe2cc;
+  --ns-hover:#d5e6d3;
+  --ns-read:#708675;
+  --ns-bubble:#dce9da;
+  --ns-mine:#c6dfc2;
   --ns-head-r:max(12px,calc((100vw - 1320px)/2 + 12px));
   color-scheme:light;
 }
@@ -49,13 +49,16 @@ body.dark-layout {
 html,body {background:var(--ns-page)!important;color:var(--ns-text)!important}
 body > footer {display:none!important}
 body #nsk-frame,body #nsk-body,body #nsk-frame-block {background:var(--ns-page)!important;color:var(--ns-text)!important}
-body #nsk-frame :is(h1,h2,h3,h4,h5,h6,p,span,div,li,label,small,strong,em,td,th,button) {color:var(--ns-text)!important}
+body #nsk-frame :is(h1,h2,h3,h4,h5,h6,p,span,div,li,label,small,strong,em,td,th,button,a) {color:var(--ns-text)!important}
 body #nsk-frame a {color:var(--ns-link)!important}
 body #nsk-frame a:hover {color:var(--ns-title)!important}
 body #nsk-frame :is(input,textarea,select,pre,code,blockquote) {background:var(--ns-sub)!important;color:var(--ns-text)!important;border-color:var(--ns-border)!important}
 body #nsk-frame :is(.msg-time,time,.post-info,.post-info *,[class*="time"],[class*="count"],.meta,.meta *) {color:var(--ns-muted)!important}
 body .avatar-normal,body .avatar {border-radius:50%!important;object-fit:cover!important}
 body #nsk-frame :is(.nsk-panel,.user-card,.selector,.head-container,.card-block,.discussion-wrapper,.discussion-item,.comment-wrapper,.collection-wrapper,.nsk-notification,.talk-list,.message-wrapper,.message-input,.search-hint) {background:var(--ns-card)!important;color:var(--ns-text)!important;border-color:var(--ns-border)!important}
+body .nsk-notification,body .user-card,body #nsk-right-panel-container,body .nsk-container > :is(.head-container,.selector,.card-block) {background:var(--ns-sub)!important;color:var(--ns-text)!important;border-color:var(--ns-border)!important}
+body .nsk-notification :is(h1,h2,h3,h4,h5,h6,p,span,div,li,label,small,strong,em,td,th,button) {color:var(--ns-text)!important}
+body .nsk-notification a {color:var(--ns-link)!important}
 body #nsk-frame :is(.btn,.app-title.router-link-active,.select-item.router-link-active,.pager-cur) {background:var(--ns-active)!important;color:var(--ns-text)!important;border-color:var(--ns-border)!important}
 ::selection {background:var(--ns-active);color:var(--ns-text)}
 
@@ -101,6 +104,9 @@ body #nsk-frame {margin-top:48px!important}
 body #nsk-right-panel-container > div:has(>.new-discussion) {display:contents!important}
 body #nsk-right-panel-container .new-discussion {display:flex!important;position:fixed!important;position-anchor:none!important;top:8px!important;right:var(--ns-head-r)!important;left:auto!important;bottom:auto!important;transform:none!important;align-items:center!important;justify-content:center!important;width:max-content!important;min-width:65px!important;height:32px!important;margin:0!important;padding:0 12px!important;z-index:1310!important;visibility:visible!important;opacity:1!important;color:var(--ns-text)!important;background:var(--ns-active)!important;border:1px solid var(--ns-border)!important;border-radius:8px!important;white-space:nowrap!important}
 body #nsk-right-panel-container .new-discussion:hover {background:var(--ns-hover)!important}
+@media(min-width:1101px) {
+  body #nsk-right-panel-container .new-discussion {right:calc(var(--ns-head-r) + 145px + 32px + 32px + 20px)!important}
+}
 
 /* Profile cards and profile pages. */
 body .user-card {color:var(--ns-text)!important;background:var(--ns-card)!important;border:1px solid var(--ns-border)!important;border-radius:12px!important;overflow:hidden!important}
@@ -113,10 +119,10 @@ body .user-card .avatar-normal {width:64px!important;height:64px!important}
   body #nsk-right-panel-container .user-card .user-stat {display:grid!important;grid-template-columns:1fr 1fr!important;gap:8px!important;margin:0!important;padding:10px!important;background:var(--ns-card)!important;border-top:1px solid var(--ns-border)!important}
 }
 body .nsk-container:not(.nsk-notification) {background:transparent!important;color:var(--ns-text)!important}
-body .nsk-container > :is(.head-container,.selector) {background:var(--ns-card)!important;color:var(--ns-text)!important;border-color:var(--ns-border)!important;border-radius:14px!important;box-shadow:0 3px 12px rgba(20,41,28,.08)!important}
+body .nsk-container > :is(.head-container,.selector) {background:var(--ns-sub)!important;color:var(--ns-text)!important;border-color:var(--ns-border)!important;border-radius:14px!important;box-shadow:0 3px 12px rgba(20,41,28,.08)!important}
 body .nsk-container > .selector {padding:14px 18px!important}
 body .nsk-container > .selector > .card-block {display:grid!important;grid-template-columns:repeat(auto-fit,minmax(145px,1fr))!important;gap:10px!important;margin:12px 0 18px!important;padding:0!important;background:transparent!important}
-body .nsk-container > .selector > .card-block > .card-item {min-height:76px!important;padding:14px!important;background:var(--ns-sub)!important;color:var(--ns-text)!important;border:1px solid var(--ns-border)!important;border-radius:10px!important;box-shadow:none!important}
+body .nsk-container > .selector > .card-block > .card-item {min-height:76px!important;padding:14px!important;background:var(--ns-card)!important;color:var(--ns-text)!important;border:1px solid var(--ns-border)!important;border-radius:10px!important;box-shadow:none!important}
 body #nsk-frame #nsk-body-left {background:transparent!important;color:var(--ns-text)!important;border:0!important;box-shadow:none!important}
 body #nsk-frame #nsk-body-left :is(.post-title,.post-title a) {color:var(--ns-title)!important}
 body #nsk-frame #nsk-body-left .post-title a:visited {color:var(--ns-read)!important}
@@ -182,7 +188,7 @@ body .nsk-notification:has(.message-wrapper) .message-input > div:last-child > s
 body .nsk-notification:has(.message-wrapper) .message-input .vue-js-switch {display:inline-flex!important;align-items:center!important;margin:0 auto 0 0!important}
 body .nsk-notification:has(.message-wrapper) .message-input .btn {display:block!important;float:none!important;margin:0 0 0 auto!important;padding:7px 16px!important;border-radius:8px!important}
 
-/* Mobile: preserve the native header, hide every category rail, and prevent overlap. */
+/* Mobile: keep categories in a second row of the native top bar; hide the old floating rail. */
 @media(max-width:1100px) {
   body #nsk-frame #nsk-body {display:block!important}
   body #nsk-frame #nsk-body-left {width:auto!important;max-width:none!important;margin:0!important;background:transparent!important}
@@ -190,16 +196,19 @@ body .nsk-notification:has(.message-wrapper) .message-input .btn {display:block!
   body #nsk-frame #nsk-right-panel-container > .user-card,body #nsk-frame #nsk-right-panel-container > .nsk-panel,body #nsk-frame #nsk-right-panel-container > div:not(:has(>.new-discussion)) {display:none!important}
 }
 @media(max-width:760px) {
-  body > header {display:block!important;height:48px!important;z-index:1300!important}
+  body > header {display:block!important;height:84px!important;z-index:1300!important}
   body #nsk-head {display:flex!important;width:calc(100% - 16px)!important;height:48px!important;gap:0!important;padding:0 4px!important}
   body #nsk-head .site-title {width:28px!important;flex:0 0 28px!important;font-size:0!important}
   body #nsk-head .site-title img {width:28px!important;height:28px!important}
-  body #nsk-head .nav-menu {display:none!important}
+  body #nsk-head .nav-menu {display:flex!important;position:fixed!important;top:48px!important;left:8px!important;right:8px!important;width:auto!important;max-width:none!important;height:36px!important;margin:0!important;padding:0!important;overflow-x:auto!important;overflow-y:hidden!important;align-items:center!important;background:var(--ns-card)!important;border-top:1px solid var(--ns-border)!important;border-bottom:1px solid var(--ns-border)!important;z-index:1305!important;scrollbar-width:none!important}
+  body #nsk-head .nav-menu li {display:list-item!important;flex:0 0 auto!important;height:36px!important}
+  body #nsk-head .nav-menu a {display:flex!important;align-items:center!important;height:34px!important;padding:0 9px!important;font-size:13px!important}
   body #nsk-head .search-box {position:fixed!important;top:8px!important;right:126px!important;display:flex!important;align-items:center!important;justify-content:center!important;width:32px!important;height:32px!important;margin:0!important;padding:0!important;background:var(--ns-active)!important;border:1px solid var(--ns-border)!important;border-radius:8px!important;z-index:1310!important}
   body #nsk-head .search-box #search-site2 {display:none!important}
   body #nsk-head .search-box .search-icon {display:block!important;width:17px!important;height:17px!important;color:var(--ns-text)!important}
   body #nsk-head .color-theme-switcher {position:fixed!important;top:8px!important;right:10px!important;width:32px!important;height:32px!important;margin:0!important;z-index:1310!important}
   body #nsk-left-panel-container,body #nsk-right-panel-container .category-list,body #nsk-frame #nsk-left-panel-container,body #nsk-frame #nsk-right-panel-container > .category-list {display:none!important;visibility:hidden!important}
+  body #nsk-frame {margin-top:84px!important}
   body #nsk-right-panel-container > div.user-card:not(:has(>.new-discussion)) {display:block!important;position:fixed!important;top:0!important;right:0!important;width:0!important;height:0!important;overflow:visible!important;z-index:1309!important;background:transparent!important;border:0!important}
   body #nsk-frame #nsk-right-panel-container > div.user-card:not(:has(>.new-discussion)) {display:block!important}
   body #nsk-right-panel-container > div.user-card .user-head {display:none!important}
@@ -218,3 +227,9 @@ body .nsk-notification:has(.message-wrapper) .message-input .btn {display:block!
   body .nsk-notification .reply-item > div:nth-child(2) {flex-wrap:wrap!important}
   body .nsk-notification .reply-item > div:nth-child(2) > span {margin-left:0!important}
 }
+
+/* Final surface and text pass: keep route-specific panels visibly green and avoid inline black text. */
+body > header {background-color:var(--ns-sub)!important;background-image:none!important}
+body .user-card,body #nsk-right-panel-container,body .nsk-notification,body .nsk-notification:has(.reply-container),body .nsk-notification:has(.message-wrapper) {background-color:var(--ns-sub)!important;color:var(--ns-text)!important}
+body .nsk-notification :is(h1,h2,h3,h4,h5,h6,p,span,div,li,label,small,strong,em,td,th,button) {color:var(--ns-text)!important}
+body .nsk-notification a {color:var(--ns-link)!important}
