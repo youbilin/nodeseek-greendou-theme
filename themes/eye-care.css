@@ -246,7 +246,7 @@ body .nsk-notification a {color:var(--ns-link)!important}
 body #nsk-right-panel-container {max-height:none!important;overflow:visible!important;overflow-y:visible!important}
 body #nsk-frame #nsk-right-panel-container {max-height:none!important;overflow:visible!important;overflow-y:visible!important}
 @media(min-width:1101px) {
-  body #nsk-frame #nsk-right-panel-container {position:fixed!important;top:56px!important;right:var(--ns-head-r)!important;left:auto!important;width:260px!important;max-width:260px!important;max-height:calc(100vh - 72px)!important;overflow:clip!important;z-index:1200!important;anchor-name:--ns-profile!important}
+  body #nsk-frame #nsk-right-panel-container {position:fixed!important;top:56px!important;right:var(--ns-head-r)!important;left:auto!important;width:260px!important;max-width:260px!important;box-sizing:border-box!important;max-height:calc(100vh - 72px)!important;overflow:clip!important;z-index:1200!important;anchor-name:--ns-profile!important}
 }
 body #nsk-right-panel-container > .nsk-panel.quick-access,
 body #nsk-right-panel-container .nsk-panel.quick-access {display:none!important}
@@ -285,7 +285,7 @@ body .nsk-notification:has(.message-wrapper) .message-item:has(> [style*="end"])
 /* Desktop categories and post action sit below the fixed profile card. CSS cannot reparent
    the original sibling node, so this uses the card's stable desktop footprint as its dock. */
 @media(min-width:1101px) {
-  body #nsk-left-panel-container {position:fixed!important;top:354px!important;left:auto!important;right:var(--ns-head-r)!important;width:260px!important;max-width:260px!important;height:auto!important;margin:0!important;padding:6px 8px!important;overflow:visible!important;background:var(--ns-sub)!important;border:1px solid var(--ns-border)!important;border-radius:0 0 14px 14px!important;box-shadow:0 3px 10px rgba(35,54,39,.08)!important;z-index:1201!important}
+  body #nsk-left-panel-container {position:fixed!important;top:354px!important;left:auto!important;right:var(--ns-head-r)!important;width:260px!important;max-width:260px!important;box-sizing:border-box!important;height:auto!important;margin:0!important;padding:6px 8px!important;overflow:visible!important;background:var(--ns-sub)!important;border:1px solid var(--ns-border)!important;border-radius:0 0 14px 14px!important;box-shadow:0 3px 10px rgba(35,54,39,.08)!important;z-index:1201!important}
   body #nsk-left-panel-container .category-list {width:100%!important}
   body #nsk-left-panel-container .category-list ul {display:flex!important;flex-wrap:wrap!important;gap:2px!important;width:100%!important;height:auto!important;padding:0 68px 0 0!important;box-sizing:border-box!important}
   body #nsk-left-panel-container .category-list li {height:30px!important}
