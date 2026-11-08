@@ -1,19 +1,15 @@
-# NodeSeek Mung Bean Theme
+﻿# NodeSeek Mung Bean Theme
 
-Light mung-bean-green colors, compatible dark-mode colors, message and profile-page fixes, and a compact header layout for NodeSeek.
+A site-wide mung-bean-green theme with dark-mode compatibility, a native CSS-anchor category strip, profile-card refinements, and a more spacious private-message layout.
 
-## Custom CSS
+## Install
 
-Import the stylesheet from NodeSeek Settings -> Extension -> Custom CSS:
+In NodeSeek Settings → Extension → Custom CSS, paste this import line:
 
 ```css
-@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.0.0/nodeseek-greendou.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.1.0/nodeseek-greendou.css");
 ```
 
-## All categories in the native header
+The top navigation reuses the existing left category list with CSS Anchor Positioning. No extra links or userscript are installed. On narrower screens the appended categories are hidden to keep the native header usable.
 
-CSS cannot create links. Install `nodeseek-navigation.user.js` with a userscript manager such as Tampermonkey to add the complete category list, including the members-only category, to `#nsk-head .nav-menu`.
-
-## Optional promotion hiding
-
-Append the contents of `nodeseek-hide-promotions.css` to your custom CSS if you also want to hide the promotion images.
+The stylesheet supports NodeSeek's light and dark layouts. Private-message styling is limited to the existing conversation DOM; CSS cannot add a contact-list column, change send-key behavior, or generate link-preview cards.
