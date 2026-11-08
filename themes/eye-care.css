@@ -234,6 +234,33 @@ body .user-card,body #nsk-right-panel-container,body .nsk-notification,body .nsk
 body .nsk-notification :is(h1,h2,h3,h4,h5,h6,p,span,div,li,label,small,strong,em,td,th,button) {color:var(--ns-text)!important}
 body .nsk-notification a {color:var(--ns-link)!important}
 
+/* Final desktop header alignment: the appended links share the native header surface. */
+@media(min-width:1101px) {
+  body #nsk-left-panel-container {background:transparent!important;border:0!important;box-shadow:none!important;top:0!important}
+  body #nsk-left-panel-container .category-list ul {height:48px!important}
+  body #nsk-left-panel-container .category-list a {height:40px!important;color:var(--ns-text)!important;background:transparent!important}
+  body #nsk-right-panel-container .new-discussion {z-index:1304!important}
+}
+
+/* The profile column is a card, not a nested scroll viewport. */
+body #nsk-right-panel-container {max-height:none!important;overflow:visible!important;overflow-y:visible!important}
+body #nsk-right-panel-container > .nsk-panel.quick-access,
+body #nsk-right-panel-container .nsk-panel.quick-access {display:none!important}
+body #nsk-right-panel-container .user-card .menu > div > :is(a:empty,button:empty) {display:none!important}
+
+/* Equal notification tabs, including the active route, prevent a resize flash. */
+body .nsk-notification > .app-switch .app-title {box-sizing:border-box!important;display:inline-flex!important;flex:0 0 96px!important;width:96px!important;min-width:96px!important;max-width:96px!important;height:34px!important;min-height:34px!important;padding:7px 8px!important;line-height:20px!important;align-items:center!important;justify-content:center!important}
+
+/* Keep every message column attached to its avatar. */
+body .nsk-notification:has(.message-wrapper) .message-item {display:flex!important;align-items:flex-start!important;gap:8px!important;width:100%!important;margin:10px 0!important}
+body .nsk-notification:has(.message-wrapper) .message-item > :first-child {flex:0 0 36px!important;width:36px!important;min-width:36px!important}
+body .nsk-notification:has(.message-wrapper) .message-item .avatar {display:block!important;flex:0 0 36px!important;width:36px!important;height:36px!important;margin:2px 0 0!important}
+body .nsk-notification:has(.message-wrapper) .message-item .content-column {display:flex!important;flex:0 1 auto!important;flex-direction:column!important;align-items:flex-start!important;min-width:0!important;max-width:calc(100% - 44px)!important}
+body .nsk-notification:has(.message-wrapper) .message-item:has(.content-column[style*="right"]),
+body .nsk-notification:has(.message-wrapper) .message-item:has(.content-column[style*="end"]) {flex-direction:row-reverse!important}
+body .nsk-notification:has(.message-wrapper) .message-item:has(.content-column[style*="right"]) .content-column,
+body .nsk-notification:has(.message-wrapper) .message-item:has(.content-column[style*="end"]) .content-column {align-items:flex-end!important}
+
 /* Keep the appended desktop categories and post action in the same visual layer as the header. */
 @media(min-width:1101px) {
   body #nsk-left-panel-container {top:0!important;background:var(--ns-sub)!important;border-bottom:1px solid var(--ns-border)!important;z-index:1303!important}
