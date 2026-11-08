@@ -367,3 +367,7 @@ body .nsk-notification:has(.message-wrapper) .message-input :is(.CodeMirror-line
   body #nsk-right-panel-container .user-card .user-stat {grid-template-columns:1fr 1fr!important;gap:6px 12px!important;padding:12px!important}
   body #nsk-right-panel-container .user-card .stat-block > div > a {min-height:24px!important;line-height:20px!important}
 }
+
+/* Explicit IDs win over the site's .nsk-container surface defaults. */
+body #nsk-body {background:transparent!important;color:var(--ns-text)!important}
+body #nsk-body-left {background:var(--ns-card)!important;color:var(--ns-text)!important}
