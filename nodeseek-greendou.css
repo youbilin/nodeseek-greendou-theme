@@ -245,6 +245,7 @@ body .nsk-notification a {color:var(--ns-link)!important}
 /* Normalize the notification tabs so route changes do not resize the top row. */
 body .nsk-notification .app-switch .app-title {display:inline-flex!important;align-items:center!important;justify-content:center!important;box-sizing:border-box!important;height:32px!important;min-height:32px!important;line-height:20px!important;margin:0!important;padding:6px 12px!important;border:0!important;border-radius:7px!important;font-size:14px!important;white-space:nowrap!important}
 body .nsk-notification > .app-switch {height:40px!important;min-height:40px!important;align-items:center!important}
+body .nsk-notification > .app-switch .app-title {flex:0 0 84px!important;width:84px!important;min-width:84px!important}
 
 /* Cover all CodeMirror line-number variants used by the Markdown editor. */
 body .nsk-notification:has(.message-wrapper) .message-input :is(.CodeMirror-gutters,.CodeMirror-linenumbers,.CodeMirror-linenumber,.cm-gutters,.cm-lineNumbers,[class*="line-number"],[class*="lineNumber"]) {display:none!important;width:0!important;min-width:0!important}
