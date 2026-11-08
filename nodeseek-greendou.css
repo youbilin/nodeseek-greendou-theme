@@ -305,12 +305,11 @@ body .nsk-notification:has(.message-wrapper) .message-item:has(> [style*="end"])
   }
 }
 
-/* Keep the discussion editor surfaces in mung-bean green as well. */
+/* Editor surfaces stay transparent so the parent page surface remains visible; borders remain. */
+body #editor,
 body #editor-body,
-body #editor-body > div.tab-select.window_header,
-body #editor-body > div.expression,
-body #editor-body :is(.tab-select,.window_header,.expression,.editor-toolbar,.editor-content,.CodeMirror,.cm-editor,.cm-scroller) {background:var(--ns-sub)!important;color:var(--ns-text)!important;border-color:var(--ns-border)!important}
-body #editor-body :is(input,textarea,select,pre,code,[contenteditable="true"]) {background:var(--ns-card)!important;color:var(--ns-text)!important;border-color:var(--ns-border)!important}
+body #editor-body :is(.tab-select,.window_header,.expression,.editor-toolbar,.editor-content,.CodeMirror,.cm-editor,.cm-scroller) {background:transparent!important;color:var(--ns-text)!important;border-color:var(--ns-border)!important}
+body #editor-body :is(input,textarea,select,pre,code,[contenteditable="true"]) {background:transparent!important;color:var(--ns-text)!important;border-color:var(--ns-border)!important}
 
 /* Keep desktop header controls in separate, non-shrinking slots. */
 @media(min-width:761px) {
@@ -411,7 +410,7 @@ body #nsk-right-panel-container .user-card :is(.user-head,.user-stat) {backgroun
 /* Desktop utility dock: hide the native head shell while keeping only its search
    and theme controls visible in the profile-side action stack. */
 @media(min-width:761px) {
-  body > header {height:0!important;min-height:0!important;background:transparent!important;border:0!important;pointer-events:none!important}
+  body > header {height:0!important;min-height:0!important;background:transparent!important;border:0!important;pointer-events:none!important;z-index:1400!important}
   body #nsk-head {display:contents!important}
   body #nsk-head :is(.site-title,.nav-menu,.history-dropdown-on) {display:none!important}
   body #nsk-head .search-box:has(a[href="#search"]) {display:contents!important}
@@ -439,6 +438,7 @@ body img[src*="gravatar.com"],body img[src*="gravatar.org"] {display:block!impor
 /* The sorter is intentionally removed; search and theme remain as compact card actions. */
 body .sorter,body select.sorter {display:none!important;visibility:hidden!important}
 @media(min-width:761px) {
+  body > header {z-index:1400!important}
   body #nsk-head a[href="#search"],body a[href="#search"],body #nsk-head .search-box:not(:has(a[href="#search"])),body #nsk-head .color-theme-switcher {top:358px!important}
   body #nsk-head a[href="#search"],body a[href="#search"],body #nsk-head .search-box:not(:has(a[href="#search"])),body #nsk-head .color-theme-switcher {position-anchor:--ns-profile!important;top:anchor(--ns-profile bottom,358px)!important;transform:translateY(8px)!important}
   body #nsk-head a[href="#search"],body a[href="#search"],body #nsk-head .search-box:not(:has(a[href="#search"])) {right:56px!important}
@@ -448,6 +448,13 @@ body .sorter,body select.sorter {display:none!important;visibility:hidden!import
 
 /* Reuse the native home link as a real, clickable return control on space layouts. */
 @media(min-width:761px) {
-  body:has(a[href="/space/"]) #nsk-head .site-title > a[href="/"] {display:flex!important;position:fixed!important;top:14px!important;left:18px!important;align-items:center!important;justify-content:center!important;width:64px!important;height:30px!important;padding:0!important;color:var(--ns-text)!important;background:var(--ns-active)!important;border:1px solid var(--ns-border)!important;border-radius:9px!important;box-shadow:0 2px 8px rgba(35,54,39,.08)!important;z-index:1204!important;pointer-events:auto!important;font-size:0!important}
-  body:has(a[href="/space/"]) #nsk-head .site-title > a[href="/"]::after {content:"返回";font-size:13px!important;color:var(--ns-text)!important}
+  body:has(#nsk-frame .selector) #nsk-head .site-title {display:contents!important}
+  body:has(#nsk-frame .selector) #nsk-head .site-title > a[href="/"] {display:flex!important;position:fixed!important;top:14px!important;left:18px!important;align-items:center!important;justify-content:center!important;width:64px!important;height:30px!important;padding:0!important;color:var(--ns-text)!important;background:var(--ns-active)!important;border:1px solid var(--ns-border)!important;border-radius:9px!important;box-shadow:0 2px 8px rgba(35,54,39,.08)!important;z-index:1401!important;pointer-events:auto!important;font-size:0!important}
+  body:has(#nsk-frame .selector) #nsk-head .site-title > a[href="/"]::after {content:"返回";font-size:13px!important;color:var(--ns-text)!important}
+
+  body #nsk-frame #nsk-left-panel-container .category-list ul {grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:4px 0!important}
+  body #nsk-frame #nsk-left-panel-container .category-list ul::before {content:"全部分类";display:flex!important;align-items:center!important;justify-content:center!important;height:32px!important;padding:0 2px!important;color:var(--ns-title)!important;background:var(--ns-active)!important;border-radius:7px!important;font-size:13px!important;font-weight:600!important;white-space:nowrap!important}
+  body #nsk-frame #nsk-left-panel-container .category-list a {height:32px!important;line-height:32px!important;font-size:13px!important;padding:0 5px!important}
+  body #nsk-frame #nsk-left-panel-container {anchor-name:--ns-category!important}
+  body #nsk-right-panel-container .new-discussion {position-anchor:--ns-category!important;top:anchor(--ns-category bottom,620px)!important;right:12px!important}
 }
