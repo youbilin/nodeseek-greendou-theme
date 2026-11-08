@@ -388,3 +388,11 @@ body .nsk-notification .app-switch {background:transparent!important;border:0!im
 /* The card keeps its outer surface while the internal profile sections blend into it. */
 body .user-card :is(.user-head,.user-stat) {background:transparent!important;border-color:transparent!important;box-shadow:none!important}
 body #nsk-right-panel-container .user-card :is(.user-head,.user-stat) {background:transparent!important;border-color:transparent!important;box-shadow:none!important}
+
+/* Dock the post sorter with the profile actions on wide screens. */
+@media(min-width:1101px) {
+  body .sorter {position:fixed!important;top:398px!important;right:12px!important;width:260px!important;max-width:260px!important;min-height:38px!important;box-sizing:border-box!important;display:flex!important;align-items:center!important;justify-content:space-between!important;gap:8px!important;margin:0!important;padding:7px 10px!important;z-index:1201!important;color:var(--ns-text)!important;background:var(--ns-sub)!important;border:1px solid var(--ns-border)!important;border-radius:10px!important;box-shadow:0 3px 10px rgba(35,54,39,.08)!important}
+  body select.sorter {display:block!important;width:260px!important;min-height:34px!important;padding:6px 28px 6px 10px!important;color:var(--ns-text)!important;background:var(--ns-sub)!important;border:1px solid var(--ns-border)!important;border-radius:8px!important;box-shadow:0 2px 6px rgba(35,54,39,.06)!important}
+  body .sorter :is(select,button,a) {color:var(--ns-text)!important;background:var(--ns-card)!important;border:1px solid var(--ns-border)!important;border-radius:7px!important}
+  body .sorter :is(button,a) {display:inline-flex!important;align-items:center!important;justify-content:center!important;min-height:28px!important;padding:4px 9px!important}
+}
