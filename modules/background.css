@@ -1,0 +1,65 @@
+/* NodeSeek background module v1.0.0
+   Paints a custom page photo and makes the main surfaces translucent.
+   Stackable: import after a theme, e.g.
+     @import url("./themes/eye-care.css");
+     @import url("./modules/background.css");
+   Set the photo with these variables, imported after this file:
+     :root{
+       --nsk-bg-image:url("./bg.jpg");
+       --nsk-bg-overlay:rgba(16,22,18,.35);
+       --nsk-bg-surface:rgba(231,240,228,.82);
+       --nsk-bg-surface-dark:rgba(41,54,46,.84);
+     }
+   --nsk-bg-image defaults to a theme-coloured gradient. --nsk-bg-overlay
+   defaults to transparent, meaning no dim wash. The two surface tokens default to the
+   eye-care card colours at about 82% opacity and apply to light and dark layouts.
+   Pick a calm, low-contrast picture: it sits behind every word and the cards
+   above it are only about 80% opaque. Quote paths that contain spaces.
+   Local files, data: URIs and any URL you may hotlink all work; a remote URL is
+   requested by every visitor. Mobile Safari ignores background-attachment:fixed,
+   so the photo scrolls there instead of staying put.
+   Nothing is hidden, moved or re-positioned: only background paint changes. */
+:root{
+  --nsk-bg-image:linear-gradient(135deg, var(--ns-page, #dfeadf), var(--ns-sub, #d9e7d8));
+  --nsk-bg-overlay:transparent;
+  --nsk-bg-surface:color-mix(in srgb, var(--ns-card, #e7f0e4) 82%, transparent);
+  --nsk-bg-surface-dark:color-mix(in srgb, var(--ns-card, #29362e) 84%, transparent);
+}
+body.dark-layout{
+  --nsk-bg-surface:var(--nsk-bg-surface-dark);
+}
+/* Photo layer: fixed, centred, cover; the themed page colour is the fallback. */
+html,
+body{
+  background-image:linear-gradient(var(--nsk-bg-overlay),var(--nsk-bg-overlay)),var(--nsk-bg-image)!important;
+  background-position:center center!important;
+  background-size:cover!important;
+  background-repeat:no-repeat!important;
+  background-attachment:fixed!important;
+  background-color:var(--ns-page,transparent)!important;
+}
+/* The dim wash is the first background layer, so it sits above the photo but
+   below every piece of page content. */
+/* The outer shell goes clear and the cards carry the translucency, so the photo
+   shows once instead of being buried under stacked 80% layers. */
+body #nsk-frame,
+body #nsk-frame-block{
+  background:transparent!important;
+}
+body #nsk-frame #nsk-body{
+  background:transparent!important;
+  border:0!important;
+  box-shadow:none!important;
+}
+/* Major surfaces. No backdrop-filter on purpose: on an ancestor it would become
+   the containing block of the fixed side rails and shift them. */
+body #nsk-frame #nsk-body-left,
+body #nsk-frame #nsk-left-panel-container,
+body #nsk-frame #nsk-right-panel-container,
+body #nsk-frame :is(.nsk-panel,.user-card,.selector,.head-container,.discussion-wrapper,.discussion-item,.comment-wrapper,.collection-wrapper,.nsk-notification,.talk-list,.message-wrapper,.message-input,.search-hint){
+  background:rgba(231,240,228,.82)!important;
+  background:var(--nsk-bg-surface)!important;
+  border-color:var(--ns-border,rgba(127,127,127,.28))!important;
+}
+/* Only paint changes: the fixed header stays opaque and nothing is repositioned,
+   so navigation and the anchor-placed rails keep their geometry over any photo. */

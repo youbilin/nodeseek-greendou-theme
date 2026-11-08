@@ -1,29 +1,47 @@
 # 兼容性矩阵
 
-测试日期：2026-11-09。测试环境：NodeSeek 线上版，Playwright，1440×900 与 375×812，登录态；每个包在关闭站点自定义 CSS 后单独注入，另测与 eye-care 叠加。
+测试日期：2026-11-09。测试环境：NodeSeek 线上版，Playwright，1440×900 与 375×812，登录态；每个包在关闭站点自定义 CSS 后单独注入，另测与 eye-care 叠加。新主题在 Chromium 中验证了相对 `@import` 解析。
 
-## 包 × 页面
+## 包概览
 
-| 页面/区域 | eye-care | compact | reading | zen | mobile |
+| 包 | 类型 | 桌面 | 移动 | 亮/暗 | 依赖/冲突 |
 |---|---|---|---|---|---|
-| 首页 / 版块列表 | full | full | n/a | full | full |
-| 帖子详情 / 楼层 | full | full | full | full | full |
-| 搜索面板 | full | n/a | n/a | n/a | n/a |
-| 通知（@/回复） | full | n/a | n/a | full | full |
-| 私信 / 消息输入 | partial | n/a | n/a | full | full |
-| 个人主页 | full | n/a | full | full | full |
-| 发帖编辑器 | partial | n/a | n/a | n/a | full |
-| 桌面悬浮分类栏 / CSS Anchor | full | n/a | n/a | full | n/a |
-| 亮色 | full | full | full | full | full |
-| 暗色 | full | full | full | full | full |
-| 移动端 | palette only | n/a | full | full | full |
+| eye-care | 主题 | full | palette | full | 与 oled-black / high-contrast 互斥 |
+| oled-black | 主题 | full | full | 全黑 | 导入 eye-care 底座；与 eye-care / high-contrast 互斥 |
+| high-contrast | 主题 | full | full | full | 导入 eye-care 底座；与 eye-care / oled-black 互斥 |
+| compact | 模块 | full | n/a | full | 仅 `min-width:1101px`；与 mobile 媒体查询互补 |
+| reading | 模块 | full | full | full | 自动导入 code-tables；与 compact 可叠加 |
+| code-tables | 模块 | full | full | full | reading 已包含；单独使用也可 |
+| zen | 模块 | full | full | full | 与 glass 方向相反；不隐藏分类栏/锚点容器 |
+| mobile | 模块 | n/a | full | full | 仅 `max-width:1100px`；修复 375px 溢出和通知竖排 |
+| glass | 模块 | full | full | full | 避免与 zen / OLED 叠用；放最后导入 |
+| background | 模块 | full | full | full | 默认主题色渐变；设置 `--nsk-bg-image` 换图 |
+| ip-card | 模块 | full | 默认隐藏 | full | 第三方请求；CSS 无 alt 文本 |
+
+## 页面 × 主题
+
+| 页面/区域 | eye-care | oled-black | high-contrast |
+|---|---|---|---|
+| 首页 / 版块列表 | full | full | full |
+| 帖子详情 / 楼层 | full | full | full |
+| 搜索面板 | full | full | full |
+| 通知（@/回复） | full | full | full |
+| 私信 / 消息输入 | partial | full | full |
+| 个人主页 | full | full | full |
+| 发帖编辑器 | partial | full | full |
+| 桌面悬浮分类栏 / CSS Anchor | full | full | full |
+| 亮色 | full | 强制黑 | full |
+| 暗色 | full | 强制黑 | full |
+| 移动端 | palette only | full | full |
 
 说明：
 - `full` = 该包主动覆盖并实测；`partial` = 只覆盖配色/部分区域；`n/a` = 该包不涉及。
-- `eye-care` 的移动端只改配色，不改几何；需要移动布局修复请叠加 `mobile`。
+- `eye-care` 的移动端只改配色；需要移动布局修复请叠加 `mobile`。
 - `compact` 仅在 `min-width:1101px` 生效，`mobile` 仅在 `max-width:1100px` 生效，两者可同时导入。
-- `reading` 的引用块/代码块背景使用半透明中性色；叠加 eye-care 时主题的绿色底仍会生效，这是预期行为。
-- eye-care v1.5.x 单独用在 375px 通知列表时，桌面单行 flex 规则会把长标题挤成竖排；`mobile` 已修复。只装 eye-care 的用户建议同时装 `mobile`。
+- eye-care v1.5.x 单独用在 375px 通知列表时，桌面单行 flex 规则会把长标题挤成竖排；`mobile` 已修复。
+- `glass` 的 `backdrop-filter` 只加在普通面板上，绝不给 `body>header`、`#nsk-head`、`#nsk-left-panel-container`、`#nsk-right-panel-container` 加，否则 fixed/anchor 子元素会认错包含块。
+- `background` 只改背景和表面透明度，不加 `backdrop-filter`；和 `glass` 叠用时先 background 后 glass。
+- `ip-card` 在 `max-width:600px` 下 `content:none`，既隐藏卡片也跳过第三方请求。
 
 ## 选择器稳定度
 
@@ -35,11 +53,17 @@
 | `.nsk-notification` / `.message-wrapper` / `.message-input` | 中 | 通知页改版时优先检查 |
 | `#nsk-head` / `.nav-menu` / `.search-box` | 中 | 移动头部是主动重排，站点大改时先回退 mobile |
 | `#nsk-right-panel-container > div:has(>a.promotation-item)` | 中 | 依赖 `:has()`；旧浏览器忽略，不影响其他规则 |
+| `body::before` / `body::after` | 中 | background 用 before、ip-card 用 after；第三方 CSS 也可能占用，冲突时换选择器 |
 
 ## 回归检查清单
 
-1. 1440×900 首页：无横向滚动，列表行高约 45–46px（compact）。
-2. 1440×900 帖子页：正文 15px/1.75，h2 有下边框，代码/表格/图片不溢出（reading）。
+1. 1440×900 首页：无横向滚动，列表行高约 45–46px（compact），页脚/广告/轮播按 zen 配置隐藏。
+2. 1440×900 帖子页：正文 15px/1.75，h2 有下边框，代码/表格/图片不溢出（reading + code-tables）。
 3. 375×812 首页：`documentElement.scrollWidth <= innerWidth`，头部两行，分类可横滑（mobile）。
-4. 通知/私信：消息气泡、输入框、Markdown 工具栏不被 mobile 改坏。
+4. 通知/私信：消息气泡、输入框、Markdown 工具栏不被 mobile 改坏，通知标题不竖排。
 5. 暗色模式：切换 `body.dark-layout` 后，模块不产生硬编码浅色背景。
+6. 主题互斥：eye-care / oled-black / high-contrast 只启用一个；OLED 按钮文字对比度 ≥ 4.5:1。
+7. 高对比：正文和链接在亮/暗两种模式下保持可读，焦点环可见。
+8. 玻璃：header、左右 fixed 侧栏的 `backdrop-filter` 必须为 `none`。
+9. 背景：默认渐变生效；换成照片后卡片半透明且正文可读。
+10. IP 卡片：桌面右下角显示 240×113；375px 下不生成伪元素、不发起第三方请求。

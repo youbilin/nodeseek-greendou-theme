@@ -1,0 +1,52 @@
+/* NodeSeek visitor IP card module v1.0.0
+   OPT-IN AND THIRD-PARTY. This file paints https://my.ippure.com/v1/card as a
+   CSS background image. Once it is loaded, every visitor's browser requests that
+   third-party endpoint, so the operator of my.ippure.com sees the visitor's IP
+   address (plus the usual user-agent and referrer), and the returned card shows
+   that visitor their own public IP on screen. Enable it only where visitors have
+   been told about it; it is not something a theme should turn on for them.
+   A CSS background is not an <img>: no alt text, no caption, no DOM node, no
+   right-click or save-as, and it is silent to screen readers. If the card has to
+   be accessible, publish a real <img alt="..."> instead of this module. */
+:root{
+  --nsk-ip-card:url("https://my.ippure.com/v1/card");
+  --nsk-ip-width:240px;
+  --nsk-ip-height:113px;
+  --nsk-ip-offset-x:12px;   /* gap from the right edge */
+  --nsk-ip-offset-y:12px;   /* gap from the bottom edge */
+  --nsk-ip-radius:10px;
+  --nsk-ip-opacity:.95;
+  --nsk-ip-shadow:0 8px 24px rgba(0,0,0,.28);
+  --nsk-ip-bg:rgba(127,127,127,.1); /* plate shown while the card loads or fails */
+  --nsk-ip-z:2147483000;
+}
+body::after{
+  content:"";
+  position:fixed;
+  right:var(--nsk-ip-offset-x);
+  bottom:var(--nsk-ip-offset-y);
+  width:var(--nsk-ip-width);
+  height:var(--nsk-ip-height);
+  background-color:var(--nsk-ip-bg);
+  background-image:var(--nsk-ip-card);
+  background-position:center center;
+  background-size:contain;
+  background-repeat:no-repeat;
+  border-radius:var(--nsk-ip-radius);
+  box-shadow:var(--nsk-ip-shadow);
+  opacity:var(--nsk-ip-opacity);
+  pointer-events:none;
+  z-index:var(--nsk-ip-z);
+}
+/* Phones: off by default. A 240x113 card would cover content on a 390px wide
+   screen, and because no box is generated the third-party request is skipped too.
+   To opt in on phones, give the media query its own smaller card, e.g.
+     @media (max-width:600px){
+       body::after{content:"";--nsk-ip-width:150px;--nsk-ip-height:71px}
+     }
+   or just delete the rule below. */
+@media (max-width:600px){
+  body::after{
+    content:none;
+  }
+}

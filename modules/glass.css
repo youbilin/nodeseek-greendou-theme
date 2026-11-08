@@ -1,0 +1,78 @@
+/* NodeSeek glassmorphism module v1.0.0
+   Stackable glass surfaces on top of eye-care.css or NodeSeek's native colors.
+   Load after the color theme; this module changes surfaces, borders and blur only.
+   Conflicts with zen.css (it hides chrome) and OLED themes (they force pure black),
+   so keep glass last in that stack.
+   Deliberately never blurred: body>header, #nsk-head, #nsk-left-panel-container,
+   #nsk-right-panel-container - they host fixed and anchor-positioned children. */
+
+:root,body{
+  --nsk-glass-bg:rgba(250,252,248,.9);
+  --nsk-glass-bg-soft:rgba(248,250,246,.84);
+  --nsk-glass-bg-float:rgba(252,253,251,.94);
+  --nsk-glass-edge:rgba(45,70,52,.14);
+  --nsk-glass-shadow:0 8px 26px rgba(24,40,28,.12);
+  --nsk-glass-shadow-float:0 14px 34px rgba(24,40,28,.18);
+  --nsk-glass-sheen:inset 0 1px 0 rgba(255,255,255,.6);
+  --nsk-glass-blur:14px;
+  --nsk-glass-sat:1.15;
+}
+body.dark-layout{
+  --nsk-glass-bg:rgba(32,42,36,.9);
+  --nsk-glass-bg-soft:rgba(32,42,36,.84);
+  --nsk-glass-bg-float:rgba(28,37,32,.94);
+  --nsk-glass-edge:rgba(190,210,195,.16);
+  --nsk-glass-shadow:0 8px 26px rgba(0,0,0,.45);
+  --nsk-glass-shadow-float:0 14px 34px rgba(0,0,0,.55);
+  --nsk-glass-sheen:inset 0 1px 0 rgba(255,255,255,.06);
+}
+
+/* Near-opaque neutral fallback: stays readable when backdrop-filter is unsupported. */
+body #nsk-frame :is(#nsk-body-left,.nsk-panel,.selector,.head-container,.discussion-wrapper,.collection-wrapper,.message-wrapper,.user-card),
+body .nsk-notification,
+body>.user-card{
+  background:var(--nsk-glass-bg)!important;
+  border-color:var(--nsk-glass-edge)!important;
+  box-shadow:var(--nsk-glass-shadow),var(--nsk-glass-sheen)!important;
+}
+body #nsk-frame :is(.card-block,.content-item,.discussion-item,.comment-wrapper,.talk-list,.message-input){
+  background:var(--nsk-glass-bg-soft)!important;
+  border-color:var(--nsk-glass-edge)!important;
+}
+body .search-hint{
+  background:var(--nsk-glass-bg-float)!important;
+  border-color:var(--nsk-glass-edge)!important;
+  box-shadow:var(--nsk-glass-shadow-float),var(--nsk-glass-sheen)!important;
+}
+
+@supports ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+  :root,body{
+    --nsk-glass-bg:rgba(252,253,251,.58);
+    --nsk-glass-bg-soft:rgba(252,253,251,.42);
+    --nsk-glass-bg-float:rgba(253,254,252,.78);
+    --nsk-glass-sheen:inset 0 1px 0 rgba(255,255,255,.72);
+  }
+  body.dark-layout{
+    --nsk-glass-bg:rgba(36,46,40,.5);
+    --nsk-glass-bg-soft:rgba(36,46,40,.34);
+    --nsk-glass-bg-float:rgba(28,37,32,.8);
+    --nsk-glass-sheen:inset 0 1px 0 rgba(255,255,255,.08);
+  }
+  /* Panels, cards and popups. */
+  body #nsk-frame :is(#nsk-body-left,.nsk-panel,.selector,.head-container,.discussion-wrapper,.collection-wrapper,.message-wrapper,.user-card),
+  body .nsk-notification,
+  body>.user-card{
+    -webkit-backdrop-filter:blur(var(--nsk-glass-blur)) saturate(var(--nsk-glass-sat))!important;
+    backdrop-filter:blur(var(--nsk-glass-blur)) saturate(var(--nsk-glass-sat))!important;
+  }
+  /* Nested rows and inputs: lighter blur so they read as panes, not panes on panes. */
+  body #nsk-frame :is(.card-block,.content-item,.discussion-item,.comment-wrapper,.talk-list,.message-input){
+    -webkit-backdrop-filter:blur(10px) saturate(1.1)!important;
+    backdrop-filter:blur(10px) saturate(1.1)!important;
+  }
+  /* Floating search hints get a heavier frost. */
+  body .search-hint{
+    -webkit-backdrop-filter:blur(18px) saturate(1.2)!important;
+    backdrop-filter:blur(18px) saturate(1.2)!important;
+  }
+}
