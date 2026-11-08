@@ -435,3 +435,19 @@ body #nsk-frame #nsk-right-panel-container .user-card :is(.user-head,.user-stat,
 
 /* Gravatar images should remain visible and round when the remote image responds. */
 body img[src*="gravatar.com"],body img[src*="gravatar.org"] {display:block!important;visibility:visible!important;opacity:1!important;width:36px!important;height:36px!important;min-width:36px!important;object-fit:cover!important;border-radius:50%!important}
+
+/* The sorter is intentionally removed; search and theme remain as compact card actions. */
+body .sorter,body select.sorter {display:none!important;visibility:hidden!important}
+@media(min-width:761px) {
+  body #nsk-head a[href="#search"],body a[href="#search"],body #nsk-head .search-box:not(:has(a[href="#search"])),body #nsk-head .color-theme-switcher {top:358px!important}
+  body #nsk-head a[href="#search"],body a[href="#search"],body #nsk-head .search-box:not(:has(a[href="#search"])),body #nsk-head .color-theme-switcher {position-anchor:--ns-profile!important;top:anchor(--ns-profile bottom,358px)!important;transform:translateY(8px)!important}
+  body #nsk-head a[href="#search"],body a[href="#search"],body #nsk-head .search-box:not(:has(a[href="#search"])) {right:56px!important}
+  body #nsk-head .color-theme-switcher {right:20px!important}
+  body #nsk-head a[href="#search"]:hover,body a[href="#search"]:hover,body #nsk-head .color-theme-switcher:hover {transform:translateY(7px)!important}
+}
+
+/* Reuse the native home link as a real, clickable return control on space layouts. */
+@media(min-width:761px) {
+  body:has(a[href="/space/"]) #nsk-head .site-title > a[href="/"] {display:flex!important;position:fixed!important;top:14px!important;left:18px!important;align-items:center!important;justify-content:center!important;width:64px!important;height:30px!important;padding:0!important;color:var(--ns-text)!important;background:var(--ns-active)!important;border:1px solid var(--ns-border)!important;border-radius:9px!important;box-shadow:0 2px 8px rgba(35,54,39,.08)!important;z-index:1204!important;pointer-events:auto!important;font-size:0!important}
+  body:has(a[href="/space/"]) #nsk-head .site-title > a[href="/"]::after {content:"返回";font-size:13px!important;color:var(--ns-text)!important}
+}
