@@ -1,11 +1,12 @@
 # 兼容性矩阵
 
-测试日期：2026-11-09。v1.9.0 起，所有 ~themes/~、~modules/~ 文件都是**自包含、复制即用**的：主题已经拼入 eye-care 底座和 mobile 修复，reading 已经内联 code-tables，不再依赖相对 @import。
+测试日期：2026-11-09。v1.10.0 起，所有 ``、`` 文件都是**自包含、复制即用**的：主题已经拼入 eye-care 底座和 mobile 修复，reading 已经内联 code-tables，不再依赖相对 @import。
 
 ## 主题
 
 | 主题 | 桌面 | 移动 | 亮/暗 | 备注 |
 |---|---|---|---|---|
+| apple | full | full | full | 已含 mobile + Apple UI |
 | eye-care | full | full | full | 已含 mobile |
 | oled-black | full | full | 全黑 | 已含 mobile |
 | high-contrast | full | full | full | 已含 mobile；支持 prefers-contrast/forced-colors |
@@ -30,6 +31,7 @@
 | ip-card | full | 默认隐藏 | 第三方请求 |
 | focus | full | full | 隐藏头像/签名/次要信息 |
 | fonts | full | full | 本地字体 |
+| apple-ui | full | full | 按钮/分段/卡片/焦点细节 |
 | progress | full | full | Chromium/Safari；Firefox 无 |
 | full-width | full | n/a | 隐藏左右栏 |
 
@@ -40,6 +42,8 @@
 | 主题 | text | title | muted | link |
 |---|---:|---:|---:|---:|
 | eye-care | 7.86 | 8.54 | **3.29** | 5.37 |
+| apple 亮 | 16.83 | 16.83 | 5.07 | 4.70 |
+| apple 暗 | 15.63 | 15.63 | 5.93 | 4.66 |
 | oled-black | 13.20 | 17.25 | 6.80 | 11.57 |
 | terminal | 16.80 | 17.71 | 6.06 | 15.47 |
 | sepia | 9.74 | 11.68 | **3.93** | 5.07 |
@@ -78,8 +82,9 @@
 
 ## 回归检查清单
 
-1. 复制一个主题后，1440/375 都无横向滚动；主题已包含 mobile。
-2. 主题 + reading：正文 15px/1.75，代码/表格有样式，且没有额外 @import 请求。
+1. Apple 单文件复制后，按钮为蓝色、sorter 是分段控件、pager 当前页是蓝色填充；不要再复制 apple-ui。
+2. 复制一个主题后，1440/375 都无横向滚动；主题已包含 mobile。
+3. 主题 + reading：正文 15px/1.75，代码/表格有样式，且没有额外 @import 请求。
 3. 主题 + zen：页脚/广告/轮播/签名按预期隐藏。
 4. glass：header、左右 fixed 侧栏的 `backdrop-filter` 必须为 `none`。
 5. progress：Chromium/Safari 从 scaleX(0) 到 scaleX(1)；Firefox 无进度条。

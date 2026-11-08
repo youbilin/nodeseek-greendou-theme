@@ -1,5 +1,13 @@
 # Changelog
 
+## v1.10.0 — 2026-11-09
+
+- 新增 `themes/apple.css`：Apple 系统白/黑、蓝色强调、圆角和轻阴影；已内置 Apple UI 细节，复制一个文件即可。
+- 新增 `modules/apple-ui.css`：按钮 hover/press、分段控件、pager、圆角卡片、输入框焦点环、评论操作 pill、分类 pill、细滚动条和 reduced-motion；可叠加其他主题。
+- Apple 主题按钮、当前页、通知分段控件、首页 sorter、个人主页统计卡和头像环做了专门优化。
+- 保持复制粘贴架构：Apple 主题单文件自包含，不依赖 @import；其他主题可按需追加 apple-ui。
+- 版本号与构建头同步到 v1.10.0。
+
 ## v1.9.0 — 2026-11-09
 
 - 仓库改为**复制粘贴型**：每个 ~themes/~、~modules/~ 文件都是自包含 CSS，不再依赖相对 @import。

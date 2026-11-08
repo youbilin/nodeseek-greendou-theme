@@ -1,0 +1,224 @@
+/* NodeSeek Apple-style UI details v1.0.0
+   Stackable polish for any theme: system UI font, rounded controls, subtle
+   shadows, press feedback and focus rings. It never changes theme colors.
+   The Apple theme already includes this file; do not copy both. */
+:root,body{
+  --nsk-apple-ease:cubic-bezier(.2,.8,.2,1);
+  --nsk-apple-radius:10px;
+  --nsk-apple-radius-lg:16px;
+  --nsk-apple-shadow:0 1px 2px rgba(0,0,0,.04),0 8px 24px rgba(0,0,0,.06);
+  --nsk-apple-shadow-hover:0 2px 4px rgba(0,0,0,.05),0 12px 28px rgba(0,0,0,.1);
+}
+body.dark-layout{
+  --nsk-apple-shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.35);
+  --nsk-apple-shadow-hover:0 2px 4px rgba(0,0,0,.35),0 12px 28px rgba(0,0,0,.45);
+}
+
+/* System UI font. Reading/code fonts stay with reading/fonts/code-tables. */
+body #nsk-frame :is(.post-title,.post-info,.nsk-panel,.user-card,.btn,.new-discussion,.app-title,.sorter,.pager-pos,.pager-prev,.pager-next,.comment-menu,.category-list),
+body #nsk-head :is(.site-title,.nav-menu,.search-box,.color-theme-switcher){
+  font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","SF Pro Display","PingFang SC","Helvetica Neue","Microsoft YaHei",sans-serif!important;
+}
+
+/* Filled and tinted buttons: calm hover lift, quick press. */
+body #nsk-frame :is(.btn,.new-discussion,.glass-search-btn,.nsk-notification .btn){
+  border-radius:var(--nsk-apple-radius)!important;
+  transition:transform .16s var(--nsk-apple-ease),background-color .18s var(--nsk-apple-ease),box-shadow .18s var(--nsk-apple-ease),border-color .18s var(--nsk-apple-ease)!important;
+  -webkit-tap-highlight-color:transparent!important;
+}
+body #nsk-frame :is(.btn,.new-discussion,.glass-search-btn,.nsk-notification .btn):hover{
+  transform:translateY(-1px);
+  box-shadow:0 4px 12px rgba(0,0,0,.12)!important;
+}
+body #nsk-frame :is(.btn,.new-discussion,.glass-search-btn,.nsk-notification .btn):active{
+  transform:scale(.97);
+  transition-duration:.06s!important;
+  box-shadow:none!important;
+}
+
+/* Pager: rounded hit areas, quiet hover, filled current page. */
+body #nsk-frame :is(.pager-pos,.pager-prev,.pager-next){
+  border-radius:8px!important;
+  transition:background-color .16s var(--nsk-apple-ease),color .16s var(--nsk-apple-ease),transform .12s var(--nsk-apple-ease)!important;
+}
+body #nsk-frame :is(.pager-pos,.pager-prev,.pager-next):hover{
+  background:var(--ns-hover)!important;
+}
+body #nsk-frame :is(.pager-pos,.pager-prev,.pager-next):active{
+  transform:scale(.94);
+}
+body #nsk-frame .pager-cur{
+  background:var(--ns-active)!important;
+  color:var(--ns-text)!important;
+  box-shadow:0 1px 2px rgba(0,0,0,.08)!important;
+}
+
+/* Segmented controls: notification tabs and home sorter. */
+body #nsk-frame .app-switch{
+  display:flex!important;
+  align-items:center!important;
+  gap:2px!important;
+  padding:3px!important;
+  background:var(--ns-sub)!important;
+  border:0!important;
+  border-radius:12px!important;
+}
+body #nsk-frame .app-switch .app-title{
+  flex:0 0 auto!important;
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  height:32px!important;
+  min-height:0!important;
+  box-sizing:border-box!important;
+  padding:0 12px!important;
+  border-radius:9px!important;
+  font-size:14px!important;
+  line-height:1.2!important;
+  color:var(--ns-muted)!important;
+  transition:background-color .16s var(--nsk-apple-ease),color .16s var(--nsk-apple-ease),box-shadow .16s var(--nsk-apple-ease)!important;
+}
+body #nsk-frame .app-switch .app-title.router-link-active{
+  background:var(--ns-card)!important;
+  color:var(--ns-text)!important;
+  box-shadow:0 1px 2px rgba(0,0,0,.12),0 1px 3px rgba(0,0,0,.08)!important;
+}
+body #nsk-frame .sorter{
+  display:flex!important;
+  align-items:center!important;
+  gap:2px!important;
+  padding:3px!important;
+  background:var(--ns-sub)!important;
+  border-radius:11px!important;
+}
+body #nsk-frame .sorter a{
+  padding:4px 10px!important;
+  border-radius:8px!important;
+  color:var(--ns-muted)!important;
+  transition:background-color .16s var(--nsk-apple-ease),color .16s var(--nsk-apple-ease),box-shadow .16s var(--nsk-apple-ease)!important;
+}
+body #nsk-frame .sorter a.selected{
+  background:var(--ns-card)!important;
+  color:var(--ns-text)!important;
+  box-shadow:0 1px 2px rgba(0,0,0,.12)!important;
+}
+
+/* Search panel tabs and pills. */
+body .glass-card :is(.tab-btn,.sub-pill){
+  border-radius:9px!important;
+  transition:background-color .16s var(--nsk-apple-ease),color .16s var(--nsk-apple-ease),box-shadow .16s var(--nsk-apple-ease)!important;
+}
+body .glass-card :is(.tab-btn.active,.sub-pill.active){
+  box-shadow:0 1px 2px rgba(0,0,0,.12)!important;
+}
+
+/* Cards: consistent radius and quiet depth. */
+body #nsk-frame :is(#nsk-body-left,.user-card,.nsk-panel,.selector,.head-container,.card-block,.nsk-notification){
+  border-radius:var(--nsk-apple-radius-lg)!important;
+  box-shadow:var(--nsk-apple-shadow)!important;
+  transition:box-shadow .2s var(--nsk-apple-ease),background-color .2s var(--nsk-apple-ease)!important;
+}
+body #nsk-frame :is(.post-list-item,.reply-item,.discussion-item,.comment-wrapper,.card-item){
+  border-radius:12px!important;
+  transition:background-color .16s var(--nsk-apple-ease),box-shadow .18s var(--nsk-apple-ease),transform .18s var(--nsk-apple-ease)!important;
+}
+body #nsk-frame .post-list-item:hover{
+  background:var(--ns-hover)!important;
+}
+body #nsk-frame :is(.reply-item,.discussion-item,.comment-wrapper):hover{
+  background:var(--ns-hover)!important;
+}
+body #nsk-frame .card-item{
+  background:var(--ns-sub)!important;
+}
+body #nsk-frame .card-item:hover{
+  transform:translateY(-2px);
+  box-shadow:var(--nsk-apple-shadow-hover)!important;
+}
+
+/* Profile avatar gets a soft ring; content avatars stay untouched. */
+body #nsk-frame .user-card .avatar-normal{
+  box-shadow:0 0 0 3px var(--ns-card),0 0 0 4px var(--ns-border)!important;
+}
+
+/* Header search lives outside #nsk-frame; style it explicitly. */
+body #nsk-head #search-site2{
+  border-radius:10px!important;
+  transition:border-color .18s var(--nsk-apple-ease),box-shadow .18s var(--nsk-apple-ease)!important;
+}
+body #nsk-head #search-site2:focus{
+  outline:none!important;
+  border-color:var(--ns-accent,#0071e3)!important;
+  box-shadow:0 0 0 3px rgba(0,113,227,.22)!important;
+  box-shadow:0 0 0 3px color-mix(in srgb,var(--ns-accent,#0071e3) 22%,transparent)!important;
+}
+
+/* Inputs and editors: rounded, focus ring instead of a hard outline. */
+body #nsk-frame :is(#search-site2,input[type="text"],input[type="search"],textarea,.message-input .CodeMirror,.message-input .cm-editor){
+  border-radius:var(--nsk-apple-radius)!important;
+  transition:border-color .18s var(--nsk-apple-ease),box-shadow .18s var(--nsk-apple-ease)!important;
+}
+body #nsk-frame :is(#search-site2,input[type="text"],input[type="search"],textarea):focus{
+  outline:none!important;
+  border-color:var(--ns-accent,#0071e3)!important;
+  box-shadow:0 0 0 3px rgba(0,113,227,.22)!important;
+  box-shadow:0 0 0 3px color-mix(in srgb,var(--ns-accent,#0071e3) 22%,transparent)!important;
+}
+body #nsk-frame :is(.message-input .CodeMirror,.message-input .cm-editor):focus-within{
+  border-color:var(--ns-accent,#0071e3)!important;
+  box-shadow:0 0 0 3px rgba(0,113,227,.22)!important;
+  box-shadow:0 0 0 3px color-mix(in srgb,var(--ns-accent,#0071e3) 22%,transparent)!important;
+}
+
+/* Keyboard focus stays visible. */
+body #nsk-frame :focus-visible{
+  outline:2px solid var(--ns-accent,#0071e3)!important;
+  outline-offset:2px!important;
+  border-radius:5px!important;
+}
+
+/* Comment actions become quiet pills. */
+body #nsk-frame .comment-menu .menu-item{
+  border-radius:8px!important;
+  padding:3px 6px!important;
+  transition:background-color .16s var(--nsk-apple-ease),color .16s var(--nsk-apple-ease),transform .12s var(--nsk-apple-ease)!important;
+}
+body #nsk-frame .comment-menu .menu-item:hover{
+  background:var(--ns-hover)!important;
+}
+body #nsk-frame .comment-menu .menu-item:active{
+  transform:scale(.95);
+}
+
+/* Thin, theme-aware scrollbars. */
+html{
+  scrollbar-width:thin;
+  scrollbar-color:var(--ns-border) transparent;
+}
+
+/* Respect reduced motion. */
+@media (prefers-reduced-motion:reduce){
+  body #nsk-frame *,
+  body #nsk-frame *::before,
+  body #nsk-frame *::after{
+    transition:none!important;
+    animation:none!important;
+    scroll-behavior:auto!important;
+  }
+}
+
+@media (prefers-reduced-motion:reduce){
+  body #nsk-frame :is(.btn,.new-discussion,.glass-search-btn,.nsk-notification .btn,.pager-pos,.pager-prev,.pager-next,.card-item,.comment-menu .menu-item),
+  body #nsk-head #search-site2{
+    transition:none!important;
+    transform:none!important;
+  }
+}
+
+/* Category badges become quiet pills. */
+body #nsk-frame .post-info .post-category{
+  background:var(--ns-sub)!important;
+  color:var(--ns-muted)!important;
+  border-radius:6px!important;
+  padding:1px 6px!important;
+}
