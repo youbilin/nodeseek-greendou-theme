@@ -78,3 +78,25 @@ body #nsk-frame :is(.post-content,.post-content-inner,.markdown-body,.topic-cont
 body #nsk-frame :is(.post-content,.post-content-inner,.markdown-body,.topic-content,.discussion-content){overflow:visible!important;contain:none!important;content-visibility:visible!important}
 /* Keep the fast navigation group on the left with a small breathing gap. */
 body #fast-nav-button-group{left:12px!important;right:auto!important;margin-left:0!important}
+
+/* Restore the native desktop controls and remove the temporary utility tray. */
+@media(min-width:1101px){
+  body #nsk-frame #nsk-left-panel-container::before,
+  body #nsk-frame #nsk-left-panel-container::after{display:none!important;content:none!important}
+  body #nsk-head .history-dropdown-on{display:flex!important;position:relative!important;top:auto!important;right:auto!important;width:32px!important;min-width:32px!important;height:32px!important;margin:0!important;padding:0!important}
+  body #nsk-head .search-box:not(:has(a[href="#search"])){display:block!important;position:relative!important;top:auto!important;right:auto!important;width:145px!important;min-width:120px!important;max-width:145px!important;height:auto!important;margin:0 3px 0 auto!important;padding:0!important;background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important;z-index:auto!important}
+  body #nsk-head .search-box:not(:has(a[href="#search"])) #search-site2{display:block!important;width:100%!important;height:30px!important;box-sizing:border-box!important}
+  body #nsk-head .search-box:not(:has(a[href="#search"])) .search-icon{display:block!important}
+  body #nsk-head .color-theme-switcher{display:flex!important;position:relative!important;top:auto!important;right:auto!important;width:32px!important;min-width:32px!important;height:32px!important;margin:0!important;padding:0!important;box-sizing:border-box!important;box-shadow:none!important}
+  body #nsk-head a[href="#search"],body a[href="#search"]{position:static!important;top:auto!important;right:auto!important;width:auto!important;min-width:0!important;height:auto!important;margin:0!important;padding:0!important;background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important}
+  body #nsk-right-panel-container .new-discussion{right:108px!important;width:72px!important;min-width:72px!important;max-width:72px!important;font-size:13px!important;line-height:1!important}
+  body #nsk-right-panel-container .new-discussion span{display:inline!important;visibility:visible!important;opacity:1!important;color:var(--ns-text)!important;font-size:13px!important;line-height:1!important;white-space:nowrap!important}
+  body #nsk-right-panel-container .new-discussion svg{display:block!important;visibility:visible!important;opacity:1!important}
+}
+
+/* A quiet green notification badge replaces the native alert red. */
+body #nsk-right-panel-container .user-card .user-stat .notify-count,
+body #nsk-right-panel-container .user-card span.notify-count{color:var(--ns-title)!important;background:var(--ns-active)!important;border:1px solid var(--ns-border)!important;border-radius:999px!important;box-shadow:none!important}
+
+/* Leave a clearer gap from the viewport edge. */
+body #fast-nav-button-group{left:24px!important;right:auto!important;margin-left:0!important}
