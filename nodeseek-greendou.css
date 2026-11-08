@@ -3,9 +3,9 @@
   --ns-page:#dfeadf;
   --ns-card:#e7f0e4;
   --ns-sub:#d9e7d8;
-  --ns-text:#405447;
-  --ns-title:#35503d;
-  --ns-muted:#789184;
+  --ns-text:#364d3e;
+  --ns-title:#2f4838;
+  --ns-muted:#6f8877;
   --ns-link:#356b48;
   --ns-border:#c5d8c4;
   --ns-active:#cfe2cc;
@@ -20,9 +20,9 @@ body.dark-layout {
   --ns-page:#202a24;
   --ns-card:#29362e;
   --ns-sub:#313f35;
-  --ns-text:#afc0b1;
-  --ns-title:#aec2b1;
-  --ns-muted:#91a997;
+  --ns-text:#a7bba9;
+  --ns-title:#a8bda9;
+  --ns-muted:#8da593;
   --ns-link:#a8c6a9;
   --ns-border:#435247;
   --ns-active:#3a4b3d;
@@ -377,12 +377,12 @@ body .nsk-notification .app-switch {background:transparent!important;border:0!im
 
 /* Keep the floating profile card slightly clear of the viewport edge. */
 @media(min-width:1101px) {
-  body #nsk-frame #nsk-right-panel-container {right:12px!important}
-  body #nsk-left-panel-container {right:12px!important}
-  body #nsk-right-panel-container .new-discussion {right:20px!important}
-  body #nsk-left-panel-container .category-list ul {display:grid!important;grid-template-columns:repeat(6,minmax(0,1fr))!important;align-items:center!important;gap:0!important;padding-right:72px!important}
+  body #nsk-frame #nsk-right-panel-container {right:12px!important;border-radius:16px!important}
+  body #nsk-left-panel-container {right:12px!important;border-radius:12px!important}
+  body #nsk-left-panel-container .category-list ul {display:grid!important;grid-template-columns:repeat(6,minmax(0,1fr))!important;align-items:center!important;gap:0!important;padding-right:0!important}
   body #nsk-left-panel-container .category-list li {display:block!important;min-width:0!important;flex:none!important}
-  body #nsk-left-panel-container .category-list a {justify-content:center!important;width:100%!important;height:28px!important;padding:0 4px!important;font-size:12px!important;line-height:28px!important}
+  body #nsk-left-panel-container .category-list a {justify-content:center!important;width:100%!important;height:28px!important;padding:0 4px!important;font-size:12px!important;line-height:28px!important;color:var(--ns-text)!important}
+  body #nsk-right-panel-container .new-discussion {top:398px!important;right:12px!important;width:260px!important;min-width:260px!important;max-width:260px!important;height:34px!important;box-sizing:border-box!important;padding:0 12px!important;border-radius:12px!important}
 }
 
 /* The card keeps its outer surface while the internal profile sections blend into it. */
@@ -391,8 +391,8 @@ body #nsk-right-panel-container .user-card :is(.user-head,.user-stat) {backgroun
 
 /* Dock the post sorter with the profile actions on wide screens. */
 @media(min-width:1101px) {
-  body .sorter {position:fixed!important;top:398px!important;right:12px!important;width:260px!important;max-width:260px!important;min-height:38px!important;box-sizing:border-box!important;display:flex!important;align-items:center!important;justify-content:space-between!important;gap:8px!important;margin:0!important;padding:7px 10px!important;z-index:1201!important;color:var(--ns-text)!important;background:var(--ns-sub)!important;border:1px solid var(--ns-border)!important;border-radius:10px!important;box-shadow:0 3px 10px rgba(35,54,39,.08)!important}
-  body select.sorter {display:block!important;width:260px!important;min-height:34px!important;padding:6px 28px 6px 10px!important;color:var(--ns-text)!important;background:var(--ns-sub)!important;border:1px solid var(--ns-border)!important;border-radius:8px!important;box-shadow:0 2px 6px rgba(35,54,39,.06)!important}
+  body .sorter {position:fixed!important;top:442px!important;right:12px!important;width:260px!important;max-width:260px!important;min-height:38px!important;box-sizing:border-box!important;display:flex!important;align-items:center!important;justify-content:space-between!important;gap:8px!important;margin:0!important;padding:7px 10px!important;z-index:1201!important;color:var(--ns-text)!important;background:var(--ns-sub)!important;border:1px solid var(--ns-border)!important;border-radius:12px!important;box-shadow:0 3px 10px rgba(35,54,39,.08)!important}
+  body select.sorter {display:block!important;top:442px!important;width:260px!important;min-height:34px!important;padding:6px 28px 6px 10px!important;color:var(--ns-text)!important;background:var(--ns-sub)!important;border:1px solid var(--ns-border)!important;border-radius:10px!important;box-shadow:0 2px 6px rgba(35,54,39,.06)!important}
   body .sorter :is(select,button,a) {color:var(--ns-text)!important;background:var(--ns-card)!important;border:1px solid var(--ns-border)!important;border-radius:7px!important}
   body .sorter :is(button,a) {display:inline-flex!important;align-items:center!important;justify-content:center!important;min-height:28px!important;padding:4px 9px!important}
 }
