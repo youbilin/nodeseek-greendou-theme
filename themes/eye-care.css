@@ -370,4 +370,7 @@ body .nsk-notification:has(.message-wrapper) .message-input :is(.CodeMirror-line
 
 /* Explicit IDs win over the site's .nsk-container surface defaults. */
 body #nsk-body {background:transparent!important;color:var(--ns-text)!important}
-body #nsk-body-left {background:var(--ns-card)!important;color:var(--ns-text)!important}
+body #nsk-body {border:0!important;box-shadow:none!important}
+body #nsk-body-left {background:var(--ns-card)!important;color:var(--ns-text)!important;border:1px solid var(--ns-border)!important;border-radius:12px!important;box-shadow:0 3px 12px rgba(35,54,39,.10)!important}
+body #nsk-frame #nsk-body-left {background:var(--ns-card)!important;border:1px solid var(--ns-border)!important;border-radius:12px!important;box-shadow:0 3px 12px rgba(35,54,39,.10)!important}
+body .nsk-notification .app-switch {background:transparent!important;border:0!important;box-shadow:none!important}
