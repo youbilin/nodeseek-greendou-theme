@@ -1,89 +1,130 @@
-# NodeSeek CSS 片段库
+# NodeSeek CSS 主题
 
-每个主题和模块都是**独立、自包含的 CSS 文件**。想要什么样式，打开对应文件，复制全部内容，粘贴到 NodeSeek 的 CSS 注入里即可。
+在 NodeSeek 的自定义 CSS 里粘一行 `@import` 就生效。不用下载文件，不用整份复制。
 
-不再提供一键预设包，避免把一堆互相重叠的样式一次性塞进去。
+## 一行导入
 
-## 怎么复制
+NodeSeek → 设置 → 扩展 → 自定义 CSS，粘贴：
 
-1. 打开下表中的文件（或点 Raw）。
-2. 全选复制整个文件。
-3. NodeSeek 设置 → 扩展 → 自定义 CSS。
-4. 粘贴，保存。
+```css
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.10.0/themes/apple.css");
+```
 
-主题文件已经包含 eye-care 结构底座和 mobile 移动修复，所以**一个主题只需要复制一个文件**。模块按需追加，放在主题后面。
+保存，刷新页面。换风格只改文件名，加模块就在下面再来一行。
+
+**唯一要注意的：** 所有 `@import` 必须放在自定义 CSS 的最上面，前面不能有别的样式。CSS 规定 `@import` 只能出现在其他规则之前，写在后面会被浏览器直接忽略。
+
+CDN 是 jsDelivr，按 tag 固定版本，改版本号就能升级。已在 nodeseek.com 实测：导入返回 200，主题变量正常生效。
 
 ## 主题（互斥，只选一个）
 
-| 主题 | 风格 | 文件 |
+| 主题 | 风格 | 导入 |
 |---|---|---|
-| Apple | 系统白/黑、蓝色强调、圆角和轻阴影；已内置 Apple UI 细节 | [themes/apple.css](themes/apple.css) |
-| 护眼 | 暖纸绿、低饱和图片/徽章、暗色适配、桌面悬浮分类栏 | [themes/eye-care.css](themes/eye-care.css) |
-| OLED 纯黑 | 纯黑画布、近黑卡片，亮/暗模式都用黑色 | [themes/oled-black.css](themes/oled-black.css) |
-| 高对比 | 黑白高对比、焦点环、链接下划线、减少动效、forced-colors | [themes/high-contrast.css](themes/high-contrast.css) |
-| 终端绿 | 黑底荧光绿，和 terminal 风格 IP 卡最搭 | [themes/terminal.css](themes/terminal.css) |
-| 暖纸 | 牛皮纸/暖纸配色，含暖暗色模式 | [themes/sepia.css](themes/sepia.css) |
-| Nord | Polar Night 深色 + Frost 蓝链接 | [themes/nord.css](themes/nord.css) |
-| Solarized | Solarized 亮色 + 暗色两套 | [themes/solarized.css](themes/solarized.css) |
+| **Apple** | 系统白/黑、蓝色强调、圆角轻阴影；已内置 Apple UI 细节 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.10.0/themes/apple.css");` |
+| **护眼** | 暖纸绿、低饱和图片/徽章、暗色适配、桌面悬浮分类栏 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.10.0/themes/eye-care.css");` |
+| **OLED 纯黑** | 纯黑画布、近黑卡片，亮/暗模式都是黑 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.10.0/themes/oled-black.css");` |
+| **高对比** | 黑白高对比、焦点环、链接下划线、减少动效、forced-colors | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.10.0/themes/high-contrast.css");` |
+| **终端绿** | 黑底荧光绿，和 terminal 风格 IP 卡最搭 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.10.0/themes/terminal.css");` |
+| **暖纸** | 牛皮纸/暖纸配色，含暖暗色模式 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.10.0/themes/sepia.css");` |
+| **Nord** | Polar Night 深色 + Frost 蓝链接 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.10.0/themes/nord.css");` |
+| **Solarized** | Solarized 亮色 + 暗色两套 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.10.0/themes/solarized.css");` |
 
-**不要同时复制两个主题。** 每个主题文件已经包含完整底座，直接全选粘贴即可。
+每个主题文件已经包含 eye-care 结构底座和移动端修复，**不要同时导入两个主题**。
 
 ## 模块（按需追加）
 
-| 模块 | 作用 | 文件 |
+写在主题那行下面，顺序按需，全部放在最上面即可。
+
+| 模块 | 作用 | 导入 |
 |---|---|---|
-| 紧凑密度 | 仅桌面，压缩列表行高、头像和评论间距 | [modules/compact.css](modules/compact.css) |
-| 阅读排版 | 正文字号/行高、标题、引用、图片、楼层锚点；已内联代码/表格样式 | [modules/reading.css](modules/reading.css) |
-| 代码与表格 | 只想要代码块和表格时单独用 | [modules/code-tables.css](modules/code-tables.css) |
-| 极简净化 | 隐藏页脚、侧栏广告、轮播、推荐角标、快捷功能区、新用户面板、签名 | [modules/zen.css](modules/zen.css) |
-| 移动可用性 | 仅移动端：两行头部、修复 375px 溢出和通知竖排、触摸目标 | [modules/mobile.css](modules/mobile.css) |
-| 玻璃拟态 | 半透明面板 + backdrop-filter 模糊；不要和 zen/OLED 叠用 | [modules/glass.css](modules/glass.css) |
-| 自定义背景 | 默认山景图 + 半透明卡片；可换图 | [modules/background.css](modules/background.css) |
-| 访客 IP 卡片 | 右下角 terminal 风格 IP 卡；移动端默认隐藏；CSS 不可点击 | [modules/ip-card.css](modules/ip-card.css) |
-| 专注 | 隐藏头像、签名、浏览量、最后回复、分类徽章 | [modules/focus.css](modules/focus.css) |
-| 字体 | 本地 CJK 字体栈；正文衬线、UI 无衬线 | [modules/fonts.css](modules/fonts.css) |
-| Apple UI | Apple 风格按钮按压、分段控件、圆角卡片、焦点环；给非 Apple 主题用 | [modules/apple-ui.css](modules/apple-ui.css) |
-| 阅读进度 | 顶部 3px 进度条；Chromium/Safari 支持，Firefox 不显示 | [modules/progress.css](modules/progress.css) |
-| 全宽 | 仅桌面，隐藏左右栏，内容居中 1080px | [modules/full-width.css](modules/full-width.css) |
+| **紧凑密度** | 仅桌面，压缩列表行高、头像和评论间距 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.10.0/modules/compact.css");` |
+| **阅读排版** | 正文字号/行高、标题、引用、图片、楼层锚点；已内联代码/表格样式 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.10.0/modules/reading.css");` |
+| **代码与表格** | 只想要代码块和表格时单独用 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.10.0/modules/code-tables.css");` |
+| **极简净化** | 隐藏页脚、侧栏广告、轮播、推荐角标、快捷功能区、新用户面板、签名 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.10.0/modules/zen.css");` |
+| **移动可用性** | 仅移动端：两行头部、修复 375px 溢出、触摸目标；给原生主题用 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.10.0/modules/mobile.css");` |
+| **玻璃拟态** | 半透明面板 + backdrop-filter 模糊；不要和 zen/OLED 叠用 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.10.0/modules/glass.css");` |
+| **自定义背景** | 默认山景图 + 半透明卡片；可换图 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.10.0/modules/background.css");` |
+| **访客 IP 卡片** | 右下角 terminal 风格 IP 卡；移动端默认隐藏；CSS 不可点击 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.10.0/modules/ip-card.css");` |
+| **专注** | 隐藏头像、签名、浏览量、最后回复、分类徽章 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.10.0/modules/focus.css");` |
+| **字体** | 本地 CJK 字体栈；正文衬线、UI 无衬线 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.10.0/modules/fonts.css");` |
+| **Apple UI** | Apple 风格按钮按压、分段控件、圆角卡片、焦点环；给非 Apple 主题用 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.10.0/modules/apple-ui.css");` |
+| **阅读进度** | 顶部 3px 进度条；Chromium/Safari 支持，Firefox 不显示 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.10.0/modules/progress.css");` |
+| **全宽** | 仅桌面，隐藏左右栏，内容居中 1080px | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.10.0/modules/full-width.css");` |
 
-### 复制时的注意
+### 叠加注意
 
-- **reading 已经内联了 code-tables**，复制 reading 就不要再复制 code-tables；只想改代码/表格时再单独用 code-tables。
-- 主题文件已经包含 mobile，**不要再复制 mobile**（除非你用的是原生主题，没有套本仓库主题）。
-- **Apple 主题已经内置 Apple UI 细节，不要再复制 apple-ui**；其他主题想要 Apple 风格细节才复制 apple-ui。
-- 玻璃拟态不要和 zen / OLED 主题叠用；玻璃需要背景层次。
-- 全宽会隐藏左右栏和侧栏的“发帖”按钮，保留顶部导航和搜索。
+- **阅读排版已内联代码与表格**，导入了 reading 就不要再导入 code-tables；只想改代码/表格时才单独用 code-tables。
+- 主题已含 mobile，**用本仓库主题就不要再导入 mobile**；只有用 NodeSeek 原生主题时才加。
+- **Apple 主题已内置 Apple UI 细节**，不要再导入 apple-ui；其他主题想要 Apple 手感才加。
+- 玻璃拟态不要和 zen、OLED 主题叠用，玻璃需要背景层次。
+- 全宽会隐藏左右栏和侧栏的发帖按钮，顶部导航和搜索保留。
 - 阅读进度在 Firefox 中不会出现，纯 CSS 无 fallback。
 - 自定义背景默认图片约 650KB；IP 卡片会请求 card.net.coffee 并显示访客自己的 IP。
 
-## 组合示例：复制顺序
+## 常用组合
 
-不需要预设文件，按顺序复制粘贴即可：
+整块复制，一次粘完。
 
-**Apple 原生**
-1. 复制 `themes/apple.css`
-   Apple 主题已内置 Apple UI 细节，不要复制 `modules/apple-ui.css`。
+### Apple（推荐）
 
-**护眼阅读**
-1. 复制 `themes/eye-care.css`
-2. 复制 `modules/reading.css`
-3. 复制 `modules/zen.css`
+已内置 Apple UI 细节和移动端修复，只加这一行就够。
 
-**终端专注**
-1. 复制 `themes/terminal.css`
-2. 复制 `modules/focus.css`
-3. 复制 `modules/fonts.css`
-4. 复制 `modules/reading.css`
+```css
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.10.0/themes/apple.css");
+```
 
-**背景玻璃**
-1. 复制 `themes/eye-care.css`
-2. 复制 `modules/background.css`
-3. 复制 `modules/glass.css`
+### 护眼阅读
 
-**OLED 阅读**
-1. 复制 `themes/oled-black.css`
-2. 复制 `modules/reading.css`
-3. 复制 `modules/ip-card.css`（可选）
+护眼主题 + 阅读排版 + 极简净化。
+
+```css
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.10.0/themes/eye-care.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.10.0/modules/reading.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.10.0/modules/zen.css");
+```
+
+### 终端专注
+
+终端绿 + 专注 + 字体 + 阅读排版。
+
+```css
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.10.0/themes/terminal.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.10.0/modules/focus.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.10.0/modules/fonts.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.10.0/modules/reading.css");
+```
+
+### 背景玻璃
+
+护眼底座 + 自定义背景 + 玻璃拟态。
+
+```css
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.10.0/themes/eye-care.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.10.0/modules/background.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.10.0/modules/glass.css");
+```
+
+### OLED 阅读
+
+纯黑主题 + 阅读排版，IP 卡可选。
+
+```css
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.10.0/themes/oled-black.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.10.0/modules/reading.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.10.0/modules/ip-card.css");
+```
+
+## 版本与镜像
+
+- 固定版本（推荐）：URL 里的 `@v1.10.0`。升级时把版本号改掉，页面刷新即生效。
+- 跟最新：把 `@v1.10.0` 换成 `@main`。可能包含未发布的改动，日常不建议。
+- 镜像：访问 jsDelivr 慢或被拦时，只换域名，路径不变。
+  - `https://fastly.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.10.0/themes/apple.css`
+  - `https://gcore.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.10.0/themes/apple.css`
+
+## 备用：复制粘贴
+
+内网、离线或 `@import` 被拦的环境，文件本身也是自包含的：打开 [themes/](themes/) 或 [modules/](modules/) 里的文件，全选复制，粘到自定义 CSS 里即可，效果和 `@import` 完全一样。主题来自 `src/`，由 `build.mjs` 拼装，所以单文件本身就是完整的。
 
 ## 兼容性
 
@@ -115,22 +156,22 @@
 
 ## 仓库维护
 
-- `themes/`、`modules/` 是**给用户复制**的成品文件，直接自包含。
+- `themes/`、`modules/` 是发布产物，自包含；CDN 直接指向这些文件。
 - `src/` 是源文件：`src/base/eye-care.css` + `src/themes/*.overlay.css`；`build.mjs` 把它们拼成 `themes/*.css`，并把 code-tables 内联进 `modules/reading.css`。
-- 修改主题时改 `src/`，然后运行：
+- 改样式改 `src/`，然后：
 
 ```bash
 npm run build
 ```
 
-用户只需要复制 `themes/` / `modules/` 里的成品文件。
+- 发布新版本时打 tag（如 `v1.10.1`），jsDelivr 立即可用；README 里的版本号同步改。
 - `nodeseek-greendou.css` 是 eye-care 的旧地址兼容副本，由构建脚本同步。
 
 ## 目录结构
 
 ```
-themes/        7 个自包含主题
-modules/       12 个自包含模块
+themes/        8 个自包含主题
+modules/       13 个自包含模块
 src/base/      eye-care 底座源文件
 src/themes/    主题覆盖层源文件（含 apple.overlay.css）
 src/modules/   模块源文件
@@ -153,16 +194,22 @@ CSS 做不到的交互在独立仓库：[youbilin/nodeseek-userscript](https://g
 - CSS 不能新增私信联系人栏、不能修改发送快捷键、不能生成链接预览卡；这些在 userscript 仓库。
 - 极简净化默认隐藏签名；需要保留时删掉对应规则。
 - 专注会隐藏分类徽章；只想隐藏头像时删掉对应规则。
-- 主题和模块都依赖 NodeSeek 现有类名；站点大版本更新后需要重新测试。
+- 主题和模块依赖 NodeSeek 现有类名；站点大版本更新后需要重新测试。
 - Apple UI 是视觉增强；高对比用户建议跳过，以免阴影/圆角覆盖高对比样式。
-- 旧的 @import URL 仍然可用（文件会整份加载），但现在主推复制粘贴，不依赖任何相对导入。
+- `@import` 依赖浏览器能访问 jsDelivr；被墙或公司网络拦截时换镜像域名，或改用下面的复制粘贴方式。
 
 ## 版本
 
 - 当前：`v1.10.0`
-- 版本线：`vMAJOR.MINOR.PATCH`；新增文件/覆盖 = MINOR，修复 = PATCH，破坏复制方式 = MAJOR。
-- 请固定版本号；不要用 `@latest`。
+- 版本线：`vMAJOR.MINOR.PATCH`；新增文件/覆盖 = MINOR，修复 = PATCH，破坏导入方式 = MAJOR。
+- 请固定版本号；生产使用不要指向 `@latest`。
 
 ## English
 
-Each theme and module is a standalone CSS file. Open it, copy everything, paste into NodeSeek's custom CSS field. Themes already include the eye-care base and mobile fixes. Modules are optional additions; paste them after the theme. Source files live in `src/` and are assembled by `build.mjs`.
+One-line import, no copy-paste:
+
+```css
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-greendou-theme@v1.10.0/themes/apple.css");
+```
+
+Paste it into NodeSeek → Settings → Extensions → Custom CSS. Every `@import` must sit at the very top of the field. Themes are mutually exclusive and already bundle the eye-care base plus mobile fixes; modules are optional and stack after the theme. Published files under `themes/` and `modules/` are self-contained, so you can also copy a whole file if you cannot load the CDN. Source lives in `src/` and is assembled by `build.mjs`.
