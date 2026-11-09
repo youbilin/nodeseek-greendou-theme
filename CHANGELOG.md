@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.10.1 — 2026-11-09
+- 悬浮分类栏与「全部/返回」按钮文字加粗（font-weight 600），暗色模式下更清晰。
+- `modules/background.css` 升级到 v1.1.0：移动端/触屏设备改用固定的 `html::before` 照片图层，与桌面端 `background-attachment:fixed` 彻底分离；修复 iOS Safari 上背景被拉伸放大、随内容滚动的问题。
+- README 重写：以一行 jsDelivr `@import` 为唯一主推用法，中英双语并列，增加徽章、FAQ 与兼容性折叠区。
+- 仓库更名 `nodeseek-greendou-theme` → `nodeseek-themes`，README 内全部 CDN 地址同步更新。
+
 ## v1.10.0 — 2026-11-09
 
 - 新增 `themes/apple.css`：Apple 系统白/黑、蓝色强调、圆角和轻阴影；已内置 Apple UI 细节，复制一个文件即可。

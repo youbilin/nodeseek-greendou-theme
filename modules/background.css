@@ -1,4 +1,4 @@
-/* NodeSeek background module v1.0.1
+/* NodeSeek background module v1.1.0
    Paints a custom page photo and makes the main surfaces translucent.
    Copy-paste order: theme → background → glass.
    Set the photo with these variables at the top of your custom CSS:
@@ -14,8 +14,12 @@
    Pick a calm, low-contrast picture: it sits behind every word and the cards
    above it are only about 80% opaque. Quote paths that contain spaces.
    Local files, data: URIs and any URL you may hotlink all work; a remote URL is
-   requested by every visitor. Mobile Safari ignores background-attachment:fixed,
-   so the photo scrolls there instead of staying put.
+   requested by every visitor.
+   Desktop and touch are separate code paths. Desktop paints the photo directly
+   on html/body with background-attachment:fixed. iOS Safari ignores fixed
+   attachment and would blow the photo up to full document height, so touch
+   devices get a dedicated fixed html::before photo layer instead — same visual
+   result, correct on every phone and tablet.
    Nothing is hidden, moved or re-positioned: only background paint changes. */
 :root{
   --nsk-bg-image:url("https://cdn.nodeimage.com/i/QxqCslRIB79cCYLxCN5KeucxIcrmob5Y.webp");
@@ -61,3 +65,30 @@ body #nsk-frame :is(.nsk-panel,.user-card,.selector,.head-container,.discussion-
 }
 /* Only paint changes: the fixed header stays opaque and nothing is repositioned,
    so navigation and the anchor-placed rails keep their geometry over any photo. */
+/* Touch path (phones and tablets): attachment:fixed is unsupported on iOS, so
+   the photo moves onto a fixed html::before layer sized to the viewport.
+   body keeps no background of its own (the themed page colour lives on html),
+   so the layer shows through; content paints above it. html::before is used
+   because body::before belongs to progress.css and body::after to ip-card.css. */
+@media (hover:none) and (pointer:coarse){
+  html{
+    background-image:none!important;
+    background-attachment:scroll!important;
+    background-color:var(--ns-page,transparent)!important;
+  }
+  body{
+    background:none!important;
+    background-image:none!important;
+  }
+  html::before{
+    content:""!important;
+    position:fixed!important;
+    inset:0!important;
+    z-index:-1!important;
+    background-image:linear-gradient(var(--nsk-bg-overlay),var(--nsk-bg-overlay)),var(--nsk-bg-image)!important;
+    background-position:center center!important;
+    background-size:cover!important;
+    background-repeat:no-repeat!important;
+    pointer-events:none!important;
+  }
+}

@@ -16,7 +16,7 @@ const THEMES = [
 
 function themeHeader(name, title) {
   return [
-    '/* NodeSeek ' + title + ' — standalone ' + name + '.css @v1.10.0',
+    '/* NodeSeek ' + title + ' — standalone ' + name + '.css @v1.10.1',
     '   复制整个文件到 NodeSeek 设置 → 扩展 → 自定义 CSS。',
     '   本文件已包含 eye-care 结构底座和 mobile 移动修复；',
     '   不要同时复制另一个主题，也不需要再复制 eye-care/mobile。',
@@ -38,7 +38,7 @@ for (const [name, title] of THEMES) {
 }
 
 const readingHeader = [
-  '/* NodeSeek reading — standalone module @v1.10.0',
+  '/* NodeSeek reading — standalone module @v1.10.1',
   '   复制整个文件到论坛 CSS 注入；代码/表格样式已内联。',
   '   不要再单独复制 code-tables.css。 */',
   '',
