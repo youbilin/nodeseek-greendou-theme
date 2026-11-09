@@ -24,7 +24,7 @@ One line of CSS. A whole new look.
 NodeSeek → **设置 → 扩展 → 自定义 CSS**，粘贴这一行，保存，刷新页面：
 
 ```css
-@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.1/themes/apple.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/themes/apple.css");
 ```
 
 换风格只改文件名；加模块在下面再来一行。
@@ -37,14 +37,14 @@ NodeSeek → **设置 → 扩展 → 自定义 CSS**，粘贴这一行，保存�
 
 | 主题 | 风格 | 导入 |
 |---|---|---|
-| **Apple** | 系统白/黑、蓝色强调、圆角轻阴影；已内置 Apple UI 细节 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.1/themes/apple.css");` |
-| **护眼** | 暖纸绿、低饱和图片/徽章、暗色适配、桌面悬浮分类栏 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.1/themes/eye-care.css");` |
-| **OLED 纯黑** | 纯黑画布、近黑卡片，亮/暗模式都是黑 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.1/themes/oled-black.css");` |
-| **高对比** | 黑白高对比、焦点环、链接下划线、减少动效、forced-colors | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.1/themes/high-contrast.css");` |
-| **终端绿** | 黑底荧光绿，和 terminal 风格 IP 卡最搭 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.1/themes/terminal.css");` |
-| **暖纸** | 牛皮纸/暖纸配色，含暖暗色模式 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.1/themes/sepia.css");` |
-| **Nord** | Polar Night 深色 + Frost 蓝链接 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.1/themes/nord.css");` |
-| **Solarized** | Solarized 亮色 + 暗色两套 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.1/themes/solarized.css");` |
+| **Apple** | 系统白/黑、蓝色强调、圆角轻阴影；已内置 Apple UI 细节 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/themes/apple.css");` |
+| **护眼** | 暖纸绿、低饱和图片/徽章、暗色适配、桌面悬浮分类栏 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/themes/eye-care.css");` |
+| **OLED 纯黑** | 纯黑画布、近黑卡片，亮/暗模式都是黑 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/themes/oled-black.css");` |
+| **高对比** | 黑白高对比、焦点环、链接下划线、减少动效、forced-colors | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/themes/high-contrast.css");` |
+| **终端绿** | 黑底荧光绿，和 terminal 风格 IP 卡最搭 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/themes/terminal.css");` |
+| **暖纸** | 牛皮纸/暖纸配色，含暖暗色模式 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/themes/sepia.css");` |
+| **Nord** | Polar Night 深色 + Frost 蓝链接 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/themes/nord.css");` |
+| **Solarized** | Solarized 亮色 + 暗色两套 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/themes/solarized.css");` |
 
 每个主题文件已包含 eye-care 结构底座和移动端修复，**不要同时导入两个主题**。
 
@@ -54,19 +54,19 @@ NodeSeek → **设置 → 扩展 → 自定义 CSS**，粘贴这一行，保存�
 
 | 模块 | 作用 | 导入 |
 |---|---|---|
-| **紧凑密度** | 仅桌面，压缩列表行高、头像和评论间距 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.1/modules/compact.css");` |
-| **阅读排版** | 正文字号/行高、标题、引用、图片、楼层锚点；已内联代码/表格样式 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.1/modules/reading.css");` |
-| **代码与表格** | 只想要代码块和表格时单独用 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.1/modules/code-tables.css");` |
-| **极简净化** | 隐藏页脚、侧栏广告、轮播、推荐角标、快捷功能区、新用户面板、签名 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.1/modules/zen.css");` |
-| **移动可用性** | 仅移动端：两行头部、修复 375px 溢出、触摸目标；给原生主题用 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.1/modules/mobile.css");` |
-| **玻璃拟态** | 半透明面板 + backdrop-filter 模糊；不要和 zen/OLED 叠用 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.1/modules/glass.css");` |
-| **自定义背景** | 默认山景图 + 半透明卡片；移动端与桌面端分别适配 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.1/modules/background.css");` |
-| **访客 IP 卡片** | 右下角 terminal 风格 IP 卡；移动端默认隐藏；CSS 不可点击 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.1/modules/ip-card.css");` |
-| **专注** | 隐藏头像、签名、浏览量、最后回复、分类徽章 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.1/modules/focus.css");` |
-| **字体** | 本地 CJK 字体栈；正文衬线、UI 无衬线 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.1/modules/fonts.css");` |
-| **Apple UI** | Apple 风格按钮按压、分段控件、圆角卡片、焦点环；给非 Apple 主题用 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.1/modules/apple-ui.css");` |
-| **阅读进度** | 顶部 3px 进度条；Chromium/Safari 支持，Firefox 不显示 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.1/modules/progress.css");` |
-| **全宽** | 仅桌面，隐藏左右栏，内容居中 1080px | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.1/modules/full-width.css");` |
+| **紧凑密度** | 仅桌面，压缩列表行高、头像和评论间距 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/modules/compact.css");` |
+| **阅读排版** | 正文字号/行高、标题、引用、图片、楼层锚点；已内联代码/表格样式 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/modules/reading.css");` |
+| **代码与表格** | 只想要代码块和表格时单独用 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/modules/code-tables.css");` |
+| **极简净化** | 隐藏页脚、侧栏广告、轮播、推荐角标、快捷功能区、新用户面板、签名 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/modules/zen.css");` |
+| **移动可用性** | 仅移动端：两行头部、修复 375px 溢出、触摸目标；给原生主题用 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/modules/mobile.css");` |
+| **玻璃拟态** | 半透明面板 + backdrop-filter 模糊；不要和 zen/OLED 叠用 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/modules/glass.css");` |
+| **自定义背景** | 默认山景图 + 半透明卡片；移动端与桌面端分别适配 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/modules/background.css");` |
+| **访客 IP 卡片** | 右下角 terminal 风格 IP 卡；移动端默认隐藏；CSS 不可点击 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/modules/ip-card.css");` |
+| **专注** | 隐藏头像、签名、浏览量、最后回复、分类徽章 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/modules/focus.css");` |
+| **字体** | 本地 CJK 字体栈；正文衬线、UI 无衬线 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/modules/fonts.css");` |
+| **Apple UI** | Apple 风格按钮按压、分段控件、圆角卡片、焦点环；给非 Apple 主题用 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/modules/apple-ui.css");` |
+| **阅读进度** | 顶部 3px 进度条；Chromium/Safari 支持，Firefox 不显示 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/modules/progress.css");` |
+| **全宽** | 仅桌面，隐藏左右栏，内容居中 1080px | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/modules/full-width.css");` |
 
 ### 叠加注意
 
@@ -85,49 +85,49 @@ NodeSeek → **设置 → 扩展 → 自定义 CSS**，粘贴这一行，保存�
 **Apple（推荐）** — 已内置 Apple UI 细节和移动端修复，只加这一行就够。
 
 ```css
-@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.1/themes/apple.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/themes/apple.css");
 ```
 
 **护眼阅读** — 护眼主题 + 阅读排版 + 极简净化。
 
 ```css
-@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.1/themes/eye-care.css");
-@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.1/modules/reading.css");
-@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.1/modules/zen.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/themes/eye-care.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/modules/reading.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/modules/zen.css");
 ```
 
 **终端专注** — 终端绿 + 专注 + 字体 + 阅读排版。
 
 ```css
-@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.1/themes/terminal.css");
-@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.1/modules/focus.css");
-@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.1/modules/fonts.css");
-@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.1/modules/reading.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/themes/terminal.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/modules/focus.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/modules/fonts.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/modules/reading.css");
 ```
 
 **背景玻璃** — 护眼底座 + 自定义背景 + 玻璃拟态。
 
 ```css
-@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.1/themes/eye-care.css");
-@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.1/modules/background.css");
-@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.1/modules/glass.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/themes/eye-care.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/modules/background.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/modules/glass.css");
 ```
 
 **OLED 阅读** — 纯黑主题 + 阅读排版，IP 卡可选。
 
 ```css
-@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.1/themes/oled-black.css");
-@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.1/modules/reading.css");
-@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.1/modules/ip-card.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/themes/oled-black.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/modules/reading.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/modules/ip-card.css");
 ```
 
 ## 升级与镜像
 
-- **固定版本（推荐）**：URL 里的 `@v1.10.1`。升级时把版本号改掉，刷新即生效。
-- **跟最新**：把 `@v1.10.1` 换成 `@main`。可能包含未发布的改动，日常不建议。
+- **固定版本（推荐）**：URL 里的 `@v1.10.2`。升级时把版本号改掉，刷新即生效。
+- **跟最新**：把 `@v1.10.2` 换成 `@main`。可能包含未发布的改动，日常不建议。
 - **镜像**：jsDelivr 访问慢或被拦时，只换域名，路径不变。
-  - `https://fastly.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.1/themes/apple.css`
-  - `https://gcore.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.1/themes/apple.css`
+  - `https://fastly.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/themes/apple.css`
+  - `https://gcore.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/themes/apple.css`
 
 ## 备用：复制粘贴
 
@@ -229,7 +229,7 @@ CSS 做不到的交互在独立仓库：[youbilin/nodeseek-userscript](https://g
 NodeSeek → **Settings → Extensions → Custom CSS**, paste one line, save, refresh:
 
 ```css
-@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.1/themes/apple.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/themes/apple.css");
 ```
 
 Swap the file name to change the look; add one line per module.
@@ -242,14 +242,14 @@ Verified against nodeseek.com (2026-11-09, Chrome): the CDN import returns 200 a
 
 | Theme | Look | Import |
 |---|---|---|
-| **Apple** | System white/black, blue accent, rounded corners; Apple UI details included | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.1/themes/apple.css");` |
-| **Eye-care** | Warm paper green, desaturated badges, dark-mode support, floating desktop category dock | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.1/themes/eye-care.css");` |
-| **OLED black** | True-black canvas, near-black cards, black in both modes | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.1/themes/oled-black.css");` |
-| **High contrast** | Black/white, focus rings, link underlines, reduced motion, forced-colors | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.1/themes/high-contrast.css");` |
-| **Terminal** | Black background, phosphor green, pairs with the terminal IP card | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.1/themes/terminal.css");` |
-| **Sepia** | Kraft-paper palette with a warm dark mode | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.1/themes/sepia.css");` |
-| **Nord** | Polar Night dark + Frost blue links | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.1/themes/nord.css");` |
-| **Solarized** | Solarized light + dark | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.1/themes/solarized.css");` |
+| **Apple** | System white/black, blue accent, rounded corners; Apple UI details included | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/themes/apple.css");` |
+| **Eye-care** | Warm paper green, desaturated badges, dark-mode support, floating desktop category dock | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/themes/eye-care.css");` |
+| **OLED black** | True-black canvas, near-black cards, black in both modes | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/themes/oled-black.css");` |
+| **High contrast** | Black/white, focus rings, link underlines, reduced motion, forced-colors | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/themes/high-contrast.css");` |
+| **Terminal** | Black background, phosphor green, pairs with the terminal IP card | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/themes/terminal.css");` |
+| **Sepia** | Kraft-paper palette with a warm dark mode | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/themes/sepia.css");` |
+| **Nord** | Polar Night dark + Frost blue links | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/themes/nord.css");` |
+| **Solarized** | Solarized light + dark | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/themes/solarized.css");` |
 
 Every theme bundles the eye-care structural base and mobile fixes. **Never import two themes.**
 
@@ -257,19 +257,19 @@ Every theme bundles the eye-care structural base and mobile fixes. **Never impor
 
 | Module | Purpose | Import |
 |---|---|---|
-| **Compact** | Desktop only; tighter list rows, avatars, comment spacing | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.1/modules/compact.css");` |
-| **Reading** | Body size/leading, headings, quotes, images, post anchors; code & table styles inlined | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.1/modules/reading.css");` |
-| **Code & tables** | Standalone code blocks and tables | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.1/modules/code-tables.css");` |
-| **Zen** | Hides footer, sidebar ads, carousel, promoted badges, signature | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.1/modules/zen.css");` |
-| **Mobile** | Mobile only; two-row header, 375px overflow fixes, touch targets — for the native theme | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.1/modules/mobile.css");` |
-| **Glass** | Translucent panels with backdrop-filter; not with zen/OLED | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.1/modules/glass.css");` |
-| **Background** | Default mountain photo + translucent cards; separate desktop/touch code paths | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.1/modules/background.css");` |
-| **IP card** | Terminal-style visitor IP card, bottom right; hidden on mobile; not clickable | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.1/modules/ip-card.css");` |
-| **Focus** | Hides avatars, signatures, view counts, category badges | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.1/modules/focus.css");` |
-| **Fonts** | Local CJK font stack; serif body, sans UI | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.1/modules/fonts.css");` |
-| **Apple UI** | Apple-style buttons, segmented controls, cards, focus rings — for non-Apple themes | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.1/modules/apple-ui.css");` |
-| **Progress** | 3px top reading-progress bar; Chromium/Safari only | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.1/modules/progress.css");` |
-| **Full width** | Desktop only; hides side rails, centers content at 1080px | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.1/modules/full-width.css");` |
+| **Compact** | Desktop only; tighter list rows, avatars, comment spacing | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/modules/compact.css");` |
+| **Reading** | Body size/leading, headings, quotes, images, post anchors; code & table styles inlined | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/modules/reading.css");` |
+| **Code & tables** | Standalone code blocks and tables | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/modules/code-tables.css");` |
+| **Zen** | Hides footer, sidebar ads, carousel, promoted badges, signature | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/modules/zen.css");` |
+| **Mobile** | Mobile only; two-row header, 375px overflow fixes, touch targets — for the native theme | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/modules/mobile.css");` |
+| **Glass** | Translucent panels with backdrop-filter; not with zen/OLED | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/modules/glass.css");` |
+| **Background** | Default mountain photo + translucent cards; separate desktop/touch code paths | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/modules/background.css");` |
+| **IP card** | Terminal-style visitor IP card, bottom right; hidden on mobile; not clickable | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/modules/ip-card.css");` |
+| **Focus** | Hides avatars, signatures, view counts, category badges | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/modules/focus.css");` |
+| **Fonts** | Local CJK font stack; serif body, sans UI | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/modules/fonts.css");` |
+| **Apple UI** | Apple-style buttons, segmented controls, cards, focus rings — for non-Apple themes | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/modules/apple-ui.css");` |
+| **Progress** | 3px top reading-progress bar; Chromium/Safari only | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/modules/progress.css");` |
+| **Full width** | Desktop only; hides side rails, centers content at 1080px | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/modules/full-width.css");` |
 
 ### Stacking notes
 
@@ -282,7 +282,7 @@ Every theme bundles the eye-care structural base and mobile fixes. **Never impor
 
 ## Versioning & mirrors
 
-- **Pinned (recommended)**: keep `@v1.10.1` in the URL; bump the tag to upgrade.
+- **Pinned (recommended)**: keep `@v1.10.2` in the URL; bump the tag to upgrade.
 - **Bleeding edge**: replace the tag with `@main` — may contain unreleased changes.
 - **Mirrors**: swap only the host if jsDelivr is slow or blocked — `fastly.jsdelivr.net` or `gcore.jsdelivr.net`.
 
