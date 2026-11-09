@@ -1,16 +1,19 @@
-/* NodeSeek background module v1.1.0
+/* NodeSeek background module v1.2.0
    Paints a custom page photo and makes the main surfaces translucent.
    Copy-paste order: theme → background → glass.
-   Set the photo with these variables at the top of your custom CSS:
+   YOUR OWN PHOTO — paste this anywhere in the custom CSS field (before or
+   after the @import lines, both work):
      :root{
-       --nsk-bg-image:url("https://cdn.nodeimage.com/i/QxqCslRIB79cCYLxCN5KeucxIcrmob5Y.webp");
+       --nsk-bg-image:url("https://example.com/your-photo.jpg");
        --nsk-bg-overlay:rgba(16,22,18,.35);
        --nsk-bg-surface:rgba(231,240,228,.82);
        --nsk-bg-surface-dark:rgba(41,54,46,.84);
      }
-   --nsk-bg-image defaults to the bundled mountain photo. --nsk-bg-overlay
-   defaults to transparent, meaning no dim wash. The two surface tokens default to the
-   eye-care card colours at about 82% opacity and apply to light and dark layouts.
+   --nsk-bg-image falls back to the bundled mountain photo when unset.
+   --nsk-bg-overlay defaults to transparent, meaning no dim wash. The two
+   surface tokens default to the eye-care card colours at about 82% opacity
+   and apply to light and dark layouts; set the dark one separately if you
+   want a different dark surface.
    Pick a calm, low-contrast picture: it sits behind every word and the cards
    above it are only about 80% opaque. Quote paths that contain spaces.
    Local files, data: URIs and any URL you may hotlink all work; a remote URL is
@@ -22,18 +25,20 @@
    result, correct on every phone and tablet.
    Nothing is hidden, moved or re-positioned: only background paint changes. */
 :root{
-  --nsk-bg-image:url("https://cdn.nodeimage.com/i/QxqCslRIB79cCYLxCN5KeucxIcrmob5Y.webp");
   --nsk-bg-overlay:transparent;
   --nsk-bg-surface:color-mix(in srgb, var(--ns-card, #e7f0e4) 82%, transparent);
   --nsk-bg-surface-dark:color-mix(in srgb, var(--ns-card, #29362e) 84%, transparent);
 }
+/* The photo variable is deliberately NOT defined here: it is read with a
+   fallback at each use site, so a user-defined --nsk-bg-image wins no matter
+   whether it sits before or after this module in the custom CSS field. */
 body.dark-layout{
   --nsk-bg-surface:var(--nsk-bg-surface-dark);
 }
 /* Photo layer: fixed, centred, cover; the themed page colour is the fallback. */
 html,
 body{
-  background-image:linear-gradient(var(--nsk-bg-overlay),var(--nsk-bg-overlay)),var(--nsk-bg-image)!important;
+  background-image:linear-gradient(var(--nsk-bg-overlay),var(--nsk-bg-overlay)),var(--nsk-bg-image,url("https://cdn.nodeimage.com/i/QxqCslRIB79cCYLxCN5KeucxIcrmob5Y.webp"))!important;
   background-position:center center!important;
   background-size:cover!important;
   background-repeat:no-repeat!important;
@@ -85,7 +90,7 @@ body #nsk-frame :is(.nsk-panel,.user-card,.selector,.head-container,.discussion-
     position:fixed!important;
     inset:0!important;
     z-index:-1!important;
-    background-image:linear-gradient(var(--nsk-bg-overlay),var(--nsk-bg-overlay)),var(--nsk-bg-image)!important;
+    background-image:linear-gradient(var(--nsk-bg-overlay),var(--nsk-bg-overlay)),var(--nsk-bg-image,url("https://cdn.nodeimage.com/i/QxqCslRIB79cCYLxCN5KeucxIcrmob5Y.webp"))!important;
     background-position:center center!important;
     background-size:cover!important;
     background-repeat:no-repeat!important;

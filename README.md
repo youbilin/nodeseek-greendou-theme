@@ -22,7 +22,7 @@
 NodeSeek → **设置 → 扩展 → 自定义 CSS**，粘贴这一行，保存，刷新页面：
 
 ```css
-@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/themes/apple.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.3/themes/apple.css");
 ```
 
 换风格只改文件名；加模块在下面再来一行。
@@ -50,14 +50,14 @@ NodeSeek → **设置 → 扩展 → 自定义 CSS**，粘贴这一行，保存�
 
 | 主题 | 风格 | 导入 |
 |---|---|---|
-| **Apple** | 系统白/黑、蓝色强调、圆角轻阴影；已内置 Apple UI 细节 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/themes/apple.css");` |
-| **护眼** | 暖纸绿、低饱和图片/徽章、暗色适配、桌面悬浮分类栏 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/themes/eye-care.css");` |
-| **OLED 纯黑** | 纯黑画布、近黑卡片，亮/暗模式都是黑 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/themes/oled-black.css");` |
-| **高对比** | 黑白高对比、焦点环、链接下划线、减少动效、forced-colors | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/themes/high-contrast.css");` |
-| **终端绿** | 黑底荧光绿，和 terminal 风格 IP 卡最搭 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/themes/terminal.css");` |
-| **暖纸** | 牛皮纸/暖纸配色，含暖暗色模式 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/themes/sepia.css");` |
-| **Nord** | Polar Night 深色 + Frost 蓝链接 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/themes/nord.css");` |
-| **Solarized** | Solarized 亮色 + 暗色两套 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/themes/solarized.css");` |
+| **Apple** | 系统白/黑、蓝色强调、圆角轻阴影；已内置 Apple UI 细节 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.3/themes/apple.css");` |
+| **护眼** | 暖纸绿、低饱和图片/徽章、暗色适配、桌面悬浮分类栏 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.3/themes/eye-care.css");` |
+| **OLED 纯黑** | 纯黑画布、近黑卡片，亮/暗模式都是黑 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.3/themes/oled-black.css");` |
+| **高对比** | 黑白高对比、焦点环、链接下划线、减少动效、forced-colors | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.3/themes/high-contrast.css");` |
+| **终端绿** | 黑底荧光绿，和 terminal 风格 IP 卡最搭 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.3/themes/terminal.css");` |
+| **暖纸** | 牛皮纸/暖纸配色，含暖暗色模式 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.3/themes/sepia.css");` |
+| **Nord** | Polar Night 深色 + Frost 蓝链接 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.3/themes/nord.css");` |
+| **Solarized** | Solarized 亮色 + 暗色两套 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.3/themes/solarized.css");` |
 
 每个主题文件已包含 eye-care 结构底座和移动端修复，**不要同时导入两个主题**。
 
@@ -67,19 +67,19 @@ NodeSeek → **设置 → 扩展 → 自定义 CSS**，粘贴这一行，保存�
 
 | 模块 | 作用 | 导入 |
 |---|---|---|
-| **紧凑密度** | 仅桌面，压缩列表行高、头像和评论间距 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/modules/compact.css");` |
-| **阅读排版** | 正文字号/行高、标题、引用、图片、楼层锚点；已内联代码/表格样式 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/modules/reading.css");` |
-| **代码与表格** | 只想要代码块和表格时单独用 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/modules/code-tables.css");` |
-| **极简净化** | 隐藏页脚、侧栏广告、轮播、推荐角标、快捷功能区、新用户面板、签名 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/modules/zen.css");` |
-| **移动可用性** | 仅移动端：两行头部、修复 375px 溢出、触摸目标；给原生主题用 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/modules/mobile.css");` |
-| **玻璃拟态** | 半透明面板 + backdrop-filter 模糊；不要和 zen/OLED 叠用 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/modules/glass.css");` |
-| **自定义背景** | 默认山景图 + 半透明卡片；移动端与桌面端分别适配 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/modules/background.css");` |
-| **访客 IP 卡片** | 右下角 terminal 风格 IP 卡；移动端默认隐藏；CSS 不可点击 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/modules/ip-card.css");` |
-| **专注** | 隐藏头像、签名、浏览量、最后回复、分类徽章 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/modules/focus.css");` |
-| **字体** | 本地 CJK 字体栈；正文衬线、UI 无衬线 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/modules/fonts.css");` |
-| **Apple UI** | Apple 风格按钮按压、分段控件、圆角卡片、焦点环；给非 Apple 主题用 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/modules/apple-ui.css");` |
-| **阅读进度** | 顶部 3px 进度条；Chromium/Safari 支持，Firefox 不显示 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/modules/progress.css");` |
-| **全宽** | 仅桌面，隐藏左右栏，内容居中 1080px | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/modules/full-width.css");` |
+| **紧凑密度** | 仅桌面，压缩列表行高、头像和评论间距 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.3/modules/compact.css");` |
+| **阅读排版** | 正文字号/行高、标题、引用、图片、楼层锚点；已内联代码/表格样式 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.3/modules/reading.css");` |
+| **代码与表格** | 只想要代码块和表格时单独用 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.3/modules/code-tables.css");` |
+| **极简净化** | 隐藏页脚、侧栏广告、轮播、推荐角标、快捷功能区、新用户面板、签名 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.3/modules/zen.css");` |
+| **移动可用性** | 仅移动端：两行头部、修复 375px 溢出、触摸目标；给原生主题用 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.3/modules/mobile.css");` |
+| **玻璃拟态** | 半透明面板 + backdrop-filter 模糊；不要和 zen/OLED 叠用 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.3/modules/glass.css");` |
+| **自定义背景** | 默认山景图 + 半透明卡片；移动端与桌面端分别适配 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.3/modules/background.css");` |
+| **访客 IP 卡片** | 右下角 terminal 风格 IP 卡；移动端默认隐藏；CSS 不可点击 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.3/modules/ip-card.css");` |
+| **专注** | 隐藏头像、签名、浏览量、最后回复、分类徽章 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.3/modules/focus.css");` |
+| **字体** | 本地 CJK 字体栈；正文衬线、UI 无衬线 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.3/modules/fonts.css");` |
+| **Apple UI** | Apple 风格按钮按压、分段控件、圆角卡片、焦点环；给非 Apple 主题用 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.3/modules/apple-ui.css");` |
+| **阅读进度** | 顶部 3px 进度条；Chromium/Safari 支持，Firefox 不显示 | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.3/modules/progress.css");` |
+| **全宽** | 仅桌面，隐藏左右栏，内容居中 1080px | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.3/modules/full-width.css");` |
 
 ### 叠加注意
 
@@ -95,39 +95,54 @@ NodeSeek → **设置 → 扩展 → 自定义 CSS**，粘贴这一行，保存�
 **护眼阅读**
 
 ```css
-@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/themes/eye-care.css");
-@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/modules/reading.css");
-@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/modules/zen.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.3/themes/eye-care.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.3/modules/reading.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.3/modules/zen.css");
 ```
 
 **终端专注**
 
 ```css
-@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/themes/terminal.css");
-@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/modules/focus.css");
-@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/modules/fonts.css");
-@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/modules/reading.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.3/themes/terminal.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.3/modules/focus.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.3/modules/fonts.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.3/modules/reading.css");
 ```
 
 **背景玻璃**
 
 ```css
-@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/themes/eye-care.css");
-@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/modules/background.css");
-@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/modules/glass.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.3/themes/eye-care.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.3/modules/background.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.3/modules/glass.css");
 ```
 
 **OLED 阅读**
 
 ```css
-@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/themes/oled-black.css");
-@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/modules/reading.css");
-@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/modules/ip-card.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.3/themes/oled-black.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.3/modules/reading.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.3/modules/ip-card.css");
 ```
+
+## 换上你自己的背景
+
+导入 background 模块后，把这段贴到自定义 CSS 的**任意位置**（import 行前面或后面都行）：
+
+```css
+:root{
+  --nsk-bg-image:url("https://example.com/your-photo.jpg");
+  --nsk-bg-overlay:rgba(0,0,0,.25);
+}
+```
+
+- `--nsk-bg-image`：你的图片地址（本地文件、data URI、外链都行）；不设就用默认山景图
+- `--nsk-bg-overlay`：压暗层；浅色照片建议加一点，保证卡片外文字可读
+- `--nsk-bg-surface` / `--nsk-bg-surface-dark`：卡片透明度，亮/暗模式分开设置
 
 ## 升级与镜像
 
-- **固定版本（推荐）**：URL 里的 `@v1.10.2`。升级时改版本号，刷新即生效。
+- **固定版本（推荐）**：URL 里的 `@v1.10.3`。升级时改版本号，刷新即生效。
 - **跟最新**：换成 `@main`。可能包含未发布改动，日常不建议。
 - **镜像**：jsDelivr 慢或被拦时只换域名：`fastly.jsdelivr.net` / `gcore.jsdelivr.net`。
 
@@ -181,7 +196,7 @@ NodeSeek → **设置 → 扩展 → 自定义 CSS**，粘贴这一行，保存�
 
 - `themes/`、`modules/` 是发布产物，CDN 直接指向这些文件；`src/` 是源文件（`src/base/eye-care.css` + `src/themes/*.overlay.css`）。
 - `build.mjs` 拼装产物：主题 = 底座 + 覆盖层 + apple-ui（仅 Apple）+ mobile；`modules/reading.css` 内联 code-tables。
-- 改样式改 `src/`，然后 `npm run build`；发布时打 tag（如 `v1.10.2`）并同步 README 版本号。
+- 改样式改 `src/`，然后 `npm run build`；发布时打 tag（如 `v1.10.3`）并同步 README 版本号。
 
 ```
 themes/        8 个自包含主题
@@ -207,6 +222,6 @@ CSS 做不到的交互在独立仓库：[youbilin/nodeseek-userscript](https://g
 
 ## 版本
 
-- 当前：`v1.10.2`
+- 当前：`v1.10.3`
 - 版本线：`vMAJOR.MINOR.PATCH`；新增文件/覆盖 = MINOR，修复 = PATCH，破坏导入方式 = MAJOR。
 - 请固定版本号；生产使用不要指向 `@latest`。
