@@ -22,7 +22,7 @@ One line of CSS. A whole new look.
 NodeSeek → **Settings → Extensions → Custom CSS**, paste one line, save, refresh:
 
 ```css
-@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.3/themes/apple.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.4/themes/apple.css");
 ```
 
 Swap the file name to change the look; add one line per module.
@@ -50,14 +50,14 @@ Screenshots are real captures of nodeseek.com (2026-11-09, Chrome, 1440×900).
 
 | Theme | Look | Import |
 |---|---|---|
-| **Apple** | System white/black, blue accent, rounded corners; Apple UI details included | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.3/themes/apple.css");` |
-| **Eye-care** | Warm paper green, desaturated badges, dark-mode support, floating desktop category dock | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.3/themes/eye-care.css");` |
-| **OLED black** | True-black canvas, near-black cards, black in both modes | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.3/themes/oled-black.css");` |
-| **High contrast** | Black/white, focus rings, link underlines, reduced motion, forced-colors | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.3/themes/high-contrast.css");` |
-| **Terminal** | Black background, phosphor green, pairs with the terminal IP card | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.3/themes/terminal.css");` |
-| **Sepia** | Kraft-paper palette with a warm dark mode | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.3/themes/sepia.css");` |
-| **Nord** | Polar Night dark + Frost blue links | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.3/themes/nord.css");` |
-| **Solarized** | Solarized light + dark | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.3/themes/solarized.css");` |
+| **Apple** | System white/black, blue accent, rounded corners; Apple UI details included | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.4/themes/apple.css");` |
+| **Eye-care** | Warm paper green, desaturated badges, dark-mode support, floating desktop category dock | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.4/themes/eye-care.css");` |
+| **OLED black** | True-black canvas, near-black cards, black in both modes | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.4/themes/oled-black.css");` |
+| **High contrast** | Black/white, focus rings, link underlines, reduced motion, forced-colors | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.4/themes/high-contrast.css");` |
+| **Terminal** | Black background, phosphor green, pairs with the terminal IP card | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.4/themes/terminal.css");` |
+| **Sepia** | Kraft-paper palette with a warm dark mode | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.4/themes/sepia.css");` |
+| **Nord** | Polar Night dark + Frost blue links | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.4/themes/nord.css");` |
+| **Solarized** | Solarized light + dark | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.4/themes/solarized.css");` |
 
 Every theme bundles the eye-care structural base and mobile fixes. **Never import two themes.**
 
@@ -65,19 +65,19 @@ Every theme bundles the eye-care structural base and mobile fixes. **Never impor
 
 | Module | Purpose | Import |
 |---|---|---|
-| **Compact** | Desktop only; tighter list rows, avatars, comment spacing | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.3/modules/compact.css");` |
-| **Reading** | Body size/leading, headings, quotes, images, post anchors; code & table styles inlined | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.3/modules/reading.css");` |
-| **Code & tables** | Standalone code blocks and tables | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.3/modules/code-tables.css");` |
-| **Zen** | Hides footer, sidebar ads, carousel, promoted badges, signature | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.3/modules/zen.css");` |
-| **Mobile** | Mobile only; two-row header, 375px overflow fixes, touch targets — for the native theme | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.3/modules/mobile.css");` |
-| **Glass** | Translucent panels with backdrop-filter; not with zen/OLED | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.3/modules/glass.css");` |
-| **Background** | Default mountain photo + translucent cards; separate desktop/touch code paths | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.3/modules/background.css");` |
-| **IP card** | Terminal-style visitor IP card, bottom right; hidden on mobile; not clickable | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.3/modules/ip-card.css");` |
-| **Focus** | Hides avatars, signatures, view counts, category badges | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.3/modules/focus.css");` |
-| **Fonts** | Local CJK font stack; serif body, sans UI | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.3/modules/fonts.css");` |
-| **Apple UI** | Apple-style buttons, segmented controls, cards, focus rings — for non-Apple themes | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.3/modules/apple-ui.css");` |
-| **Progress** | 3px top reading-progress bar; Chromium/Safari only | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.3/modules/progress.css");` |
-| **Full width** | Desktop only; hides side rails, centers content at 1080px | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.3/modules/full-width.css");` |
+| **Compact** | Desktop only; tighter list rows, avatars, comment spacing | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.4/modules/compact.css");` |
+| **Reading** | Body size/leading, headings, quotes, images, post anchors; code & table styles inlined | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.4/modules/reading.css");` |
+| **Code & tables** | Standalone code blocks and tables | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.4/modules/code-tables.css");` |
+| **Zen** | Hides footer, sidebar ads, carousel, promoted badges, signature | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.4/modules/zen.css");` |
+| **Mobile** | Mobile only; two-row header, 375px overflow fixes, touch targets — for the native theme | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.4/modules/mobile.css");` |
+| **Glass** | Translucent panels with backdrop-filter; not with zen/OLED | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.4/modules/glass.css");` |
+| **Background** | Default mountain photo + translucent cards; separate desktop/touch code paths | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.4/modules/background.css");` |
+| **IP card** | Terminal-style visitor IP card, bottom right; hidden on mobile; not clickable | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.4/modules/ip-card.css");` |
+| **Focus** | Hides avatars, signatures, view counts, category badges | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.4/modules/focus.css");` |
+| **Fonts** | Local CJK font stack; serif body, sans UI | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.4/modules/fonts.css");` |
+| **Apple UI** | Apple-style buttons, segmented controls, cards, focus rings — for non-Apple themes | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.4/modules/apple-ui.css");` |
+| **Progress** | 3px top reading-progress bar; Chromium/Safari only | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.4/modules/progress.css");` |
+| **Full width** | Desktop only; hides side rails, centers content at 1080px | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.4/modules/full-width.css");` |
 
 ### Stacking notes
 
@@ -93,34 +93,34 @@ Every theme bundles the eye-care structural base and mobile fixes. **Never impor
 **Eye-care reading**
 
 ```css
-@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.3/themes/eye-care.css");
-@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.3/modules/reading.css");
-@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.3/modules/zen.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.4/themes/eye-care.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.4/modules/reading.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.4/modules/zen.css");
 ```
 
 **Terminal focus**
 
 ```css
-@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.3/themes/terminal.css");
-@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.3/modules/focus.css");
-@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.3/modules/fonts.css");
-@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.3/modules/reading.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.4/themes/terminal.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.4/modules/focus.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.4/modules/fonts.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.4/modules/reading.css");
 ```
 
 **Background glass**
 
 ```css
-@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.3/themes/eye-care.css");
-@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.3/modules/background.css");
-@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.3/modules/glass.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.4/themes/eye-care.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.4/modules/background.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.4/modules/glass.css");
 ```
 
 **OLED reading**
 
 ```css
-@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.3/themes/oled-black.css");
-@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.3/modules/reading.css");
-@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.3/modules/ip-card.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.4/themes/oled-black.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.4/modules/reading.css");
+@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.4/modules/ip-card.css");
 ```
 
 ## Use your own background
@@ -140,7 +140,7 @@ After importing the background module, paste this **anywhere** in the field (bef
 
 ## Versioning & mirrors
 
-- **Pinned (recommended)**: keep `@v1.10.3` in the URL; bump the tag to upgrade.
+- **Pinned (recommended)**: keep `@v1.10.4` in the URL; bump the tag to upgrade.
 - **Bleeding edge**: replace the tag with `@main` — may contain unreleased changes.
 - **Mirrors**: swap only the host if jsDelivr is slow or blocked — `fastly.jsdelivr.net` or `gcore.jsdelivr.net`.
 
@@ -192,7 +192,7 @@ Full matrix in [docs/compatibility.md](docs/compatibility.md). Tested 2026-11-09
 
 ## Development
 
-Published files are assembled by `build.mjs` from `src/` (`src/base/eye-care.css` + `src/themes/*.overlay.css`); `modules/reading.css` inlines `code-tables.css`. Edit `src/`, run `npm run build`, tag a release (e.g. `v1.10.3`) and sync the version in this README — jsDelivr picks the tag up immediately.
+Published files are assembled by `build.mjs` from `src/` (`src/base/eye-care.css` + `src/themes/*.overlay.css`); `modules/reading.css` inlines `code-tables.css`. Edit `src/`, run `npm run build`, tag a release (e.g. `v1.10.4`) and sync the version in this README — jsDelivr picks the tag up immediately.
 
 ```
 themes/        8 self-contained themes
@@ -218,6 +218,6 @@ CSS can't do interactions — those live in [youbilin/nodeseek-userscript](https
 
 ## Versioning
 
-- Current: `v1.10.3`
+- Current: `v1.10.4`
 - Scheme: `vMAJOR.MINOR.PATCH` — new files/overrides = MINOR, fixes = PATCH, breaking import changes = MAJOR.
 - Pin a version; don't point production at `@latest`.

@@ -1,5 +1,8 @@
 # Changelog
 
+## v1.10.4 — 2026-11-09
+- 编辑器去透明全覆盖：`#editor-body` 本体改用卡片底色，工具栏/标签栏/表情面板用次级底色，CodeMirror/textarea/contenteditable 等编辑面用卡片底色；并新增全局 `CodeMirror`/`cm-editor`/`mde-toolbar` 规则，覆盖 `#editor` 之外的编辑器（如私信输入框）。
+
 ## v1.10.3 — 2026-11-09
 - `modules/background.css` 升级到 v1.2.0：背景图变量改为在使用处兜底，任何人在自定义 CSS 的**任意位置**写 `:root{--nsk-bg-image:url(...)}` 都能换掉默认山景图（此前写在模块前面会被默认值压掉）。实测覆盖：默认 / import 之间 / import 之后三种位置全部生效。
 - README（中/英）新增「换上你自己的背景」章节，给出三行模板。
