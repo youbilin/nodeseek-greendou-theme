@@ -3,21 +3,19 @@
 # NodeSeek Themes
 
 **NodeSeek 论坛自定义 CSS 主题与模块**
-**Custom CSS themes & modules for the [NodeSeek](https://www.nodeseek.com) forum**
 
 [![Version](https://img.shields.io/github/v/tag/youbilin/nodeseek-themes?sort=semver&label=version)](https://github.com/youbilin/nodeseek-themes/tags)
 [![jsDelivr](https://img.shields.io/jsdelivr/gh/hd/youbilin/nodeseek-themes?label=jsDelivr)](https://www.jsdelivr.com/package/gh/youbilin/nodeseek-themes)
-![Themes](https://img.shields.io/badge/themes-8-0969da)
-![Modules](https://img.shields.io/badge/modules-13-8250df)
+![Themes](https://img.shields.io/badge/主题-8-0969da)
+![Modules](https://img.shields.io/badge/模块-13-8250df)
+
+[English](README.en.md) | **简体中文**
 
 一行 `@import`，整站换装。
-One line of CSS. A whole new look.
 
 </div>
 
 ---
-
-# 中文
 
 ## 快速开始
 
@@ -32,6 +30,21 @@ NodeSeek → **设置 → 扩展 → 自定义 CSS**，粘贴这一行，保存�
 > **唯一要注意的**：所有 `@import` 必须放在自定义 CSS 的**最顶部**，前面不能有任何其他样式规则。CSS 规定 `@import` 只能出现在其他规则之前，位置不对会被浏览器直接忽略。
 
 已在 nodeseek.com 实测（2026-11-09，Chrome）：CDN 导入返回 200，主题变量正常生效。
+
+## 主题预览
+
+| 主题 | 亮色 | 暗色 |
+|---|---|---|
+| **Apple** | <img src="screenshots/apple-light.jpg" width="400" alt="Apple 亮色"> | <img src="screenshots/apple-dark.jpg" width="400" alt="Apple 暗色"> |
+| **护眼** | <img src="screenshots/eye-care-light.jpg" width="400" alt="护眼亮色"> | <img src="screenshots/eye-care-dark.jpg" width="400" alt="护眼暗色"> |
+| **OLED 纯黑** | <img src="screenshots/oled-black-light.jpg" width="400" alt="OLED 亮色"> | <img src="screenshots/oled-black-dark.jpg" width="400" alt="OLED 暗色"> |
+| **高对比** | <img src="screenshots/high-contrast-light.jpg" width="400" alt="高对比亮色"> | <img src="screenshots/high-contrast-dark.jpg" width="400" alt="高对比暗色"> |
+| **终端绿** | <img src="screenshots/terminal-light.jpg" width="400" alt="终端亮色"> | <img src="screenshots/terminal-dark.jpg" width="400" alt="终端暗色"> |
+| **暖纸** | <img src="screenshots/sepia-light.jpg" width="400" alt="暖纸亮色"> | <img src="screenshots/sepia-dark.jpg" width="400" alt="暖纸暗色"> |
+| **Nord** | <img src="screenshots/nord-light.jpg" width="400" alt="Nord 亮色"> | <img src="screenshots/nord-dark.jpg" width="400" alt="Nord 暗色"> |
+| **Solarized** | <img src="screenshots/solarized-light.jpg" width="400" alt="Solarized 亮色"> | <img src="screenshots/solarized-dark.jpg" width="400" alt="Solarized 暗色"> |
+
+截图为 nodeseek.com 首页实拍（2026-11-09，Chrome，1440×900）。
 
 ## 主题（8 个，互斥，只选一个）
 
@@ -70,25 +83,16 @@ NodeSeek → **设置 → 扩展 → 自定义 CSS**，粘贴这一行，保存�
 
 ### 叠加注意
 
-- **阅读排版已内联代码与表格**，导入了 reading 就不要再导入 code-tables；只想改代码/表格时才单独用 code-tables。
-- 主题已含 mobile，**用本仓库主题就不要再导入 mobile**；只有用 NodeSeek 原生主题时才加。
-- **Apple 主题已内置 Apple UI 细节**，不要再导入 apple-ui；其他主题想要 Apple 手感才加。
-- 玻璃拟态不要和 zen、OLED 主题叠用，玻璃需要背景层次。
-- 全宽会隐藏左右栏和侧栏的发帖按钮，顶部导航和搜索保留。
-- 阅读进度在 Firefox 中不会出现，纯 CSS 无 fallback。
-- 自定义背景默认图片约 650KB；IP 卡片会请求 card.net.coffee 并显示访客自己的 IP。
+- **阅读排版已内联代码与表格**，导入了 reading 就不要再导入 code-tables。
+- 主题已含 mobile，**用本仓库主题就不要再导入 mobile**。
+- **Apple 主题已内置 Apple UI 细节**，不要再导入 apple-ui。
+- 玻璃拟态不要和 zen、OLED 主题叠用。
+- 全宽会隐藏左右栏和侧栏的发帖按钮；阅读进度在 Firefox 不显示。
+- 自定义背景默认图片约 650KB；IP 卡片会请求 card.net.coffee。
 
 ## 常用组合
 
-整块复制，一次粘完。
-
-**Apple（推荐）** — 已内置 Apple UI 细节和移动端修复，只加这一行就够。
-
-```css
-@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/themes/apple.css");
-```
-
-**护眼阅读** — 护眼主题 + 阅读排版 + 极简净化。
+**护眼阅读**
 
 ```css
 @import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/themes/eye-care.css");
@@ -96,7 +100,7 @@ NodeSeek → **设置 → 扩展 → 自定义 CSS**，粘贴这一行，保存�
 @import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/modules/zen.css");
 ```
 
-**终端专注** — 终端绿 + 专注 + 字体 + 阅读排版。
+**终端专注**
 
 ```css
 @import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/themes/terminal.css");
@@ -105,7 +109,7 @@ NodeSeek → **设置 → 扩展 → 自定义 CSS**，粘贴这一行，保存�
 @import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/modules/reading.css");
 ```
 
-**背景玻璃** — 护眼底座 + 自定义背景 + 玻璃拟态。
+**背景玻璃**
 
 ```css
 @import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/themes/eye-care.css");
@@ -113,7 +117,7 @@ NodeSeek → **设置 → 扩展 → 自定义 CSS**，粘贴这一行，保存�
 @import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/modules/glass.css");
 ```
 
-**OLED 阅读** — 纯黑主题 + 阅读排版，IP 卡可选。
+**OLED 阅读**
 
 ```css
 @import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/themes/oled-black.css");
@@ -123,24 +127,22 @@ NodeSeek → **设置 → 扩展 → 自定义 CSS**，粘贴这一行，保存�
 
 ## 升级与镜像
 
-- **固定版本（推荐）**：URL 里的 `@v1.10.2`。升级时把版本号改掉，刷新即生效。
-- **跟最新**：把 `@v1.10.2` 换成 `@main`。可能包含未发布的改动，日常不建议。
-- **镜像**：jsDelivr 访问慢或被拦时，只换域名，路径不变。
-  - `https://fastly.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/themes/apple.css`
-  - `https://gcore.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/themes/apple.css`
+- **固定版本（推荐）**：URL 里的 `@v1.10.2`。升级时改版本号，刷新即生效。
+- **跟最新**：换成 `@main`。可能包含未发布改动，日常不建议。
+- **镜像**：jsDelivr 慢或被拦时只换域名：`fastly.jsdelivr.net` / `gcore.jsdelivr.net`。
 
 ## 备用：复制粘贴
 
-内网、离线或 `@import` 被拦的环境，文件本身是自包含的：打开 [themes/](themes/) 或 [modules/](modules/) 里的文件，全选复制，粘到自定义 CSS 即可，效果与 `@import` 完全一致。
+文件本身自包含：打开 [themes/](themes/) 或 [modules/](modules/) 里的文件，全选复制粘到自定义 CSS，效果与 `@import` 一致。
 
 <details>
 <summary><strong>常见问题</strong></summary>
 
-- **导入后没变化？** 检查 `@import` 是否在输入框第一行。前面有任何规则（包括空行后的注释以外的内容），整条导入会被忽略。
-- **改了样式没生效？** jsDelivr 按 tag 永久缓存；改版本号才会拿到新文件。调试时可以临时用 `@main`。
-- **悬浮分类栏需要什么浏览器？** 桌面悬浮分类栏/用户卡使用 CSS 锚点定位，需要 Chrome/Edge 125+ 或 Safari 26+；旧浏览器自动退回原生左侧栏，不影响使用。
-- **仓库改名后旧地址还能用吗？** GitHub 网页和 git 地址自动跳转；旧 jsDelivr 地址不保证长期可用，建议换成新地址。
-- **能只隐藏某一部分吗？** 可以。zen/focus 等模块的每个规则块都是独立的，复制粘贴用户直接删掉对应规则即可。
+- **导入后没变化？** `@import` 必须在输入框第一行，前面有任何规则整条导入都会被忽略。
+- **改了样式没生效？** jsDelivr 按 tag 永久缓存，改版本号才拿得到新文件；调试可临时用 `@main`。
+- **悬浮分类栏需要什么浏览器？** CSS 锚点定位需要 Chrome/Edge 125+ 或 Safari 26+；旧浏览器自动退回原生左侧栏。
+- **仓库改名后旧地址还能用吗？** GitHub 自动跳转；旧 jsDelivr 地址不保证长期可用，建议换新地址。
+- **能只隐藏某一部分吗？** 可以，zen/focus 每个规则块独立，删掉对应规则即可。
 
 </details>
 
@@ -152,7 +154,7 @@ NodeSeek → **设置 → 扩展 → 自定义 CSS**，粘贴这一行，保存�
 | apple | full | full | full | 已含 mobile + Apple UI |
 | eye-care | full | full | full | 已含 mobile |
 | oled-black | full | full | 全黑 | 已含 mobile |
-| high-contrast | full | full | full | 已含 mobile；支持 prefers-contrast/forced-colors |
+| high-contrast | full | full | full | 支持 prefers-contrast/forced-colors |
 | terminal | full | full | 全黑 | 已含 mobile |
 | sepia | full | full | full | 已含 mobile |
 | nord | full | full | 全暗 | 已含 mobile |
@@ -165,10 +167,10 @@ NodeSeek → **设置 → 扩展 → 自定义 CSS**，粘贴这一行，保存�
 | glass | full | full | full | 避免与 zen/OLED 叠用 |
 | background | full | full | full | 移动端独立适配 |
 | ip-card | full | 默认隐藏 | full | 第三方请求 |
-| focus | full | full | full | 隐藏头像/签名/次要信息 |
+| focus | full | full | full | 隐藏次要信息 |
 | fonts | full | full | full | 本地字体 |
 | apple-ui | full | full | full | 给非 Apple 主题用 |
-| progress | full | full | full | Chromium/Safari，Firefox 无 |
+| progress | full | full | full | Chromium/Safari |
 | full-width | full | n/a | full | 隐藏左右栏 |
 
 详细矩阵见 [docs/compatibility.md](docs/compatibility.md)。测试日期：2026-11-09。
@@ -177,28 +179,19 @@ NodeSeek → **设置 → 扩展 → 自定义 CSS**，粘贴这一行，保存�
 
 ## 本地开发
 
-- `themes/`、`modules/` 是发布产物，自包含；CDN 直接指向这些文件。
-- `src/` 是源文件：`src/base/eye-care.css` + `src/themes/*.overlay.css`；`build.mjs` 把它们拼成 `themes/*.css`，并把 code-tables 内联进 `modules/reading.css`。
-- 改样式改 `src/`，然后：
-
-```bash
-npm run build
-```
-
-- 发布新版本时打 tag（如 `v1.10.1`），jsDelivr 立即可用；README 里的版本号同步改。
-- `nodeseek-greendou.css` 是 eye-care 的旧地址兼容副本，由构建脚本同步。
-
-## 目录结构
+- `themes/`、`modules/` 是发布产物，CDN 直接指向这些文件；`src/` 是源文件（`src/base/eye-care.css` + `src/themes/*.overlay.css`）。
+- `build.mjs` 拼装产物：主题 = 底座 + 覆盖层 + apple-ui（仅 Apple）+ mobile；`modules/reading.css` 内联 code-tables。
+- 改样式改 `src/`，然后 `npm run build`；发布时打 tag（如 `v1.10.2`）并同步 README 版本号。
 
 ```
 themes/        8 个自包含主题
 modules/       13 个自包含模块
 src/base/      eye-care 底座源文件
-src/themes/    主题覆盖层源文件（含 apple.overlay.css）
+src/themes/    主题覆盖层源文件
 src/modules/   模块源文件
-build.mjs      拼装自包含文件
+build.mjs      拼装脚本
+screenshots/   README 截图
 docs/          兼容性文档
-nodeseek-greendou.css  旧地址兼容副本
 ```
 
 ## 用户脚本
@@ -208,92 +201,12 @@ CSS 做不到的交互在独立仓库：[youbilin/nodeseek-userscript](https://g
 ## 已知限制
 
 - CSS 不能新增私信联系人栏、不能修改发送快捷键、不能生成链接预览卡；这些在 userscript 仓库。
-- 极简净化默认隐藏签名；需要保留时删掉对应规则。
-- 专注会隐藏分类徽章；只想隐藏头像时删掉对应规则。
+- 极简净化默认隐藏签名；专注会隐藏分类徽章；不需要时删掉对应规则。
 - 主题和模块依赖 NodeSeek 现有类名；站点大版本更新后需要重新测试。
-- Apple UI 是视觉增强；高对比用户建议跳过，以免阴影/圆角覆盖高对比样式。
-- `@import` 依赖浏览器能访问 jsDelivr；被墙或公司网络拦截时换镜像域名，或改用复制粘贴方式。
+- `@import` 依赖浏览器能访问 jsDelivr；被拦时换镜像域名或改用复制粘贴。
 
 ## 版本
 
-- 当前：`v1.10.1`
+- 当前：`v1.10.2`
 - 版本线：`vMAJOR.MINOR.PATCH`；新增文件/覆盖 = MINOR，修复 = PATCH，破坏导入方式 = MAJOR。
 - 请固定版本号；生产使用不要指向 `@latest`。
-
----
-
-# English
-
-## Quick Start
-
-NodeSeek → **Settings → Extensions → Custom CSS**, paste one line, save, refresh:
-
-```css
-@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/themes/apple.css");
-```
-
-Swap the file name to change the look; add one line per module.
-
-> **The one rule:** every `@import` must sit at the **very top** of the field, before any other style rules. Per the CSS spec, an `@import` that appears after other rules is ignored by the browser.
-
-Verified against nodeseek.com (2026-11-09, Chrome): the CDN import returns 200 and theme variables apply.
-
-## Themes (8 — pick exactly one)
-
-| Theme | Look | Import |
-|---|---|---|
-| **Apple** | System white/black, blue accent, rounded corners; Apple UI details included | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/themes/apple.css");` |
-| **Eye-care** | Warm paper green, desaturated badges, dark-mode support, floating desktop category dock | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/themes/eye-care.css");` |
-| **OLED black** | True-black canvas, near-black cards, black in both modes | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/themes/oled-black.css");` |
-| **High contrast** | Black/white, focus rings, link underlines, reduced motion, forced-colors | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/themes/high-contrast.css");` |
-| **Terminal** | Black background, phosphor green, pairs with the terminal IP card | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/themes/terminal.css");` |
-| **Sepia** | Kraft-paper palette with a warm dark mode | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/themes/sepia.css");` |
-| **Nord** | Polar Night dark + Frost blue links | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/themes/nord.css");` |
-| **Solarized** | Solarized light + dark | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/themes/solarized.css");` |
-
-Every theme bundles the eye-care structural base and mobile fixes. **Never import two themes.**
-
-## Modules (13 — optional, stack after the theme)
-
-| Module | Purpose | Import |
-|---|---|---|
-| **Compact** | Desktop only; tighter list rows, avatars, comment spacing | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/modules/compact.css");` |
-| **Reading** | Body size/leading, headings, quotes, images, post anchors; code & table styles inlined | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/modules/reading.css");` |
-| **Code & tables** | Standalone code blocks and tables | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/modules/code-tables.css");` |
-| **Zen** | Hides footer, sidebar ads, carousel, promoted badges, signature | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/modules/zen.css");` |
-| **Mobile** | Mobile only; two-row header, 375px overflow fixes, touch targets — for the native theme | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/modules/mobile.css");` |
-| **Glass** | Translucent panels with backdrop-filter; not with zen/OLED | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/modules/glass.css");` |
-| **Background** | Default mountain photo + translucent cards; separate desktop/touch code paths | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/modules/background.css");` |
-| **IP card** | Terminal-style visitor IP card, bottom right; hidden on mobile; not clickable | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/modules/ip-card.css");` |
-| **Focus** | Hides avatars, signatures, view counts, category badges | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/modules/focus.css");` |
-| **Fonts** | Local CJK font stack; serif body, sans UI | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/modules/fonts.css");` |
-| **Apple UI** | Apple-style buttons, segmented controls, cards, focus rings — for non-Apple themes | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/modules/apple-ui.css");` |
-| **Progress** | 3px top reading-progress bar; Chromium/Safari only | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/modules/progress.css");` |
-| **Full width** | Desktop only; hides side rails, centers content at 1080px | `@import url("https://cdn.jsdelivr.net/gh/youbilin/nodeseek-themes@v1.10.2/modules/full-width.css");` |
-
-### Stacking notes
-
-- **Reading already inlines code & tables** — don't stack code-tables with reading.
-- Themes already include **mobile**; only stack mobile on the native theme.
-- **Apple already includes Apple UI** — don't stack apple-ui on it.
-- Glass conflicts with zen and OLED-black (it needs background depth).
-- Progress is invisible on Firefox (CSS-only, no fallback).
-- The background module ships a ~650KB default photo; the IP card requests card.net.coffee and shows the visitor's own IP.
-
-## Versioning & mirrors
-
-- **Pinned (recommended)**: keep `@v1.10.2` in the URL; bump the tag to upgrade.
-- **Bleeding edge**: replace the tag with `@main` — may contain unreleased changes.
-- **Mirrors**: swap only the host if jsDelivr is slow or blocked — `fastly.jsdelivr.net` or `gcore.jsdelivr.net`.
-
-## Fallback: copy-paste
-
-Every published file is self-contained: open any file under [themes/](themes/) or [modules/](modules/), copy it whole, and paste it into the custom CSS field — identical result to `@import`.
-
-## Development
-
-Published files are assembled by `build.mjs` from `src/` (`src/base/eye-care.css` + `src/themes/*.overlay.css`); `modules/reading.css` inlines `code-tables.css`. Edit `src/`, then run `npm run build`. Tag a release (e.g. `v1.10.1`) and jsDelivr picks it up immediately.
-
-## Related
-
-CSS can't do interactions — those live in [youbilin/nodeseek-userscript](https://github.com/youbilin/nodeseek-userscript): clickable IP card, keyboard shortcuts, link hover previews, local contacts.
